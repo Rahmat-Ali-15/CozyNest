@@ -354,12 +354,10 @@ header {
 .wedding-registry-popup{
   position: absolute;
   top: 40px;
-  right: 30px;
-  width: 99%;
-  padding: 20px;
+  width: 100%;
+  right: 10px;
+  padding: 35px 40px 20px 40px;
   display: flex;
-  justify-content: center;
-  gap: 60px;
   border: 1px solid var(--border);
   background-color: var(--bg);
   opacity: 0;
@@ -368,6 +366,14 @@ header {
   overflow: hidden;
   transform: translateY(10px);
   transition: all 0.6s ease;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.new-popup{
+  justify-content: center;
+  gap: 60px;
+}
+.wedding-registry-popup{
+  gap: 40px;
 }
 .new:hover .new-popup,.new-popup:hover,
 .wedding-registry:hover .wedding-registry-popup, .wedding-registry-popup:hover{
@@ -394,7 +400,7 @@ header {
 .tips>ul>li,
 .wedding-top-categories>ul>li,
 .wedding-top-brand>ul>li{
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 .top-category>ul>li>a,
 .trending>ul>li>a,
@@ -432,10 +438,10 @@ header {
   align-items: center;
 }
 .navbar>ul>li>a{
+  position: relative;
   font-size: 14px;
   font-weight: 500;
   color: white;
-  position: relative;
 }
 .navbar>ul>li>a::after{
   content: "";
@@ -453,52 +459,111 @@ header {
 }
 /* navbar popup start */
 .navbar>ul{
+  width: 100%;
   position: relative;
-  width: 100%;
 }
-.furniture-popup{
-  width: 100%;
-  padding: 30px;
+.furniture-popup,
+.outdoor-popup{
+  max-height: 600px;
   position: absolute;
   top: 34px;
+  right: 60px;
+  padding: 50px 35px 20px 35px;
   display: flex;
-  gap: 30px;
+  gap: 65px;
   background-color: var(--bg);
-  border: 1px solid red;
+  overflow-y: auto;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.furniture-popup>div{
-  border: 1px solid red;
+.outdoor-popup{
+  width: 97%;
+  gap: 0px !important;
+  justify-content: space-between;
+  right: 10px;
+}
+.furniture:hover .furniture-popup,.furniture-popup:hover,
+.outdoor:hover .outdoor-popup,.outdoor-popup:hover{
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+  transform: translateY(0);
 }
 .new-furniture>h3,
 .diningroom-furniture>h3,
 .bedroom-furniture>h3,
-.entryway-furniture>h3{
+.entryway-furniture>h3,
+.outdoor-furniture>h3,
+.outdoor-dining-furniture>h3,
+.outdoor-entertaining>h3,
+.outdoor-decor>h3{
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+.new-furniture>h3:hover,
+.diningroom-furniture>h3:hover,
+.bedroom-furniture>h3:hover,
+.entryway-furniture>h3:hover,
+.outdoor-furniture>h3:hover,
+.outdoor-dining-furniture>h3:hover,
+.outdoor-entertaining>h3:hover,
+.outdoor-decor>h3:hover{
+  text-decoration: underline;
 }
 .new-furniture>ul>li,
 .diningroom-furniture>ul>li,
 .bedroom-furniture>ul>li,
-.entryway-furniture>ul>li{
-  margin-bottom: 10px;
+.entryway-furniture>ul>li,
+.outdoor-furniture>ul>li,
+.outdoor-dining-furniture>ul>li,
+.outdoor-entertaining>ul>li,
+.outdoor-decor>ul>li,
+.outdoor-img>ul>li{
+  margin-bottom: 7px;
 }
 .new-furniture>ul>li>a,
 .diningroom-furniture>ul>li>a,
 .bedroom-furniture>ul>li>a,
-.entryway-furniture>ul>li>a{
-  color: var(--primary-text);
+.entryway-furniture>ul>li>a,
+.outdoor-furniture>ul>li>a,
+.outdoor-dining-furniture>ul>li>a,
+.outdoor-entertaining>ul>li>a,
+.outdoor-decor>ul>li>a,
+.outdoor-img>ul>li>a{
+  color: var(--secondry-text);
   font-size: 14px;
 }
-.img-furniture>figure>a>img{
+.new-furniture>ul>li>a:hover,
+.diningroom-furniture>ul>li>a:hover,
+.bedroom-furniture>ul>li>a:hover,
+.entryway-furniture>ul>li>a:hover,
+.outdoor-furniture>ul>li>a:hover,
+.outdoor-dining-furniture>ul>li>a:hover,
+.outdoor-entertaining>ul>li>a:hover,
+.outdoor-decor>ul>li>a:hover,
+.outdoor-img>ul>li>a:hover{
+  text-decoration: underline;
+}
+.img-furniture>figure>a>img,
+.outdoor-img>figure>a>img{
   height: 350px;
   width: 260px;
 }
-.img-furniture>figure>figcaption{
+.img-furniture>figure>figcaption,
+.outdoor-img>figure>figcaption{
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 550;
   margin-top: 10px;
   cursor: pointer;
+}
+.outdoor-img>figure>figcaption{
+  margin-bottom: 15px;
 }
 .img-furniture>figure>figcaption:hover{
   text-decoration: underline;
