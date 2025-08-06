@@ -212,8 +212,7 @@ header {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  border: 1px solid var(--border);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: white;
   opacity: 0;
   z-index: -1;
@@ -358,14 +357,13 @@ header {
   right: 10px;
   padding: 35px 40px 20px 40px;
   display: flex;
-  border: 1px solid var(--border);
   background-color: var(--bg);
   opacity: 0;
   z-index: -1;
   visibility: hidden;
   overflow: hidden;
   transform: translateY(10px);
-  transition: all 0.6s ease;
+  transition: all 0.4s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .new-popup{
@@ -477,7 +475,7 @@ header {
   z-index: -1;
   visibility: hidden;
   transform: translateY(10px);
-  transition: all 0.6s ease;
+  transition: all 0.4s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .outdoor-popup{
