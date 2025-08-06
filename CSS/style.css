@@ -309,5 +309,109 @@ header {
   padding: 20px 25px;
   gap: 20px;
 }
-
 /* Search bar end */
+
+/* Header bottom start */
+
+.header-bottom{
+  padding: 0 60px;
+}
+.header-bottom>ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+}
+.header-bottom>ul>li>a{
+  position: relative;
+  color: var(--secondry-text);
+  opacity: 0.9;
+}
+.header-bottom>ul>li>a::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  height: 3px;
+  width: 0%;
+  transform: translateX(-50%);
+  background-color: black;
+  transition: all 0.6s ease;
+}
+.header-bottom>ul>li>a:hover::after{
+  width: 100%;
+}
+
+/* header bottom popups start */
+
+.header-bottom>ul{
+  width: 100%;
+  position: relative;
+}
+.new-popup,
+.wedding-registry-popup{
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  width: 99%;
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  border: 1px solid var(--border);
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  overflow: hidden;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+.new:hover .new-popup,.new-popup:hover,
+.wedding-registry:hover .wedding-registry-popup, .wedding-registry-popup:hover{
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+  transform: translateY(0);
+}
+.top-category>h3,
+.trending>h3,
+.collabs>h3,
+.wedding>h3,
+.tips>h3,
+.wedding-top-categories>h3,
+.wedding-top-brand>h3{
+  font-weight: 550;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+.top-category>ul>li,
+.trending>ul>li,
+.collabs>ul>li,
+.wedding>ul>li,
+.tips>ul>li,
+.wedding-top-categories>ul>li,
+.wedding-top-brand>ul>li{
+  margin-bottom: 8px;
+}
+.top-category>ul>li>a,
+.trending>ul>li>a,
+.collabs>ul>li>a,
+.wedding>ul>li>a,
+.tips>ul>li>a,
+.wedding-top-categories>ul>li>a,
+.wedding-top-brand>ul>li>a{
+  color: var(--secondry-text);
+}
+.new-img>figure>figcaption,
+.wedding-img>figure>figcaption{
+  font-weight: 550;
+  margin-top: 10px;
+}
+.wedding-img>figure>img{
+  width: 380px;
+}
+
+/* header bottom popups start */
+
+/* Header bottom end */
