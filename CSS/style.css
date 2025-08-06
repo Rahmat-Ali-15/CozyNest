@@ -26,7 +26,7 @@ body li {
 }
 header {
   width: 100%;
-  height: 250px;
+  max-height: 300px;
 }
 /* Header top start */
 .header-top {
@@ -214,6 +214,7 @@ header {
   border-radius: 5px;
   border: 1px solid var(--border);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
   opacity: 0;
   z-index: -1;
   visibility: hidden;
@@ -272,7 +273,7 @@ header {
   padding-left: 30px;
 }
 .heart-popUp > ol > li {
-  list-style-type: number;
+  list-style-type: decimal;
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -314,7 +315,7 @@ header {
 /* Header bottom start */
 
 .header-bottom{
-  padding: 0 60px;
+  padding: 15px 60px;
 }
 .header-bottom>ul{
   display: flex;
@@ -333,7 +334,7 @@ header {
   position: absolute;
   bottom: -10px;
   left: 50%;
-  height: 3px;
+  height: 2px;
   width: 0%;
   transform: translateX(-50%);
   background-color: black;
@@ -355,11 +356,12 @@ header {
   top: 40px;
   right: 30px;
   width: 99%;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   gap: 60px;
   border: 1px solid var(--border);
+  background-color: var(--bg);
   opacity: 0;
   z-index: -1;
   visibility: hidden;
@@ -412,6 +414,94 @@ header {
   width: 380px;
 }
 
-/* header bottom popups start */
+/* header bottom popups end */
 
 /* Header bottom end */
+
+/* navbar start */
+
+.navbar{
+  padding: 10px;
+  background-color: black;
+}
+.navbar>ul{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar>ul>li>a{
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  position: relative;
+}
+.navbar>ul>li>a::after{
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: var(--bg);
+  width: 0%;
+  transition: all 0.6s ease;
+}
+.navbar>ul>li>a:hover:after{
+  width: 100%;
+}
+/* navbar popup start */
+.navbar>ul{
+  position: relative;
+  width: 100%;
+}
+.furniture-popup{
+  width: 100%;
+  padding: 30px;
+  position: absolute;
+  top: 34px;
+  display: flex;
+  gap: 30px;
+  background-color: var(--bg);
+  border: 1px solid red;
+}
+.furniture-popup>div{
+  border: 1px solid red;
+}
+.new-furniture>h3,
+.diningroom-furniture>h3,
+.bedroom-furniture>h3,
+.entryway-furniture>h3{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.new-furniture>ul>li,
+.diningroom-furniture>ul>li,
+.bedroom-furniture>ul>li,
+.entryway-furniture>ul>li{
+  margin-bottom: 10px;
+}
+.new-furniture>ul>li>a,
+.diningroom-furniture>ul>li>a,
+.bedroom-furniture>ul>li>a,
+.entryway-furniture>ul>li>a{
+  color: var(--primary-text);
+  font-size: 14px;
+}
+.img-furniture>figure>a>img{
+  height: 350px;
+  width: 260px;
+}
+.img-furniture>figure>figcaption{
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.img-furniture>figure>figcaption:hover{
+  text-decoration: underline;
+}
+/* navbar popup end */
+/* navbar end */
