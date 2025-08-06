@@ -160,6 +160,7 @@ header {
 .fa-cart-shopping {
   font-size: 20px;
   color: #000001;
+  cursor: pointer;
 }
 .sign-in > p {
   font-size: 14px;
@@ -171,11 +172,15 @@ header {
 .sign-in > p > a:hover {
   text-decoration: underline;
 }
-.icons-container li {
+.icons-container > li {
   position: relative;
   cursor: pointer;
 }
-.icons-container li::after {
+.sign-in > li {
+  position: relative;
+}
+.icons-container > li::after,
+.sign-in > li::after {
   content: "";
   position: absolute;
   bottom: -8px;
@@ -187,21 +192,25 @@ header {
   transform: translateX(-50%);
   transition: all 0.6s ease;
 }
-.icons-container li:hover::after {
+.icons-container > li:hover::after,
+.sign-in > li:hover::after {
   width: 95%;
 }
-.sign-in {
+.sign-in,
+.location,
+.heart,
+.shopping-cart {
   position: relative;
 }
-.sign-in-popUp {
+.sign-in-popUp,
+.location-popUp,
+.heart-popUp,
+.shopping-popUp {
   position: absolute;
   top: 35px;
-  left: 55px;
   width: 350px;
-  padding: 30px 25px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   border-radius: 5px;
   border: 1px solid var(--border);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -211,11 +220,19 @@ header {
   transform: translateY(10px);
   transition: all 0.4s ease;
 }
-.sign-in:hover .sign-in-popUp {
+.sign-in:hover .sign-in-popUp,
+.location:hover .location-popUp,
+.heart:hover .heart-popUp,
+.shopping-cart:hover .shopping-popUp {
   opacity: 1;
   z-index: 999;
   visibility: visible;
   transform: translateY(0);
+}
+.sign-in-popUp {
+  left: 55px;
+  padding: 30px 25px;
+  gap: 10px;
 }
 .sign-in-popUp > div {
   display: flex;
@@ -223,44 +240,74 @@ header {
   gap: 20px;
 }
 .sign-in-popUp > div > a,
-.location-popUp>div>a{
+.location-popUp > div > a {
   font-size: 14px;
   color: var(--secondry-text);
 }
 .sign-in-popUp > div > a:hover,
-.location-popUp>div>a:hover {
+.location-popUp > div > a:hover {
   text-decoration: underline;
 }
-.location{
-    position: relative;
-}
-.location-popUp{
-  position: absolute;
-  top: 35px;
+.location-popUp {
   right: -190px;
-  width: 350px;
   padding: 30px 25px;
-  display: flex;
-  flex-direction: column;
   gap: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--border);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  opacity: 0;
-  z-index: -1;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
 }
-.location:hover .location-popUp{
-  opacity: 1;
-  z-index: 999;
-  visibility: visible;
-  transform: translateY(0);
+.location-popUp > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-.location-popUp>div{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.heart-popUp {
+  top: 35px;
+  right: -110px;
+  padding: 30px 30px;
+  gap: 20px;
 }
+.heart-popUp > h5 {
+  font-weight: 550;
+  font-size: 14px;
+}
+.heart-popUp > ol {
+  padding-left: 30px;
+}
+.heart-popUp > ol > li {
+  list-style-type: number;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.heart-popUp > ol > li::marker {
+  font-weight: bold;
+}
+.heart-popUp > ol > li > span {
+  font-weight: bold;
+}
+.heart-popUp > img {
+  width: 200px;
+}
+.heart-popUp > p,
+.shopping-popUp > p {
+  font-size: 13px;
+}
+.heart-popUp > p > a,
+.shopping-popUp > p > a {
+  color: var(--primary-text);
+  text-decoration: underline;
+}
+.heart-popUp > button,
+.shopping-popUp > button {
+  padding: 10px;
+  font-weight: 500;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.shopping-popUp {
+  top: 35px;
+  right: -30px;
+  padding: 20px 25px;
+  gap: 20px;
+}
+
 /* Search bar end */
