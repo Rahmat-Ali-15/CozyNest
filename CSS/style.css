@@ -462,7 +462,8 @@ header {
 }
 .furniture-popup,
 .outdoor-popup,
-.tabletop-popup{
+.tabletop-popup,
+.kitchen-popup{
   max-height: 600px;
   position: absolute;
   top: 34px;
@@ -487,7 +488,8 @@ header {
 }
 .furniture:hover .furniture-popup,.furniture-popup:hover,
 .outdoor:hover .outdoor-popup,.outdoor-popup:hover,
-.tabletop:hover .tabletop-popup,.tabletop-popup:hover{
+.tabletop:hover .tabletop-popup,.tabletop-popup:hover,
+.kitchen:hover .kitchen-popup,.kitchen-popup:hover{
   opacity: 1;
   z-index: 999;
   visibility: visible;
@@ -504,7 +506,11 @@ header {
 .tabletop-offer>h3,
 .tabletop-drinkware>h3,
 .tabletop-bartools>h3,
-.tabletop-flatware>h3{
+.tabletop-flatware>h3,
+.kitchen-offer>h3,
+.kitchen-coffee>h3,
+.kitchen-tools>h3,
+.kitchen-bakeware>h3{
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -521,7 +527,11 @@ header {
 .tabletop-offer>h3:hover,
 .tabletop-drinkware>h3:hover,
 .tabletop-bartools>h3:hover,
-.tabletop-flatware>h3:hover{
+.tabletop-flatware>h3:hover,
+.kitchen-offer>h3:hover,
+.kitchen-coffee>h3:hover,
+.kitchen-tools>h3:hover,
+.kitchen-bakeware>h3:hover{
   text-decoration: underline;
 }
 .new-furniture>ul>li,
@@ -536,7 +546,11 @@ header {
 .tabletop-offer>ul>li,
 .tabletop-drinkware>ul>li,
 .tabletop-bartools>ul>li,
-.tabletop-flatware>ul>li{
+.tabletop-flatware>ul>li,
+.kitchen-offer>ul>li,
+.kitchen-coffee>ul>li,
+.kitchen-tools>ul>li,
+.kitchen-bakeware>ul>li{
   margin-bottom: 7px;
 }
 .new-furniture>ul>li>a,
@@ -551,7 +565,11 @@ header {
 .tabletop-offer>ul>li>a,
 .tabletop-drinkware>ul>li>a,
 .tabletop-bartools>ul>li>a,
-.tabletop-flatware>ul>li>a{
+.tabletop-flatware>ul>li>a,
+.kitchen-offer>ul>li>a,
+.kitchen-coffee>ul>li>a,
+.kitchen-tools>ul>li>a,
+.kitchen-bakeware>ul>li>a{
   color: var(--secondry-text);
   font-size: 14px;
 }
@@ -567,18 +585,24 @@ header {
 .tabletop-offer>ul>li>a:hover,
 .tabletop-drinkware>ul>li>a:hover,
 .tabletop-bartools>ul>li>a:hover,
-.tabletop-flatware>ul>li>a:hover{
+.tabletop-flatware>ul>li>a:hover,
+.kitchen-offer>ul>li>a:hover,
+.kitchen-coffee>ul>li>a:hover,
+.kitchen-tools>ul>li>a:hover,
+.kitchen-bakeware>ul>li>a:hover{
   text-decoration: underline;
 }
 .img-furniture>figure>a>img,
 .outdoor-img>figure>a>img,
-.tabletop-img>figure>a>img{
+.tabletop-img>figure>a>img,
+.kitchen-img>figure>a>img{
   height: 350px;
   width: 260px;
 }
 .img-furniture>figure>figcaption,
 .outdoor-img>figure>figcaption,
-.tabletop-img>figure>figcaption{
+.tabletop-img>figure>figcaption,
+.kitchen-img>figure>figcaption{
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
