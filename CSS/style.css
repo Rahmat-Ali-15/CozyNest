@@ -461,7 +461,8 @@ header {
   position: relative;
 }
 .furniture-popup,
-.outdoor-popup{
+.outdoor-popup,
+.tabletop-popup{
   max-height: 600px;
   position: absolute;
   top: 34px;
@@ -485,7 +486,8 @@ header {
   right: 10px;
 }
 .furniture:hover .furniture-popup,.furniture-popup:hover,
-.outdoor:hover .outdoor-popup,.outdoor-popup:hover{
+.outdoor:hover .outdoor-popup,.outdoor-popup:hover,
+.tabletop:hover .tabletop-popup,.tabletop-popup:hover{
   opacity: 1;
   z-index: 999;
   visibility: visible;
@@ -498,7 +500,11 @@ header {
 .outdoor-furniture>h3,
 .outdoor-dining-furniture>h3,
 .outdoor-entertaining>h3,
-.outdoor-decor>h3{
+.outdoor-decor>h3,
+.tabletop-offer>h3,
+.tabletop-drinkware>h3,
+.tabletop-bartools>h3,
+.tabletop-flatware>h3{
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -511,7 +517,11 @@ header {
 .outdoor-furniture>h3:hover,
 .outdoor-dining-furniture>h3:hover,
 .outdoor-entertaining>h3:hover,
-.outdoor-decor>h3:hover{
+.outdoor-decor>h3:hover,
+.tabletop-offer>h3:hover,
+.tabletop-drinkware>h3:hover,
+.tabletop-bartools>h3:hover,
+.tabletop-flatware>h3:hover{
   text-decoration: underline;
 }
 .new-furniture>ul>li,
@@ -522,7 +532,11 @@ header {
 .outdoor-dining-furniture>ul>li,
 .outdoor-entertaining>ul>li,
 .outdoor-decor>ul>li,
-.outdoor-img>ul>li{
+.outdoor-img>ul>li,
+.tabletop-offer>ul>li,
+.tabletop-drinkware>ul>li,
+.tabletop-bartools>ul>li,
+.tabletop-flatware>ul>li{
   margin-bottom: 7px;
 }
 .new-furniture>ul>li>a,
@@ -533,7 +547,11 @@ header {
 .outdoor-dining-furniture>ul>li>a,
 .outdoor-entertaining>ul>li>a,
 .outdoor-decor>ul>li>a,
-.outdoor-img>ul>li>a{
+.outdoor-img>ul>li>a,
+.tabletop-offer>ul>li>a,
+.tabletop-drinkware>ul>li>a,
+.tabletop-bartools>ul>li>a,
+.tabletop-flatware>ul>li>a{
   color: var(--secondry-text);
   font-size: 14px;
 }
@@ -545,16 +563,22 @@ header {
 .outdoor-dining-furniture>ul>li>a:hover,
 .outdoor-entertaining>ul>li>a:hover,
 .outdoor-decor>ul>li>a:hover,
-.outdoor-img>ul>li>a:hover{
+.outdoor-img>ul>li>a:hover,
+.tabletop-offer>ul>li>a:hover,
+.tabletop-drinkware>ul>li>a:hover,
+.tabletop-bartools>ul>li>a:hover,
+.tabletop-flatware>ul>li>a:hover{
   text-decoration: underline;
 }
 .img-furniture>figure>a>img,
-.outdoor-img>figure>a>img{
+.outdoor-img>figure>a>img,
+.tabletop-img>figure>a>img{
   height: 350px;
   width: 260px;
 }
 .img-furniture>figure>figcaption,
-.outdoor-img>figure>figcaption{
+.outdoor-img>figure>figcaption,
+.tabletop-img>figure>figcaption{
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
