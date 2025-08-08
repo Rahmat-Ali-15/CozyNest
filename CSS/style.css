@@ -313,22 +313,22 @@ header {
 
 /* Header bottom start */
 
-.header-bottom{
+.header-bottom {
   padding: 15px 60px;
 }
-.header-bottom>ul{
+.header-bottom > ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 10px;
   font-size: 14px;
 }
-.header-bottom>ul>li>a{
+.header-bottom > ul > li > a {
   position: relative;
   color: var(--secondry-text);
   opacity: 0.9;
 }
-.header-bottom>ul>li>a::after{
+.header-bottom > ul > li > a::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -339,18 +339,18 @@ header {
   background-color: black;
   transition: all 0.6s ease;
 }
-.header-bottom>ul>li>a:hover::after{
+.header-bottom > ul > li > a:hover::after {
   width: 100%;
 }
 
 /* header bottom popups start */
 
-.header-bottom>ul{
+.header-bottom > ul {
   width: 100%;
   position: relative;
 }
 .new-popup,
-.wedding-registry-popup{
+.wedding-registry-popup {
   position: absolute;
   top: 40px;
   width: 100%;
@@ -366,55 +366,57 @@ header {
   transition: all 0.4s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.new-popup{
+.new-popup {
   justify-content: center;
   gap: 60px;
 }
-.wedding-registry-popup{
+.wedding-registry-popup {
   gap: 40px;
 }
-.new:hover .new-popup,.new-popup:hover,
-.wedding-registry:hover .wedding-registry-popup, .wedding-registry-popup:hover{
+.new:hover .new-popup,
+.new-popup:hover,
+.wedding-registry:hover .wedding-registry-popup,
+.wedding-registry-popup:hover {
   opacity: 1;
   z-index: 999;
   visibility: visible;
   transform: translateY(0);
 }
-.top-category>h3,
-.trending>h3,
-.collabs>h3,
-.wedding>h3,
-.tips>h3,
-.wedding-top-categories>h3,
-.wedding-top-brand>h3{
+.top-category > h3,
+.trending > h3,
+.collabs > h3,
+.wedding > h3,
+.tips > h3,
+.wedding-top-categories > h3,
+.wedding-top-brand > h3 {
   font-weight: 550;
   margin-bottom: 20px;
   text-decoration: underline;
 }
-.top-category>ul>li,
-.trending>ul>li,
-.collabs>ul>li,
-.wedding>ul>li,
-.tips>ul>li,
-.wedding-top-categories>ul>li,
-.wedding-top-brand>ul>li{
+.top-category > ul > li,
+.trending > ul > li,
+.collabs > ul > li,
+.wedding > ul > li,
+.tips > ul > li,
+.wedding-top-categories > ul > li,
+.wedding-top-brand > ul > li {
   margin-bottom: 7px;
 }
-.top-category>ul>li>a,
-.trending>ul>li>a,
-.collabs>ul>li>a,
-.wedding>ul>li>a,
-.tips>ul>li>a,
-.wedding-top-categories>ul>li>a,
-.wedding-top-brand>ul>li>a{
+.top-category > ul > li > a,
+.trending > ul > li > a,
+.collabs > ul > li > a,
+.wedding > ul > li > a,
+.tips > ul > li > a,
+.wedding-top-categories > ul > li > a,
+.wedding-top-brand > ul > li > a {
   color: var(--secondry-text);
 }
-.new-img>figure>figcaption,
-.wedding-img>figure>figcaption{
+.new-img > figure > figcaption,
+.wedding-img > figure > figcaption {
   font-weight: 550;
   margin-top: 10px;
 }
-.wedding-img>figure>img{
+.wedding-img > figure > img {
   width: 380px;
 }
 
@@ -424,24 +426,24 @@ header {
 
 /* navbar start */
 
-.navbar{
+.navbar {
   padding: 10px;
   background-color: black;
 }
-.navbar>ul{
+.navbar > ul {
   width: 100%;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.navbar>ul>li>a{
+.navbar > ul > li > a {
   position: relative;
   font-size: 14px;
   font-weight: 500;
   color: white;
 }
-.navbar>ul>li>a::after{
+.navbar > ul > li > a::after {
   content: "";
   position: absolute;
   bottom: -11px;
@@ -452,22 +454,24 @@ header {
   width: 0%;
   transition: all 0.6s ease;
 }
-.navbar>ul>li>a:hover:after{
+.navbar > ul > li > a:hover:after {
   width: 100%;
 }
 /* navbar popup start */
-.navbar>ul{
+.navbar > ul {
   width: 100%;
   position: relative;
 }
 .furniture-popup,
 .outdoor-popup,
 .tabletop-popup,
-.kitchen-popup{
+.kitchen-popup,
+.bedding-popup {
   max-height: 600px;
+  width: 97%;
   position: absolute;
   top: 34px;
-  right: 60px;
+  right: 15px;
   padding: 50px 35px 20px 35px;
   display: flex;
   gap: 65px;
@@ -480,22 +484,30 @@ header {
   transition: all 0.4s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.outdoor-popup{
-  width: 97%;
+.outdoor-popup {
   gap: 0px !important;
   justify-content: space-between;
-  right: 10px;
 }
-.furniture:hover .furniture-popup,.furniture-popup:hover,
-.outdoor:hover .outdoor-popup,.outdoor-popup:hover,
-.tabletop:hover .tabletop-popup,.tabletop-popup:hover,
-.kitchen:hover .kitchen-popup,.kitchen-popup:hover{
+.bedding-popup {
+  justify-content: center;
+}
+
+.furniture:hover .furniture-popup,
+.furniture-popup:hover,
+.outdoor:hover .outdoor-popup,
+.outdoor-popup:hover,
+.tabletop:hover .tabletop-popup,
+.tabletop-popup:hover,
+.kitchen:hover .kitchen-popup,
+.kitchen-popup:hover,
+.bedding:hover .bedding-popup,
+.bedding-popup:hover {
   opacity: 1;
   z-index: 999;
   visibility: visible;
   transform: translateY(0);
 }
-.new-furniture>h3,
+/* .new-furniture>h3,
 .diningroom-furniture>h3,
 .bedroom-furniture>h3,
 .entryway-furniture>h3,
@@ -510,13 +522,23 @@ header {
 .kitchen-offer>h3,
 .kitchen-coffee>h3,
 .kitchen-tools>h3,
-.kitchen-bakeware>h3{
+.kitchen-bakeware>h3,
+.kitchen-offer>h3,
+.bedding-all>h3,
+.bedding-new>h3,
+.bedding-dorm>h3{
+} */
+.furniture-popup h3,
+.outdoor-popup h3,
+.tabletop-popup h3,
+.kitchen-popup h3,
+.bedding-popup h3 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
   cursor: pointer;
 }
-.new-furniture>h3:hover,
+/* .new-furniture>h3:hover,
 .diningroom-furniture>h3:hover,
 .bedroom-furniture>h3:hover,
 .entryway-furniture>h3:hover,
@@ -531,10 +553,19 @@ header {
 .kitchen-offer>h3:hover,
 .kitchen-coffee>h3:hover,
 .kitchen-tools>h3:hover,
-.kitchen-bakeware>h3:hover{
+.kitchen-bakeware>h3:hover,
+.bedding-all>h3:hover,
+.bedding-new>h3:hover,
+.bedding-dorm>h3:hover{
+} */
+.furniture-popup h3:hover,
+.outdoor-popup h3:hover,
+.tabletop-popup h3:hover,
+.kitchen-popup h3:hover,
+.bedding-popup h3:hover {
   text-decoration: underline;
 }
-.new-furniture>ul>li,
+/* .new-furniture>ul>li,
 .diningroom-furniture>ul>li,
 .bedroom-furniture>ul>li,
 .entryway-furniture>ul>li,
@@ -550,10 +581,19 @@ header {
 .kitchen-offer>ul>li,
 .kitchen-coffee>ul>li,
 .kitchen-tools>ul>li,
-.kitchen-bakeware>ul>li{
+.kitchen-bakeware>ul>li,
+.bedding-all>ul>li,
+.bedding-new>ul>li,
+.bedding-dorm>ul>li{
+} */
+.furniture-popup ul li,
+.outdoor-popup ul li,
+.tabletop-popup ul li,
+.kitchen-popup ul li,
+.bedding-popup ul li {
   margin-bottom: 7px;
 }
-.new-furniture>ul>li>a,
+/* .new-furniture>ul>li>a,
 .diningroom-furniture>ul>li>a,
 .bedroom-furniture>ul>li>a,
 .entryway-furniture>ul>li>a,
@@ -569,11 +609,20 @@ header {
 .kitchen-offer>ul>li>a,
 .kitchen-coffee>ul>li>a,
 .kitchen-tools>ul>li>a,
-.kitchen-bakeware>ul>li>a{
+.kitchen-bakeware>ul>li>a,
+.bedding-all>ul>li>a,
+.bedding-new>ul>li>a,
+.bedding-dorm>ul>li>a{
+} */
+.furniture-popup ul li a,
+.outdoor-popup ul li a,
+.tabletop-popup ul li a,
+.kitchen-popup ul li a,
+.bedding-popup ul li a {
   color: var(--secondry-text);
   font-size: 14px;
 }
-.new-furniture>ul>li>a:hover,
+/* .new-furniture>ul>li>a:hover,
 .diningroom-furniture>ul>li>a:hover,
 .bedroom-furniture>ul>li>a:hover,
 .entryway-furniture>ul>li>a:hover,
@@ -589,29 +638,40 @@ header {
 .kitchen-offer>ul>li>a:hover,
 .kitchen-coffee>ul>li>a:hover,
 .kitchen-tools>ul>li>a:hover,
-.kitchen-bakeware>ul>li>a:hover{
+.kitchen-bakeware>ul>li>a:hover,
+.bedding-all>ul>li>a:hover,
+.bedding-new>ul>li>a:hover,
+.bedding-dorm>ul>li>a:hover{
+} */
+.furniture-popup ul li a:hover,
+.outdoor-popup ul li a:hover,
+.tabletop-popup ul li a:hover,
+.kitchen-popup ul li a:hover,
+.bedding-popup ul li a:hover {
   text-decoration: underline;
 }
-.img-furniture>figure>a>img,
-.outdoor-img>figure>a>img,
-.tabletop-img>figure>a>img,
-.kitchen-img>figure>a>img{
+.img-furniture > figure > a > img,
+.outdoor-img > figure > a > img,
+.tabletop-img > figure > a > img,
+.kitchen-img > figure > a > img,
+.bedding-img > figure > a > img {
   height: 350px;
   width: 260px;
 }
-.img-furniture>figure>figcaption,
-.outdoor-img>figure>figcaption,
-.tabletop-img>figure>figcaption,
-.kitchen-img>figure>figcaption{
+.img-furniture > figure > figcaption,
+.outdoor-img > figure > figcaption,
+.tabletop-img > figure > figcaption,
+.kitchen-img > figure > figcaption,
+.bedding-img > figure > figcaption {
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
   cursor: pointer;
 }
-.outdoor-img>figure>figcaption{
+.outdoor-img > figure > figcaption {
   margin-bottom: 15px;
 }
-.img-furniture>figure>figcaption:hover{
+.img-furniture > figure > figcaption:hover {
   text-decoration: underline;
 }
 /* navbar popup end */
