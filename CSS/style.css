@@ -472,7 +472,8 @@ header {
 .lighting-popup,
 .gifts-popup,
 .decor-popup,
-.rugs-popup {
+.rugs-popup,
+.sale-popup {
   max-height: 600px;
   width: 97%;
   position: absolute;
@@ -480,7 +481,8 @@ header {
   right: 15px;
   padding: 50px 35px 20px 35px;
   display: flex;
-  gap: 65px;
+  justify-content: center;
+  gap: 100px;
   background-color: var(--bg);
   overflow-y: auto;
   opacity: 0;
@@ -496,14 +498,6 @@ header {
 }
 .bedding-popup {
   justify-content: center;
-}
-.window-popup,
-.lighting-popup,
-.gifts-popup,
-.decor-popup,
-.rugs-popup{
-  justify-content: center;
-  gap: 100px;
 }
 
 .furniture:hover .furniture-popup,
@@ -527,7 +521,9 @@ header {
 .decor:hover .decor-popup,
 .decor-popup:hover,
 .rugs:hover .rugs-popup,
-.rugs-popup:hover {
+.rugs-popup:hover,
+.sale:hover .sale-popup,
+.sale-popup:hover {
   opacity: 1;
   z-index: 999;
   visibility: visible;
@@ -544,7 +540,8 @@ header {
 .lighting-popup h3,
 .gifts-popup h3,
 .decor-popup h3,
-.rugs-popup h3 {
+.rugs-popup h3,
+.sale-popup h3 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -561,7 +558,8 @@ header {
 .lighting-popup h3:hover,
 .gifts-popup h3:hover,
 .decor-popup h3:hover,
-.rugs-popup h3:hover {
+.rugs-popup h3:hover,
+.sale-popup h3:hover {
   text-decoration: underline;
 }
 
@@ -575,7 +573,8 @@ header {
 .lighting-popup ul li,
 .gifts-popup ul li,
 .decor-popup ul li,
-.rugs-popup ul li {
+.rugs-popup ul li,
+.sale-popup ul li {
   margin-bottom: 7px;
 }
 
@@ -589,7 +588,8 @@ header {
 .lighting-popup ul li a,
 .gifts-popup ul li a,
 .decor-popup ul li a,
-.rugs-popup ul li a {
+.rugs-popup ul li a,
+.sale-popup ul li a {
   color: var(--secondry-text);
   font-size: 14px;
 }
@@ -604,7 +604,8 @@ header {
 .lighting-popup ul li a:hover,
 .gifts-popup ul li a:hover,
 .decor-popup ul li a:hover,
-.rugs-popup ul li a:hover {
+.rugs-popup ul li a:hover,
+.sale-popup ul li a:hover {
   text-decoration: underline;
 }
 .img-furniture > figure > a > img,
@@ -617,7 +618,8 @@ header {
 .lighting-img > figure > a > img,
 .gifts-img > figure > a > img,
 .decor-img > figure > a > img,
-.rugs-img > figure > a > img {
+.rugs-img > figure > a > img,
+.sale-img > figure > a > img {
   height: 350px;
   width: 260px;
 }
@@ -631,7 +633,8 @@ header {
 .lighting-img > figure > figcaption,
 .gifts-img > figure > figcaption,
 .decor-img > figure > figcaption,
-.rugs-img > figure > figcaption {
+.rugs-img > figure > figcaption,
+.sale-img > figure > figcaption {
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
