@@ -468,7 +468,9 @@ header {
 .kitchen-popup,
 .bedding-popup,
 .bath-popup,
-.window-popup {
+.window-popup,
+.lighting-popup,
+.gifts-popup {
   max-height: 600px;
   width: 97%;
   position: absolute;
@@ -493,7 +495,9 @@ header {
 .bedding-popup {
   justify-content: center;
 }
-.window-popup{
+.window-popup,
+.lighting-popup,
+.gifts-popup{
   justify-content: center;
   gap: 100px;
 }
@@ -511,7 +515,11 @@ header {
 .bath:hover .bath-popup,
 .bath-popup:hover,
 .window:hover .window-popup,
-.window-popup:hover {
+.window-popup:hover,
+.lighting:hover .lighting-popup,
+.lighting-popup:hover,
+.gifts:hover .gifts-popup,
+.gifts-popup:hover {
   opacity: 1;
   z-index: 999;
   visibility: visible;
@@ -524,7 +532,9 @@ header {
 .kitchen-popup h3,
 .bedding-popup h3,
 .bath-popup h3,
-.window-popup h3 {
+.window-popup h3,
+.lighting-popup h3,
+.gifts-popup h3 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -537,7 +547,9 @@ header {
 .kitchen-popup h3:hover,
 .bedding-popup h3:hover,
 .bath-popup h3:hover,
-.window-popup h3:hover {
+.window-popup h3:hover,
+.lighting-popup h3:hover,
+.gifts-popup h3:hover {
   text-decoration: underline;
 }
 
@@ -547,7 +559,9 @@ header {
 .kitchen-popup ul li,
 .bedding-popup ul li,
 .bath-popup ul li,
-.window-popup ul li {
+.window-popup ul li,
+.lighting-popup ul li,
+.gifts-popup ul li {
   margin-bottom: 7px;
 }
 
@@ -557,7 +571,9 @@ header {
 .kitchen-popup ul li a,
 .bedding-popup ul li a,
 .bath-popup ul li a,
-.window-popup ul li a {
+.window-popup ul li a,
+.lighting-popup ul li a,
+.gifts-popup ul li a {
   color: var(--secondry-text);
   font-size: 14px;
 }
@@ -568,7 +584,9 @@ header {
 .kitchen-popup ul li a:hover,
 .bedding-popup ul li a:hover,
 .bath-popup ul li a:hover,
-.window-popup ul li a:hover {
+.window-popup ul li a:hover,
+.lighting-popup ul li a:hover,
+.gifts-popup ul li a:hover {
   text-decoration: underline;
 }
 .img-furniture > figure > a > img,
@@ -577,7 +595,9 @@ header {
 .kitchen-img > figure > a > img,
 .bedding-img > figure > a > img,
 .bath-img > figure > a > img,
-.window-img > figure > a > img {
+.window-img > figure > a > img,
+.lighting-img > figure > a > img,
+.gifts-img > figure > a > img {
   height: 350px;
   width: 260px;
 }
@@ -587,7 +607,9 @@ header {
 .kitchen-img > figure > figcaption,
 .bedding-img > figure > figcaption,
 .bath-img > figure > figcaption,
-.window-img > figure > figcaption {
+.window-img > figure > figcaption,
+.lighting-img > figure > figcaption,
+.gifts-img > figure > figcaption {
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
