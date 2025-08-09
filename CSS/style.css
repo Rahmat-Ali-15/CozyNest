@@ -470,7 +470,8 @@ header {
 .bath-popup,
 .window-popup,
 .lighting-popup,
-.gifts-popup {
+.gifts-popup,
+.decor-popup {
   max-height: 600px;
   width: 97%;
   position: absolute;
@@ -497,7 +498,8 @@ header {
 }
 .window-popup,
 .lighting-popup,
-.gifts-popup{
+.gifts-popup,
+.decor-popup{
   justify-content: center;
   gap: 100px;
 }
@@ -519,7 +521,9 @@ header {
 .lighting:hover .lighting-popup,
 .lighting-popup:hover,
 .gifts:hover .gifts-popup,
-.gifts-popup:hover {
+.gifts-popup:hover,
+.decor:hover .decor-popup,
+.decor-popup:hover {
   opacity: 1;
   z-index: 999;
   visibility: visible;
@@ -534,7 +538,8 @@ header {
 .bath-popup h3,
 .window-popup h3,
 .lighting-popup h3,
-.gifts-popup h3 {
+.gifts-popup h3,
+.decor-popup h3 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -549,7 +554,8 @@ header {
 .bath-popup h3:hover,
 .window-popup h3:hover,
 .lighting-popup h3:hover,
-.gifts-popup h3:hover {
+.gifts-popup h3:hover,
+.decor-popup h3:hover {
   text-decoration: underline;
 }
 
@@ -561,7 +567,8 @@ header {
 .bath-popup ul li,
 .window-popup ul li,
 .lighting-popup ul li,
-.gifts-popup ul li {
+.gifts-popup ul li,
+.decor-popup ul li {
   margin-bottom: 7px;
 }
 
@@ -573,7 +580,8 @@ header {
 .bath-popup ul li a,
 .window-popup ul li a,
 .lighting-popup ul li a,
-.gifts-popup ul li a {
+.gifts-popup ul li a,
+.decor-popup ul li a {
   color: var(--secondry-text);
   font-size: 14px;
 }
@@ -586,7 +594,8 @@ header {
 .bath-popup ul li a:hover,
 .window-popup ul li a:hover,
 .lighting-popup ul li a:hover,
-.gifts-popup ul li a:hover {
+.gifts-popup ul li a:hover,
+.decor-popup ul li a:hover {
   text-decoration: underline;
 }
 .img-furniture > figure > a > img,
@@ -597,7 +606,8 @@ header {
 .bath-img > figure > a > img,
 .window-img > figure > a > img,
 .lighting-img > figure > a > img,
-.gifts-img > figure > a > img {
+.gifts-img > figure > a > img,
+.decor-img > figure > a > img {
   height: 350px;
   width: 260px;
 }
@@ -609,7 +619,8 @@ header {
 .bath-img > figure > figcaption,
 .window-img > figure > figcaption,
 .lighting-img > figure > figcaption,
-.gifts-img > figure > figcaption {
+.gifts-img > figure > figcaption,
+.decor-img > figure > figcaption {
   font-size: 14px;
   font-weight: 550;
   margin-top: 10px;
