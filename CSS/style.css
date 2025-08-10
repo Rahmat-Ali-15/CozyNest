@@ -496,6 +496,10 @@ header {
   gap: 0px !important;
   justify-content: space-between;
 }
+.tabletop-popup,
+.furniture-popup{
+  gap: 65px;
+}
 .bedding-popup {
   justify-content: center;
 }
