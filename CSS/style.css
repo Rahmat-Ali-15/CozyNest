@@ -700,7 +700,7 @@ main{
   z-index: -1;
   cursor: pointer;
 }
-.full-img>div{
+.full-img>.img_btns_container{
   position: absolute;
   right: 40px;
   top: 35px;
@@ -711,7 +711,7 @@ main{
   gap: 10px;
   z-index: 8;
 }
-.full-img>div>a{
+.full-img>.img_btns_container>a{
   color: #ffffff;
   font-size: 36px;
   font-weight: bold;
@@ -719,7 +719,7 @@ main{
   line-height: 1;
   margin-bottom: 5px;
 }
-.full-img>div>button{
+.full-img>.img_btns_container>button{
   width: 270px;
   padding: 10px;
   border-radius: 40px;
@@ -727,6 +727,28 @@ main{
   font-weight: 550;
   border: none;
   cursor: pointer;
+}
+.img-btn{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  padding: 7px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.fa-tag{
+  transform: rotate(90deg);
+  font-size: 18px;
+}
+.img-btn>button{
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
 }
 /* full img end */
 
