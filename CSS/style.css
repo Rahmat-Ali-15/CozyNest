@@ -750,6 +750,26 @@ main{
   font-size: 17px;
   font-weight: 500;
 }
+.img-monterey{
+  position: absolute;
+  right: 230px;
+  bottom: 60px;
+}
+.img-monterey>h3{
+  color: #fff;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+.img-monterey>p{
+  width: 220px;
+  padding-left: 5px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+}
+.img-monterey>p>a{
+  color: #fff;
+}
 /* full img end */
 
 /* main end */
