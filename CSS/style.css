@@ -497,7 +497,7 @@ header {
   justify-content: space-between;
 }
 .tabletop-popup,
-.furniture-popup{
+.furniture-popup {
   gap: 65px;
 }
 .bedding-popup {
@@ -655,12 +655,12 @@ header {
 
 /* main start */
 
-main{
+main {
   width: 100%;
 }
 
 /* banner start */
-.banner{
+.banner {
   width: 100%;
   padding: 6px;
   display: flex;
@@ -668,13 +668,13 @@ main{
   align-items: center;
   background-color: #694642;
 }
-.msg-wrap>a{
+.msg-wrap > a {
   color: #ffffff;
   text-align: center;
   font-size: 15px;
   font-weight: 550;
 }
-.line{
+.line {
   height: 25px;
   width: 2px;
   background-color: #fff;
@@ -691,16 +691,16 @@ main{
 /* banner end */
 
 /* full img start */
-.full-img{
+.full-img {
   position: relative;
   width: 100%;
 }
-.full-img>img{
+.full-img > img {
   width: 100%;
   z-index: -1;
   cursor: pointer;
 }
-.full-img>.img_btns_container{
+.full-img > .img_btns_container {
   position: absolute;
   right: 40px;
   top: 35px;
@@ -711,7 +711,7 @@ main{
   gap: 10px;
   z-index: 8;
 }
-.full-img>.img_btns_container>a{
+.full-img > .img_btns_container > a {
   color: #ffffff;
   font-size: 36px;
   font-weight: bold;
@@ -719,7 +719,7 @@ main{
   line-height: 1;
   margin-bottom: 5px;
 }
-.full-img>.img_btns_container>button{
+.full-img > .img_btns_container > button {
   width: 270px;
   padding: 10px;
   border-radius: 40px;
@@ -728,7 +728,7 @@ main{
   border: none;
   cursor: pointer;
 }
-.img-btn{
+.img-btn {
   position: absolute;
   bottom: 40px;
   left: 40px;
@@ -740,36 +740,159 @@ main{
   border-radius: 30px;
   background-color: #fff;
 }
-.fa-tag{
+.fa-tag {
   transform: rotate(90deg);
   font-size: 18px;
 }
-.img-btn>button{
+.img-btn > button {
   background-color: transparent;
   border: none;
   font-size: 17px;
   font-weight: 500;
 }
-.img-monterey{
+.img-monterey {
   position: absolute;
   right: 230px;
   bottom: 60px;
 }
-.img-monterey>h3{
+.img-monterey > h3 {
   color: #fff;
   font-weight: 550;
   margin-bottom: 5px;
 }
-.img-monterey>p{
+.img-monterey > p {
   width: 220px;
   padding-left: 5px;
   text-align: center;
   font-size: 17px;
   font-weight: 500;
 }
-.img-monterey>p>a{
+.img-monterey > p > a {
   color: #fff;
 }
 /* full img end */
+
+/* new arrival start */
+.new-arrivals-container {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.arrivals-head {
+  height: 100px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrivals-head::before {
+  content: "";
+  width: 100px;
+}
+
+.arrivals-head > h1 {
+  text-align: center;
+  flex: 1;
+  font-size: 36px;
+  font-weight: 550;
+}
+.arrivals-head > button {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 35px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid black;
+  background-color: transparent;
+  color: black;
+}
+
+.arrivals-head > button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+}
+
+.arrivals-head > button:hover {
+  color: white;
+}
+
+.arrivals-head > button:hover::before {
+  animation: fillLeftRight 0.5s forwards ease-in-out;
+}
+
+@keyframes fillLeftRight {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.arrival-arrow{
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+}
+.arrival-arrow>.fa-angle-left,
+.arrival-arrow>.fa-angle-right{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: black;
+  font-size: 36px;
+  font-weight: 550;
+  z-index: 999;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+.arrivals-imgs{
+  display: flex;
+  /* overflow: hidden; */
+  gap: 15px;
+  transition: all 0.6s ease;
+}
+.arrival-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.arrival-items>img{
+  transition: all 0.3s ease;
+}
+.arrival-items>img:hover{
+  transform: scale(1.02);
+}
+.arrival-items>h3{
+  font-weight: 550;
+  font-size: 18px;
+}
+.arrival-items>p{
+  font-size: 18px;
+}
+
+/* new arrival end */
 
 /* main end */
