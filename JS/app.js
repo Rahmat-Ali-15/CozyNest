@@ -1,4 +1,3 @@
-// let currentIndex = 3;
 let arrivals = [
     {
         img: "../Utilities/img/arrival_img_1.webp",
@@ -48,24 +47,24 @@ let arrivals = [
 
 ];
 
-function renderArrivalImg(arrivals){
-    let arrivals_imgs = document.querySelector(".arrivals-imgs");
+function renderArrivalImg(arrivals) {
+    let arrivals_imgs = document.querySelector(".arrivals-imgs-container");
 
-    arrivals.forEach(val=>{
+    arrivals.forEach(val => {
         let div = document.createElement("div");
         div.classList.add("arrival-items")
 
         let img = document.createElement("img");
         img.src = val.img;
         img.alt = val.caption;
-        
+
         let caption = document.createElement("h3");
         caption.innerText = val.caption;
 
         let price = document.createElement("p");
         price.innerText = val.price;
 
-        div.append(img,caption,price);
+        div.append(img, caption, price);
         arrivals_imgs.append(div)
     })
 }
