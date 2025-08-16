@@ -898,7 +898,6 @@ main {
 /* img video start */
 .img-video {
   width: 100%;
-  border: 1px solid red;
   position: relative;
 }
 .video {
@@ -910,7 +909,6 @@ main {
   left: 50%;
   right: 50%;
   bottom: 50%;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -926,5 +924,15 @@ main {
   font-weight: 550;
 }
 /* img video end */
+
+/* smeg-mocha start */
+.smeg-mocha{
+  width: 100%;
+  padding: 35px;
+}
+.smeg-mocha>img{
+  width: 100%;
+}
+/* smeg-mocha end */
 
 /* main end */
