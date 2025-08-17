@@ -1015,5 +1015,11 @@ main {
   font-size: 17px;
 }
 /* smeg-mocha end */
+/* card part start */
+.card-container{
+  width: 100%;
+  border: 1px solid red;
+}
+/* card part start */
 
 /* main end */
