@@ -1015,11 +1015,11 @@ main {
   font-size: 17px;
 }
 /* smeg-mocha end */
-/* card part start */
-.card-container{
+/* hero-card part start */
+.hero-card-container{
   width: 100%;
   border: 1px solid red;
 }
-/* card part start */
+/* hero-card part start */
 
 /* main end */
