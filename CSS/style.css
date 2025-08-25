@@ -1019,6 +1019,7 @@ main {
 /* hero-card part start */
 .hero-card-container{
   width: 100%;
+  border: 1px solid red;
 }
 /* hero-card part start */
 
