@@ -679,7 +679,7 @@ main {
   width: 2px;
   background-color: #fff;
 }
-.arrow {
+.arrow, .small-arrow {
   display: inline-block;
   width: 0;
   height: 0;
@@ -687,6 +687,9 @@ main {
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 7px solid #ffffff;
+}
+.small-arrow{
+  border-left: 7px solid black;
 }
 /* banner end */
 
@@ -1019,9 +1022,35 @@ main {
 /* hero-card part start */
 .hero-card-container{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hero-card-head{
+  font-size: 25px;
+  font-weight: 450;
+  color: #202020;
   text-align: center;
+  margin-bottom: 20px;
+}
+.hero-card-content{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+.heroCard-items{
+  width: 100%;
+}
+.heroCard-items>div>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.heroCard-items>div>img{
+  width: 400px;
 }
 /* hero-card part start */
 
