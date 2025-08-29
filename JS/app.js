@@ -102,3 +102,82 @@ document.addEventListener("click", (e) => {
         document.querySelector(".video-play").style.border = "none";
     }
 });
+
+
+// Hero Card 
+
+let heroCard = [
+    {
+        img: "../Utilities/img/HeroCarousel_Sofas_img_1.jpeg",
+        caption: "Sofas",
+    },
+    {
+        img: "../Utilities/img/HeroCarousel_CoffeeTables_img_2.webp",
+        caption: "Coffee Tables",
+    },
+    {
+        img: "../Utilities/img/HeroCarousel_Lighting_img_3.webp",
+        caption: "Lighting",
+    },
+    {
+
+        img: "../Utilities/img/HeroCarousel_AccentChairs_img_4.webp",
+        caption: "Accent Chairs",
+    },
+    {
+
+        img: "../Utilities/img/HeroCarousel_Pillows_img_5.webp",
+        caption: "Pillows",
+    },
+    {
+
+        img: "../Utilities/img/HeroCarousel_Rugs_img_6.jpeg",
+        caption: "Rugs",
+    },
+    {
+
+        img: "../Utilities/img/HeroCarousel_Candles_img_7.webp",
+        caption: "Candles",
+    },
+    {
+
+        img: "../Utilities/img/HeroCarousel_Botanicals_8.webp",
+        caption: "Botanicals",
+    },
+    {
+
+        img: "../Utilities/img/Baby_CBCC_Caro_1Cribs_img_9.webp",
+        caption: "Cribes & Bassinates",
+    },
+    {
+
+        img: "../Utilities/img/Baby_CBCC_Caro_2Dressers_img_10.webp",
+        caption: "Dressers",
+    },
+    {
+
+        img: "../Utilities/img/Baby_CBCC_Caro_3Seating_img_11.webp",
+        caption: "Nursery Rocking Chairs & Gliders",
+    },
+    {
+
+        img: "../Utilities/img/Kids_CBCC_Caro_6Bookcases_img_12.webp",
+        caption: "Bookcases",
+    },
+    {
+
+        img: "../Utilities/img/Baby_CBCC_Caro_5Bedding_img_13.webp",
+        caption: "Bedding",
+    },
+    {
+
+        img: "../Utilities/img/Baby_CBCC_Caro_6Rugs_img_14.webp",
+        caption: "Rugs",
+    },
+    {
+
+        img: "../Utilities/img/Kids_CBCC_Caro_9Lighting_img_15.webp",
+        caption: "Lighting",
+    }
+    
+];
