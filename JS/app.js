@@ -181,3 +181,34 @@ let heroCard = [
     }
     
 ];
+
+const renderHeroCard = (heroCard) => {
+    let HeroCardContainer = document.querySelector(".hero-card-content");
+
+    heroCard.forEach(val => {
+        let mainDiv = document.createElement("div");
+        mainDiv.classList.add("heroCard-items");
+
+        let div = document.createElement("div");
+
+        let heroImg = document.createElement("img");
+        heroImg.src = val.img;
+        heroImg.alt = val.caption;
+
+        let heroCap = document.createElement("p");
+        heroCap.innerText = val.caption;
+
+        let arrow = document.createElement("span");
+        arrow.classList.add("small-arrow");
+
+        let heroCapArrow = document.createElement("div");
+
+        heroCapArrow.append(heroCap,arrow);
+        div.append(heroImg,heroCapArrow);
+        mainDiv.append(div);
+        HeroCardContainer.append(mainDiv);
+    })
+
+}
+
+renderHeroCard(heroCard)
