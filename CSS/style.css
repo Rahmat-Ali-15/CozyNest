@@ -1026,7 +1026,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
 .hero-card-head{
   font-size: 25px;
@@ -1052,6 +1051,7 @@ main {
 }
 .heroCard-items>div>img{
   width: 400px;
+  border: 1px solid red;
 }
 /* hero-card part start */
 
