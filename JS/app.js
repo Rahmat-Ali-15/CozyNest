@@ -197,6 +197,7 @@ const renderHeroCard = (heroCard) => {
 
         let heroCap = document.createElement("p");
         heroCap.innerText = val.caption;
+        heroCap.style.fontWeight = "550"
 
         let arrow = document.createElement("span");
         arrow.classList.add("small-arrow");
