@@ -244,17 +244,29 @@ const renderHostingCard = (hostingCard) => {
     let hostingContent = document.querySelector(".hosting-content");
 
     hostingCard.forEach(val =>{
-        let div = document.createElement("div");
+        let mainDiv = document.createElement("div");
 
         let hostingImg = document.createElement("img");
         hostingImg.src = val.img;
         hostingImg.alt = val.caption;
 
+        let div = document.createElement("div");
+        div.style.display = "flex";
+        div.style.justifyContent = "center";
+        div.style.alignItems = "center";
+        div.style.gap = "10px";
+
         let hostingCap = document.createElement("p");
         hostingCap.innerText = val.caption;
+        hostingCap.style.textAlign = "center";
+        hostingCap.style.fontWeight = "550";
 
-        div.append(hostingImg, hostingCap);
-        hostingContent.append(div);
+        let arrow = document.createElement("span");
+        arrow.classList.add("small-arrow");
+
+        div.append(hostingCap, arrow)
+        mainDiv.append(hostingImg, div);
+        hostingContent.append(mainDiv);
     })
 
 }
