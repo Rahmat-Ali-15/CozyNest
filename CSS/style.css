@@ -1059,6 +1059,7 @@ main {
 .get-together{
   width: 100%;
   position: relative;
+  padding-bottom: 30px;
 }
 .get-together>a>img{
   width: 100%;
@@ -1129,7 +1130,44 @@ main {
 
 /* hosting section start */
 .hosting-container{
+  position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hosting-arrow {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+}
+.hosting-arrow > .fa-angle-left,
+.hosting-arrow > .fa-angle-right {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: black;
+  font-size: 36px;
+  font-weight: 550;
+  z-index: 999;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+.hosting-content{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
 }
 /* hosting section end */
 
