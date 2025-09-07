@@ -213,3 +213,50 @@ const renderHeroCard = (heroCard) => {
 }
 
 renderHeroCard(heroCard)
+
+// Hosting Card
+
+let hostingCard = [
+    {
+        img : "../Utilities/img/Hosting_Drinkware.webp",
+        caption : "Drinkware"
+    },
+    {
+        img : "../Utilities/img/Hosting_Dinnerware.webp",
+        caption : "Dinnerware"
+    },
+    {
+        img : "../Utilities/img/Hosting_Serveware.webp",
+        caption : "Serveware"
+    },
+    {
+        img : "../Utilities/img/Hosting_TableLinens.jpeg",
+        caption : "Table Lines"
+    },
+    {
+        img : "../Utilities/img/Hosting_Bakeware.jpeg",
+        caption : "Bakeware"
+    },
+
+]
+
+const renderHostingCard = (hostingCard) => {
+    let hostingContent = document.querySelector(".hosting-content");
+
+    hostingCard.forEach(val =>{
+        let div = document.createElement("div");
+
+        let hostingImg = document.createElement("img");
+        hostingImg.src = val.img;
+        hostingImg.alt = val.caption;
+
+        let hostingCap = document.createElement("p");
+        hostingCap.innerText = val.caption;
+
+        div.append(hostingImg, hostingCap);
+        hostingContent.append(div);
+    })
+
+}
+
+renderHostingCard(hostingCard)
