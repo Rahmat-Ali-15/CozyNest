@@ -1056,8 +1056,74 @@ main {
 /* hero-card part start */
 
 /* get together start */
-.get-together>img{
+.get-together{
   width: 100%;
+  position: relative;
+}
+.get-together>a>img{
+  width: 100%;
+}
+.together-up-content{
+  position: absolute;
+  top: 60px;
+  left: 24%;
+  cursor: pointer;
+}
+.together-up-content>h1{
+  font-size: 34px;
+  padding-left: 20px;
+}
+.together-up-content>div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.together-up-content>div>button{
+  margin-top: 10px;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 8px 30px;
+  border-radius: 50px;
+  font-weight: 550;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: all 0.5s ease;
+}
+.together-up-content>div>button:hover{
+  background-color: black;
+  color: white;
+}
+.together-bottom-content{
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.together-bottom-content>a>img{
+  height: 40px;
+}
+.together-bottom-content>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.together-bottom-content>div p:nth-child(1){
+ font-size: 18px;
+ font-weight: 550;
+ margin-bottom: 5px;
+}
+.together-bottom-content>div p:nth-child(2){
+  width: 250px;
+  font-size: 18px;
+  text-align: center;
 }
 /* get together end */
 
