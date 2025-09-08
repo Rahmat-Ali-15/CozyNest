@@ -1,3 +1,23 @@
+// scroll button
+const scrollBtn = document.querySelector(".fa-arrow-up");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+        scrollBtn.classList.add("showScrollBtn");
+    }
+    else {
+        scrollBtn.classList.remove("showScrollBtn")
+    }
+});
+
+window.scrollUp = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+}
+
+
 let arrivals = [
     {
         img: "../Utilities/img/arrival_img_1.webp",
@@ -74,20 +94,20 @@ renderArrivalImg(arrivals);
 // video play start
 
 let videoBtn = document.querySelector(".video-play>div");
-let video = document.querySelector(".video"); 
+let video = document.querySelector(".video");
 let playIcon = document.querySelector(".fa-play");
 let pauseIcon = document.querySelector(".fa-pause");
 isVideoOpen = true;
 
-videoBtn.addEventListener("click", ()=>{
-    if(!isVideoOpen){
+videoBtn.addEventListener("click", () => {
+    if (!isVideoOpen) {
         video.play();
         playIcon.style.display = "none"
         pauseIcon.style.display = "inline-block"
         document.querySelector(".video-play").style.border = "2px dotted white";
         isVideoOpen = true;
     }
-    else{
+    else {
         video.pause();
         playIcon.style.display = "inline-block"
         pauseIcon.style.display = "none"
@@ -179,7 +199,7 @@ let heroCard = [
         img: "../Utilities/img/Kids_CBCC_Caro_9Lighting_img_15.webp",
         caption: "Lighting",
     }
-    
+
 ];
 
 const renderHeroCard = (heroCard) => {
@@ -204,8 +224,8 @@ const renderHeroCard = (heroCard) => {
 
         let heroCapArrow = document.createElement("div");
 
-        heroCapArrow.append(heroCap,arrow);
-        div.append(heroImg,heroCapArrow);
+        heroCapArrow.append(heroCap, arrow);
+        div.append(heroImg, heroCapArrow);
         mainDiv.append(div);
         HeroCardContainer.append(mainDiv);
     })
@@ -218,24 +238,24 @@ renderHeroCard(heroCard)
 
 let hostingCard = [
     {
-        img : "../Utilities/img/Hosting_Drinkware.webp",
-        caption : "Drinkware"
+        img: "../Utilities/img/Hosting_Drinkware.webp",
+        caption: "Drinkware"
     },
     {
-        img : "../Utilities/img/Hosting_Dinnerware.webp",
-        caption : "Dinnerware"
+        img: "../Utilities/img/Hosting_Dinnerware.webp",
+        caption: "Dinnerware"
     },
     {
-        img : "../Utilities/img/Hosting_Serveware.webp",
-        caption : "Serveware"
+        img: "../Utilities/img/Hosting_Serveware.webp",
+        caption: "Serveware"
     },
     {
-        img : "../Utilities/img/Hosting_TableLinens.jpeg",
-        caption : "Table Lines"
+        img: "../Utilities/img/Hosting_TableLinens.jpeg",
+        caption: "Table Lines"
     },
     {
-        img : "../Utilities/img/Hosting_Bakeware.jpeg",
-        caption : "Bakeware"
+        img: "../Utilities/img/Hosting_Bakeware.jpeg",
+        caption: "Bakeware"
     },
 
 ]
@@ -243,7 +263,7 @@ let hostingCard = [
 const renderHostingCard = (hostingCard) => {
     let hostingContent = document.querySelector(".hosting-content");
 
-    hostingCard.forEach(val =>{
+    hostingCard.forEach(val => {
         let mainDiv = document.createElement("div");
 
         let hostingImg = document.createElement("img");
