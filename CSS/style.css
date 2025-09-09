@@ -1296,4 +1296,50 @@ main {
 }
 /* caraway section end */
 
+/* KitchenAid & Breville section start */
+.kitchenAid-breville{
+  width: 100%;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.kitchenAid-breville>div>img{
+  width: 100%;
+}
+.kitchenAid-breville>div:nth-child(1),
+.kitchenAid-breville>div:nth-child(2){
+  position: relative;
+}
+.kitchenAid-breville>div:nth-child(1)>div,
+.kitchenAid-breville>div:nth-child(2)>div{
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color: white;
+}
+.kitchenAid-breville>div:nth-child(1)>div>h1,
+.kitchenAid-breville>div:nth-child(2)>div>h1{
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.kitchenAid-breville>div:nth-child(1)>div>button,
+.kitchenAid-breville>div:nth-child(2)>div>button{
+  padding: 10px 35px;
+  font-size: 18px;
+  font-weight: 550;
+  border-radius: 30px;
+}
+.kitchenAid-breville>div:nth-child(2)>div:nth-child(3){
+  position: absolute;
+  top: 55%;
+  left: 20px;
+  width: 150px;
+  text-align: right;
+  font-size: 17px;
+}
+/* KitchenAid & Breville section end */
+
 /* main end */
