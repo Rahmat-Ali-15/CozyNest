@@ -97,9 +97,10 @@ let videoBtn = document.querySelector(".video-play>div");
 let video = document.querySelector(".video");
 let playIcon = document.querySelector(".fa-play");
 let pauseIcon = document.querySelector(".fa-pause");
-isVideoOpen = true;
+let isVideoOpen = true;
 
-videoBtn.addEventListener("click", () => {
+videoBtn.addEventListener("click", (event) => {
+    event.preventDefault();
     if (!isVideoOpen) {
         video.play();
         playIcon.style.display = "none"
@@ -291,4 +292,72 @@ const renderHostingCard = (hostingCard) => {
 
 }
 
-renderHostingCard(hostingCard)
+renderHostingCard(hostingCard);
+
+
+// Autumn decorate section
+
+let autumnCard = [
+    {
+        img: "../Utilities/img/Autumn_1_Pillows.webp",
+        caption: "Pillows"
+    },
+    {
+        img: "../Utilities/img/Autumn_2_Botanicals.webp",
+        caption: "Botanical"
+    },
+    {
+        img: "../Utilities/img/Autumn_3_Vases.webp",
+        caption: "Vases"
+    },
+    {
+        img: "../Utilities/img/Autumn_4_CandleHolders.webp",
+        caption: "Candle Holders"
+    },
+    {
+        img: "../Utilities/img/Autumn_5_Throws.webp",
+        caption: "Throws"
+    },
+    {
+        img: "../Utilities/img/Autumn_6_Candles.webp",
+        caption: "Candles"
+    },
+    {
+        img: "../Utilities/img/Autumn_7_Halloween.webp",
+        caption: "Halloween"
+    }
+
+]
+
+const renderAutumnCard = (autumnCard) => {
+    let autumnContent = document.querySelector(".autumn-content");
+
+    autumnCard.forEach(val => {
+        let mainDiv = document.createElement("div");
+
+        let autumnImg = document.createElement("img");
+        autumnImg.src = val.img;
+        autumnImg.alt = val.caption;
+
+        let div = document.createElement("div");
+        div.style.display = "flex";
+        div.style.justifyContent = "center";
+        div.style.alignItems = "center";
+        div.style.gap = "10px";
+
+        let autumnCap = document.createElement("p");
+        autumnCap.innerText = val.caption;
+        autumnCap.style.textAlign = "center";
+        autumnCap.style.fontWeight = "550";
+
+        let arrow = document.createElement("span");
+        arrow.classList.add("small-arrow");
+
+        div.append(autumnCap, arrow)
+        mainDiv.append(autumnImg, div);
+        autumnContent.append(mainDiv);
+    })
+
+}
+
+renderAutumnCard(autumnCard)
