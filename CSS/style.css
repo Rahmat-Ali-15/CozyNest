@@ -26,7 +26,7 @@ body li {
   list-style-type: none;
 }
 /* scrool button start */
-.scroll_btn {
+.scroll-btn {
   position: fixed;
   top: 80%;
   left: 95%;
@@ -38,23 +38,22 @@ body li {
   background-color: #fff;
   border-radius: 50%;
   z-index: 999;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .fa-arrow-up {
   font-size: 20px;
   background-color: white;
   color: black;
   cursor: pointer;
-  opacity: 0;
+  /* opacity: 0; */
   z-index: 9999;
   border-radius: 50%;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
-.scroll_btn > p {
+/* .scroll_btn > p {
   display: none;
-}
-/* .scroll_btn>p:hover{
-  display: block;
 } */
 .showScrollBtn {
   opacity: 1;
@@ -1405,11 +1404,11 @@ main {
 /* autumn decorate seciton end */
 
 /* bedroom furniture section start */
-.bedroom-furniture-section{
+.bedroom-furniture-section {
   width: 100%;
   padding: 10px 35px;
 }
-.bedroom-furniture-section>a>img{
+.bedroom-furniture-section > a > img {
   width: 100%;
 }
 /* bedroom furniture section end */
