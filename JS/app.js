@@ -1,5 +1,5 @@
 // scroll button
-const scrollBtn = document.querySelector(".fa-arrow-up");
+const scrollBtn = document.querySelector(".scroll-btn");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
