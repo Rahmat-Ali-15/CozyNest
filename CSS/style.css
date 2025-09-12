@@ -1407,6 +1407,7 @@ main {
 .bedroom-furniture-section {
   width: 100%;
   padding: 10px 35px;
+  margin-bottom: 25px;
   position: relative;
 }
 .bedroom-furniture-section > a > img {
@@ -1433,5 +1434,41 @@ main {
   cursor: pointer;
 }
 /* bedroom furniture section end */
+
+/* All bedding section start */
+.all-bedding{
+  width: 100%;
+  position: relative;
+}
+.all-bedding>a>img{
+  width: 100%;
+}
+.all-bedding>div{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.all-bedding>div>h1{
+  text-align: center;
+  line-height: 1;
+  font-size: 38px;
+}
+.all-bedding>div>button{
+  padding: 10px 30px;
+  font-size: 19px;
+  font-weight: 550;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+/* All bedding section end */
 
 /* main end */
