@@ -1512,4 +1512,91 @@ main {
 }
 /* kitchen & cookware section end */
 
+/* fall baking section start */
+.fall-baking{
+  width: 100%;
+  position: relative;
+}
+.fall-baking>a>img{
+  width: 100%;
+}
+.fall-baking>div{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  cursor: pointer;
+}
+.fall-baking>div>h1{
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+.fall-baking>div>button{
+  padding: 8px 30px;
+  font-size: 19px;
+  font-weight: 500;
+  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+.fall-baking>div>button:hover{
+  color: white;
+  background-color: black;
+}
+/* fall baking section end */
+
+/* tool & recipe section start */
+.tool-recipe{
+  width: 100%;
+  padding: 35px 35px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.tool-recipe-left{
+  width: 100%;
+  position: relative;
+}
+.tool-recipe-left>div{
+  position: absolute;
+  left: 43%;
+  top: 10%;
+  transform: translateX(-43%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.tool-recipe-left>div>h1{
+  font-size: 36px;
+  font-weight: 600;
+}
+.tool-recipe-left>div>button{
+  padding: 10px 25px;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: transparent;
+  transition: all 0.4s ease;
+}
+.tool-recipe-left>div>button:hover{
+  color: white;
+  background-color: black;
+}
+.tool-recipe-left>a>img{
+  width: 100%;
+}
+.tool-recipe-right{
+  width: 100%;
+  position: relative;
+}
+.tool-recipe-right>a>video{
+  width: 100%;
+}
+/* tool & recipe section end */
+
 /* main end */
