@@ -1471,4 +1471,15 @@ main {
 }
 /* All bedding section end */
 
+/* kitchen & cookware section start */
+.kitchen-cookware{
+  width: 100%;
+  padding: 30px 35px;
+  position: relative;
+}
+.kitchen-cookware>a>img{
+  width: 100%;
+}
+/* kitchen & cookware section end */
+
 /* main end */
