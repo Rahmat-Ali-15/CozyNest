@@ -1631,4 +1631,60 @@ main {
 }
 /* rugs video section end */
 
+/* appointment section start */
+.appointment-section{
+  width: 100%;
+  padding: 40px 35px;
+  position: relative;
+}
+.appointment-section>a>img{
+  width: 100%;
+}
+.appointment-section>div{
+  position: absolute;
+  top: 12%;
+  left: 24%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.appointment-section>div>h1{
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 550;
+}
+.appointment-section>div>h1:nth-child(1){
+  /* margin-bottom: 20px; */
+}
+.appointment-section>div>span:nth-child(2){
+  width: 60px;
+  height: 2px;
+  margin: 25px 0 15px 0;
+  border: 2px solid white;
+}
+.appointment-section>div>h1:nth-child(3){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.appointment-section>div>h1:nth-child(3)>span{
+  width: 30px;
+  height: 2px;
+  border: 3px solid white;
+}
+.appointment-section>div>button{
+  padding: 10px 30px;
+  margin-top: 15px;
+  font-size: 19px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 550;
+  cursor: pointer;
+}
+/* appointment section end */
+
 /* main end */
