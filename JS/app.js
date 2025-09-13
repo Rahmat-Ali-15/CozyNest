@@ -361,3 +361,82 @@ const renderAutumnCard = (autumnCard) => {
 }
 
 renderAutumnCard(autumnCard)
+
+// shopping ways section
+
+let shoppingCard = [
+    {
+        img : "../Utilities/img/WaysShop1.webp",
+        caption : "Earn 10% Back",
+        capDetail : "On Create purchase with your CozyNest Credit Card."
+    },
+    {
+        img : "../Utilities/img/WaysShop2.webp",
+        caption : "Exclusive Perks on the App",
+        capDetail : "Be the first to know about deals & new arrivals."
+    },
+    {
+        img : "../Utilities/img/WaysShop3.webp",
+        caption : "The Design Desk",
+        capDetail : "Get 100% free design help for any project, big or small."
+    },
+    {
+        img : "../Utilities/img/WaysShop4.webp",
+        caption : "Wedding Registry",
+        capDetail : "We'he helped more than 1 million couples---you're next!"
+    },
+    {
+        img : "../Utilities/img/WaysShop5.webp",
+        caption : "Kids & Baby",
+        capDetail : "Create a beautiful home the whole family will love."
+    }
+
+]
+
+const shoppingCardRender = (shoppingCard) => {
+    let shoppingCardContainer = document.querySelector(".shopping-ways-card-container");
+
+    shoppingCard.forEach(el=>{
+
+        let mainDiv = document.createElement("div");
+        mainDiv.classList.add("shopping-card-mainDiv")
+
+        let shoppingImg = document.createElement("img");
+        shoppingImg.src = el.img;
+        shoppingImg.alt = el.caption;
+
+        let captionDiv = document.createElement("div");
+        captionDiv.style.display = "flex";
+        captionDiv.style.flexDirection = "column";
+        captionDiv.style.justifyContent = "center";
+        captionDiv.style.alignItems = "center";
+        captionDiv.style.gap = "10px";
+
+        let capHeadDiv = document.createElement("div");
+        capHeadDiv.style.display = "flex";
+        capHeadDiv.style.justifyContent = "center";
+        capHeadDiv.style.alignItems = "center";
+        capHeadDiv.style.gap = "10px";
+
+        let arrow = document.createElement("span");
+        arrow.classList.add("small-arrow");
+
+        let shoppingCap = document.createElement("p");
+        shoppingCap.innerText = el.caption;
+        shoppingCap.style.fontWeight = "550";
+
+        let shoppingCapDtl = document.createElement("p");
+        shoppingCapDtl.innerText = el.capDetail;
+        shoppingCapDtl.style.width = "270px";
+        shoppingCapDtl.style.textAlign = "center";
+        shoppingCapDtl.style.fontSize = "18px";
+
+        capHeadDiv.append(shoppingCap,arrow)
+        captionDiv.append(capHeadDiv,shoppingCapDtl);
+        mainDiv.append(shoppingImg,captionDiv);
+        shoppingCardContainer.append(mainDiv);
+
+    });
+}
+
+shoppingCardRender(shoppingCard)
