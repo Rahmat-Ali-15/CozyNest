@@ -1599,4 +1599,36 @@ main {
 }
 /* tool & recipe section end */
 
+/* rugs video section start */
+.rugs-video{
+  width: 100%;
+  position: relative;
+}
+.rugs-video>a>video{
+  width: 100%;
+}
+.rugs-video> div:nth-child(3){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.rugs-video> div:nth-child(3)>h1{
+  font-size: 38px;
+}
+.rugs-video> div:nth-child(3)>button{
+  font-size: 19px;
+  font-weight: 550;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+}
+/* rugs video section end */
+
 /* main end */
