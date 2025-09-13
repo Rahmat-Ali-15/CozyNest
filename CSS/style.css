@@ -1656,9 +1656,6 @@ main {
   line-height: 1;
   font-weight: 550;
 }
-.appointment-section>div>h1:nth-child(1){
-  /* margin-bottom: 20px; */
-}
 .appointment-section>div>span:nth-child(2){
   width: 60px;
   height: 2px;
@@ -1687,4 +1684,232 @@ main {
 }
 /* appointment section end */
 
+/* christmas section start */
+.christmas-section{
+  width: 100%;
+  position: relative;
+}
+.christmas-section>a>img{
+  width: 100%;
+}
+.christmas-section>div{
+  position: absolute;
+  right: 30px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 15px;
+  cursor: pointer;
+}
+.christmas-section>div>h1{
+  font-size: 38px;
+  text-align: right;
+  line-height: 1.2;
+}
+.christmas-section>div>button{
+  padding: 10px 25px;
+  font-size: 19px;
+  font-weight: 550;
+  color: white;
+  border-radius: 30px;
+  background-color: black;
+  cursor: pointer;
+}
+/* christmas section end */
+
+/* holiday section start */
+.holiday-section{
+  width: 100%;
+  padding: 40px 35px;
+  position: relative;
+}
+.holiday-section>a>img{
+  width: 100%;
+}
+.holiday-section>div{
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  transform: translateY(-50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+.holiday-section>div>h1{
+  font-size: 38px;
+}
+.holiday-section>div>button{
+  padding: 10px 25px;
+  font-size: 19px;
+  font-weight: 550;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* holiday section end */
+
+/* wedding registry section start */
+.wedding-registry-section{
+  width: 100%;
+  position: relative;
+}
+.wedding-registry-section>a>img{
+  width: 100%;
+}
+.wedding-registry-section>div{
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.wedding-registry-section>div>div:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+.wedding-registry-section>div>div:nth-child(1)>h1{
+  font-size: 8.5rem;
+}
+.wedding-registry-section>div>div:nth-child(1)>h3{
+  text-align: center;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 550;
+}
+.wedding-registry-section>div>div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wedding-registry-section>div>div:nth-child(2)>h2{
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 550;
+}
+.wedding-registry-section>div>div:nth-child(2)>button{
+  padding: 10px 25px;
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 550;
+  border: none;
+  border-radius: 30px;
+  background-color: #fff;
+}
+/* weddin registry seciton end */
+
+/* shopping ways section start */
+.shopping-ways{
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.shopping-ways-heading{
+  text-align: center;
+}
+.shopping-ways-heading>h1{
+  font-size: 36px;
+  font-weight: 550;
+}
+.shopping-ways-card-container{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+.shopping-card-mainDiv{
+  width: 100%;
+  cursor: pointer;
+}
+.shopping-card-mainDiv>img{
+  width: 435px;
+}
+/* shopping ways section end */
+
 /* main end */
+
+
+/* footer start */
+
+/* footer up section start */
+footer{
+  height: 800px;
+  width: 100%;
+}
+.footer-up{
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  color: white;
+  background-color: black;
+}
+.footer-up>div{
+  line-height: 1.1;
+}
+.footer-up>div>h1{
+  font-size: 24px;
+  font-weight: 550;
+}
+.footer-up>div>p{
+  font-size: 13px;
+}
+.footer-up>button{
+  padding: 10px 25px;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+/* footer up section end */
+
+/* footer bottom section start */
+.footer-bottom{
+  height: 85%;
+  width: 100%;
+  padding: 30px 50px;
+  background-color: #f7f7f7;
+}
+.bottom-part1{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.order>div:nth-child(1){
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.iOS-app>div:nth-child(2){
+  display: flex;
+}
+.iOS-app>div:nth-child(2)>div>a>img{
+  width: 170px;
+}
+.iOS-app>div:nth-child(2)>img{
+  width: 100px;
+  height: 100px;
+}
+/* footer bottom section end */
+
+/* footer end */
