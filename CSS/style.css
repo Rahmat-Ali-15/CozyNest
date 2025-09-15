@@ -1851,7 +1851,7 @@ main {
 
 /* footer up section start */
 footer{
-  height: 800px;
+  height: 780px;
   width: 100%;
 }
 .footer-up{
@@ -1892,6 +1892,7 @@ footer{
 }
 .bottom-part1{
   width: 100%;
+  padding-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid rgb(166, 161, 161);
@@ -1933,7 +1934,7 @@ footer{
   gap: 15px;
 }
 .iOS-app>div:nth-child(2)>div>a>img{
-  width: 170px;
+  width: 140px;
 }
 .iOS-app>div:nth-child(2)>img{
   width: 90px;
@@ -1942,9 +1943,60 @@ footer{
 
 .bottom-part2{
   width: 100%;
+  padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid rgb(166, 161, 161);
+}
+.help>p,
+.resources>p,
+.our-company>p,
+.show-us>p{
+  font-size: 15px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+.help>ul>li,
+.resources>ul>li,
+.our-company>ul>li{
+  margin-bottom: 8px;
+
+}
+.help>ul>li>a,
+.resources>ul>li>a,
+.our-company>ul>li>a{
+  color: #636465;
+  font-size: 13px;
+}
+.help>ul>li>a:hover,
+.resources>ul>li>a:hover,
+.our-company>ul>li>a:hover{
+  text-decoration: underline;
+}
+.show-us>a{
+  color: #636465;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.show-us>div:nth-child(4){
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+.show-us>div:nth-child(4)>i{
+  font-size: 20px;
+}
+.show-us>div:nth-child(6){
+  display: flex;
+  flex-direction: column;
+}
+.show-us>div:nth-child(6)>ul:nth-child(1),
+.show-us>div:nth-child(6)>ul:nth-child(2){
+  display: flex;
+  gap: 20px;
 }
 .bottom-part3{
   display: flex;
