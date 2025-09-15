@@ -1816,6 +1816,7 @@ main {
 
 /* shopping ways section start */
 .shopping-ways{
+  position: relative;
   width: 100%;
   padding: 40px 0;
   display: flex;
@@ -1828,6 +1829,32 @@ main {
 .shopping-ways-heading>h1{
   font-size: 36px;
   font-weight: 550;
+}
+.shopping-arrow {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+}
+.shopping-arrow > .fa-angle-left,
+.shopping-arrow > .fa-angle-right {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: black;
+  font-size: 36px;
+  font-weight: 550;
+  z-index: 999;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
 }
 .shopping-ways-card-container{
   width: 100%;
@@ -1896,6 +1923,7 @@ footer{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid rgb(166, 161, 161);
+  gap: 20px;
 }
 .order>div:nth-child(1),
 .contact>div:nth-child(1),
@@ -1919,15 +1947,19 @@ footer{
   font-size: 14px;
   color: #8a8f93;
 }
-.order>a,
+.order>div:nth-child(3),
+.contact>div:nth-child(3),
+.credit-card>div:nth-child(3){
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+.order>div:nth-child(3)>a,
 .contact>div:nth-child(3)>a,
-.credit-card>a{
+.credit-card>div:nth-child(3)>a{
   color: #444546;
   font-size: 13px;
   text-decoration: underline;
-  display: inline-block;
-  margin-left: 15px;
-  margin-top: 20px;
 }
 .iOS-app>div:nth-child(2){
   display: flex;
@@ -1986,17 +2018,40 @@ footer{
   display: flex;
   justify-content: space-between;
 }
-.show-us>div:nth-child(4)>i{
+.show-us>div:nth-child(4)>a>i{
   font-size: 20px;
+  color: #242420;
 }
 .show-us>div:nth-child(6){
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 .show-us>div:nth-child(6)>ul:nth-child(1),
 .show-us>div:nth-child(6)>ul:nth-child(2){
   display: flex;
   gap: 20px;
+}
+.show-us>div:nth-child(6)>ul:nth-child(1)>li>a{
+  font-size: 26px;
+  font-weight: 550;
+  color: #242420;
+}
+.show-us>div:nth-child(6)>ul:nth-child(2)>li:nth-child(1)>a{
+  padding: 0px 5px;
+  color: #242420;
+  font-size: 21px;
+  font-weight: 550;
+  border: 3px solid black;
+}
+.show-us>div:nth-child(6)>ul:nth-child(2)>li:nth-child(2)>a{
+  color: #242420;
+  font-size: 19px;
+  font-weight: 450;
+}
+.show-us>div:nth-child(6)>ul:nth-child(2)>li:nth-child(2)>a>span{
+  margin-right: 5px;
+  border: 1px solid black;
 }
 .bottom-part3{
   display: flex;
