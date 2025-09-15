@@ -451,6 +451,15 @@ header {
 .wedding-top-brand > ul > li > a {
   color: var(--secondry-text);
 }
+.top-category > ul > li > a:hover,
+.trending > ul > li > a:hover,
+.collabs > ul > li > a:hover,
+.wedding > ul > li > a:hover,
+.tips > ul > li > a:hover,
+.wedding-top-categories > ul > li > a:hover,
+.wedding-top-brand > ul > li > a:hover{
+  text-decoration: underline;
+}
 .new-img > figure > figcaption,
 .wedding-img > figure > figcaption {
   font-weight: 550;
