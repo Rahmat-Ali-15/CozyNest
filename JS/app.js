@@ -90,6 +90,39 @@ function renderArrivalImg(arrivals) {
 }
 renderArrivalImg(arrivals);
 
+// Arrival carrousel
+// let arrivalItems = document.querySelectorAll(".arrival-items");
+// let leftArrow = document.querySelector(".arrival-arrow>.fa-angle-left");
+// let righttArrow = document.querySelector(".arrival-arrow>.fa-angle-right");
+
+// leftArrow.addEventListener("click", function(){
+//     arrivalItems.forEach((el)=>{
+//         console.log(arrivalItems)
+//     })
+// })
+
+let currentIndex = 0;  // track current slide
+let itemsToShow = 4;   // ek bar me kitne items dikhane h
+let itemWidth = 500;
+
+// Arrow buttons
+let leftBtn = document.querySelector(".fa-angle-left");
+let rightBtn = document.querySelector(".fa-angle-right");
+let arrivalsContainer = document.querySelector(".arrivals-imgs-container");
+
+rightBtn.addEventListener("click", () => {
+    if (currentIndex < arrivals.length - itemsToShow) {
+        currentIndex++;
+        arrivalsContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+});
+
+leftBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        arrivalsContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+});
 
 // video play start
 
