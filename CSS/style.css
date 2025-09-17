@@ -919,13 +919,15 @@ main {
   background-color: #fff;
 }
 .arrivals-imgs-container {
+  width: 100%;
   display: flex;
   gap: 15px;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: all 0.6s ease;
 }
 .arrival-items {
   position: relative;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
