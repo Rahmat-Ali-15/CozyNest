@@ -439,4 +439,6 @@ const shoppingCardRender = (shoppingCard) => {
     });
 }
 
-shoppingCardRender(shoppingCard)
+shoppingCardRender(shoppingCard);
+
+// Carousel
