@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.signIn-container{
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signIn-details{
+    width: 60%;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.heading>h2{
+    font-weight: 550;
+}
+.heading>span{
+    font-size: 20px;
+    cursor: pointer;
+}
+.signIn-content{
+    display: flex;
+    gap: 20px;
+}
+.sign-in{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sign-in>h2,
+.create-account>h2{
+    font-weight: 400;
+    font-size: 20px;
+}
+.reset-pass{
+    display: flex;
+    justify-content: flex-end;
+}
+.reset-pass>a{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.signIn-form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.input-box>input,
+#signIn_btn{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#signIn_btn{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    cursor: pointer;
+}
+.input-box > input:hover {
+  border: 2px solid rgba(64, 157, 169, 0.8);
+}
+.input-box > input:focus-within {
+  border: 2px solid rgb(91, 91, 247);
+  box-shadow: rgba(91, 91, 247, 0.6) 0px 1px 2px 0px;
+}
+.input-box > input::placeholder {
+  opacity: 0.7;
+}
+.input-box>div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.input-box>div>label{
+    font-size: 17px;
+    font-weight: 450;
+    margin-bottom: 5px;
+}
+.input-box>div>span{
+    font-size: 13px;
+    opacity: 0.6;
+}
+#term_condition{
+    text-align: center;
+    padding: 0 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.middle-border{
+    width: 4%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.middle-border>span{
+    border-right: 3px solid rgb(206, 205, 205);
+    height: 75%;
+}
+.create-account{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.icon-details{
+    width: 100%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.box>span{
+    font-size: 14px;
+    opacity: 0.7;
+}
+.box>i{
+    font-size: 25px;
+}
+.account-btn{
+    width: 100%;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+.account-btn>a>input{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 450;
+    color: white;
+    border-radius: 8px;
+    background-color: black;
+    cursor: pointer;
+}
