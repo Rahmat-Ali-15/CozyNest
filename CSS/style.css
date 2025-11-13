@@ -2264,7 +2264,7 @@ footer{
   }
   .smeg-mocha>img{
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .smeg-mocha-heading>h1{
     font-size: 20px;
