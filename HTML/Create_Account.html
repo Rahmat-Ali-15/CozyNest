@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="stylesheet" href="../CSS/Create_Account.css">
+    <script src="../JS/Create_Account.js" defer></script>
 </head>
 
 <body>
     <main>
         <div class="signUp-page-container">
-            <form action="#" class="signUp-form">
+            <form action="#" class="signUp-form" onsubmit="myValidation(event)">
                 <div class="account-heading">
                     <h2>Create Account</h2>
                     <p>Want to check out faster, easily apply Rewards and keep track of your online and in-store orders?
@@ -20,40 +21,47 @@
                 <div class="input-box">
                     <div>
                         <label for="firstname">First Name</label>
-                        <span>required</span>
+                        <span class="error-msg">required</span>
                     </div>
-                    <input type="text" id="firstname" name="First_Name" placeholder="Enter your first name">
+                    <input type="text" id="firstname" name="First_Name" autocomplete="given-name"
+                        placeholder="Enter your first name">
+                        <span class="fname-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
                         <label for="lastname">Last Name</label>
-                        <span>required</span>
+                        <span class="error-msg">required</span>
                     </div>
-                    <input type="text" id="lastname" name="Last_Name" placeholder="Enter your last name">
+                    <input type="text" id="lastname" name="Last_Name" autocomplete="family-name"
+                        placeholder="Enter your last name">
+                        <span class="lname-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
                         <label for="p_number">Phone Number</label>
-                        <span>required</span>
+                        <span class="error-msg">required</span>
                     </div>
-                    <input type="text" id="p_number" name="phone_number" placeholder="Enter your phone number">
+                    <input type="tel" id="p_number" name="phone_number" autocomplete="tel" placeholder="Enter your phone number">
+                    <span class="num-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
                         <label for="email">Email</label>
-                        <span>required</span>
+                        <span class="error-msg">required</span>
                     </div>
-                    <input type="email" id="email" name="User_Email" placeholder="Enter your email">
+                    <input type="email" id="email" name="User_Email" autocomplete="email" placeholder="Enter your email">
+                    <span class="email-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
                         <label for="password">Password</label>
-                        <span>required</span>
+                        <span class="error-msg">required</span>
                     </div>
-                    <input type="password" id="password" name="User-Password" placeholder="Create a strong password">
+                    <input type="password" id="password" name="User-Password" autocomplete="current-password" placeholder="Create a strong password">
+                    <span class="pass-error"></span>
                 </div>
                 <div class="btn-container">
-                    <input type="button" id="signup_btn" value="CREATE ACCOUNT">
+                    <input type="submit" id="signup_btn" value="CREATE ACCOUNT">
                     <p id="term_condition">By creating an account you are agreeing to our <a href="#">Terms of Use</a>
                         and <a href="#">Privacy Policy</a>.</p>
                     <div>
