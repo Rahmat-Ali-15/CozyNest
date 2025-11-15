@@ -103,3 +103,13 @@
   padding-left: 10px;
   text-align: center;
 }
+
+/* Error messages style */
+.email-error,
+.pass-error,
+.num-error,
+.fname-error,
+.lname-error{
+  font-size: 10px;
+  color: red;
+}
