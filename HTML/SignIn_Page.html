@@ -6,6 +6,7 @@
     <title>Sign In page</title>
     <link rel="stylesheet" href="../CSS/SignIn_Page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="../JS/SignIn_Page.js" defer></script>
 </head>
 <body>
     <main>
@@ -21,23 +22,24 @@
                         <div class="reset-pass">
                             <a href="#">Reset password</a>
                         </div>
-                        <form class="signIn-form">
+                        <form class="signIn-form" onclick="signUpForm(event)">
                             <div class="input-box">
                                 <div>
                                     <label for="email">Email</label>
                                     <span>required</span>
                                 </div>
-                                <input type="email" id="email" placeholder="Enter your email" >
+                                <input type="email" id="email" autocomplete="email" placeholder="Enter your email" >
                             </div>
                             <div class="input-box">
                                 <div>
                                     <label for="password">Password</label>
                                     <span>required</span>
                                 </div>
-                                <input type="password" id="password" placeholder="Enter your email" >
+                                <input type="password" id="password" autocomplete="current-password"
+                                placeholder="Enter your email" >
                             </div>
                             <div class="signIn-btn-div">
-                                <input type="button" id="signIn_btn" value="SIGN IN">
+                                <input type="submit" id="signIn_btn" value="SIGN IN">
                             </div>
                             <P id="term_condition">By signing in, you are agreeing to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</P>
                         </form>
