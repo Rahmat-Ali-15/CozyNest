@@ -19,3 +19,9 @@ const signUpForm = (e) => {
     alert("Invalid email or Password !!!")
   }
 };
+
+let createAccBtn = document.querySelector(".create-account-btn");
+
+createAccBtn.addEventListener("click", ()=> {
+    window.location = "../HTML/Create_Account.html"
+});
