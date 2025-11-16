@@ -133,3 +133,10 @@ const myValidation = (event) => {
     }
   }
 };
+
+
+let loginBtn = document.querySelector(".login-btn");
+
+loginBtn.addEventListener("click", ()=> {
+  window.location = "../HTML/SignIn_Page.html"
+})
