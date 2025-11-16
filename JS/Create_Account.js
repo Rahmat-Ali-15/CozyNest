@@ -7,7 +7,7 @@ const myValidation = (event) => {
   let email = document.querySelector("#email").value;
   let pass = document.querySelector("#password").value;
 
-  //   All fields are required
+  // All fields are required
   if (
     fName.trim() === "" ||
     lName.trim() === "" ||
@@ -19,7 +19,7 @@ const myValidation = (event) => {
     return false;
   }
 
-  //   Removing previous error messages
+  // Removing previous error messages
   document.querySelector(".email-error").innerText = "";
   document.querySelector(".pass-error").innerText = "";
   document.querySelector(".num-error").innerText = "";
@@ -66,7 +66,8 @@ const myValidation = (event) => {
 
   // First Name validation
   if (!/^[A-Za-z]+$/.test(fName)) {
-    document.querySelector(".fname-error").innerText = "Only alphabets are allowed!";
+    document.querySelector(".fname-error").innerText =
+      "Only alphabets are allowed!";
     return false;
   } else {
     document.querySelector(".fname-error").innerText = "";
@@ -74,13 +75,14 @@ const myValidation = (event) => {
 
   // Last name validation
   if (!/^[A-Za-z]+$/.test(lName)) {
-    document.querySelector(".lname-error").innerText = "Only alphabets are allowed!";
+    document.querySelector(".lname-error").innerText =
+      "Only alphabets are allowed!";
     return false;
   } else {
     document.querySelector(".lname-error").innerText = "";
   }
 
-  //   Phone number validation
+  // Phone number validation
   if (isNaN(pNum)) {
     document.querySelector(".num-error").innerText = "Only numbers are allowed";
     return false;
