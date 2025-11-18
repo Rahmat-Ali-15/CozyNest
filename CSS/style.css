@@ -298,6 +298,9 @@ header {
   align-items: center;
   gap: 20px;
 }
+.location-popUp>div>i{
+  width: 20px;
+}
 .heart-popUp {
   top: 35px;
   right: -110px;
@@ -1949,9 +1952,12 @@ footer{
 }
 .fa-cube,
 .fa-message,
-.fa-credit-card,
+.sign-in-popUp>div>.fa-credit-card,
 .fa-mobile-screen{
   font-size: 36px;
+}
+.sign-in-popUp>div>.fa-credit-card{
+  font-size: 16px;
 }
 .order>p,
 .contact>p,
