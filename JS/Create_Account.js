@@ -1,4 +1,6 @@
-const myValidation = (event) => {
+let api_user = "https://api-server-zecj.onrender.com/user";
+
+const myValidation = async(event) => {
   event.preventDefault();
 
   let fName = document.querySelector("#firstname").value;
@@ -132,11 +134,61 @@ const myValidation = (event) => {
       return false;
     }
   }
+
+  // User details
+
+  let userData = {
+    id: Date.now(),
+    fName,
+    lName,
+    email,
+    pass
+  }
+  try {
+
+    // Checking if the email is already exists
+    let checkEmail = await fetch (`${api_user}?email=${email}`);
+    let existingUser = await checkEmail.json();
+
+    if(existingUser.length>0){
+      document.querySelector(".email-error").innerText = "This email is already registered ❌‼️";
+      return false;
+    }
+
+    let res = await fetch(api_user, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(userData)
+    });
+    let val = await res.json();
+    console.log("🚀 ~ val:", val);
+  } catch (error) {
+    console.log(error)
+  }
+
+  // Show success popup
+  document.querySelector(".success-msg-popup").classList.add("active-success-msg");
+
+  document.querySelector(".signUp-form").classList.add("signUp-form-disable")
+  
+  // Clear the form inputs
+  document.querySelector(".signUp-form").reset();
 };
 
 
+// Go to Login/SignIn page
 let loginBtn = document.querySelector(".login-btn");
+loginBtn.addEventListener("click", () => {
+  window.location = "../HTML/SignIn_Page.html";
+});
 
-loginBtn.addEventListener("click", ()=> {
-  window.location = "../HTML/SignIn_Page.html"
-})
+let continueBtn = document.querySelector(".continue-btn");
+continueBtn.addEventListener("click", () => {
+  window.location = "../HTML/SignIn_Page.html";
+});
+
+// Back to Home page
+let backBtn = document.querySelector(".back-btn");
+backBtn.addEventListener("click", () => {
+  window.location = "/index.html";
+});
