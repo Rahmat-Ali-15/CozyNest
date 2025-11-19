@@ -194,6 +194,10 @@ header {
   align-items: center;
   gap: 15px;
 }
+.user-name-icon{
+  display: flex;
+  gap: 10px;
+}
 .fa-user,
 .fa-location-dot,
 .fa-heart,
