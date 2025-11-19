@@ -1,6 +1,8 @@
-let api_user = "https://api-server-zecj.onrender.com/user";
+// let api_user = "https://api-server-zecj.onrender.com/user";
 
-const myValidation = async(event) => {
+let userDataStorage = JSON.parse(localStorage.getItem("userDetails")) || [];
+
+const myValidation = async (event) => {
   event.preventDefault();
 
   let fName = document.querySelector("#firstname").value;
@@ -25,46 +27,6 @@ const myValidation = async(event) => {
   document.querySelector(".email-error").innerText = "";
   document.querySelector(".pass-error").innerText = "";
   document.querySelector(".num-error").innerText = "";
-
-  /* 
-
-//   let fields = [
-//     {
-//       id: "firstname",
-//       name: "First Name",
-//     },
-//     {
-//       id: "lastname",
-//       name: "Last Name",
-//     },
-//     {
-//       id: "p_number",
-//       name: "Phone Number",
-//     },
-//     {
-//       id: "email",
-//       name: "Email",
-//     },
-//     {
-//       id: "password",
-//       name: "Password",
-//     },
-//   ];
-
-  //  This make sure that all fields are filled and Added error message(color)
-//   let errMsg = document.querySelectorAll(".error-msg");
-//   errMsg.forEach((msg) => (msg.style.color = "green"));
-
-//   fields.forEach((field, index) => {
-//     let val = document.querySelector(`#${field.id}`).value.trim();
-
-//     if (val === "") {
-//       errMsg[index].style.color = "red";
-//     }
-//     return false;
-//   });
-
-*/
 
   // First Name validation
   if (!/^[A-Za-z]+$/.test(fName)) {
@@ -117,64 +79,69 @@ const myValidation = async(event) => {
     const hasSpecialChar = /[!@#$%^&*()|\/;:<>?]/.test(pass);
 
     if (!hasUpperCase) {
-      document.querySelector(".pass-error").innerText =
-        "Password must include at least one uppercase letter!";
+      document.querySelector(".pass-error").innerText = "Password must include at least one uppercase letter!";
       return false;
     } else if (!hasLowerCase) {
-      document.querySelector(".pass-error").innerText =
-        "Password must include at least one lowercase letter!";
+      document.querySelector(".pass-error").innerText = "Password must include at least one lowercase letter!";
       return false;
     } else if (!hasNumber) {
-      document.querySelector(".pass-error").innerText =
-        "Password must include at least one number!";
+      document.querySelector(".pass-error").innerText = "Password must include at least one number!";
       return false;
     } else if (!hasSpecialChar) {
-      document.querySelector(".pass-error").innerText =
-        "Password must include at least one special letter!";
+      document.querySelector(".pass-error").innerText = "Password must include at least one special letter!";
       return false;
     }
   }
 
   // User details
-
   let userData = {
     id: Date.now(),
     fName,
     lName,
     email,
-    pass
+    pass,
+  };
+
+  // Check if email already exists
+  let checkEmail = userDataStorage.find((u) => u.email === email);
+
+  if (checkEmail) {
+    document.querySelector(".email-error").innerText = "This email is already registered ❌";
+    return;
   }
-  try {
+  userDataStorage.push(userData);
 
-    // Checking if the email is already exists
-    let checkEmail = await fetch (`${api_user}?email=${email}`);
-    let existingUser = await checkEmail.json();
+  localStorage.setItem("userDetails", JSON.stringify(userDataStorage));
 
-    if(existingUser.length>0){
-      document.querySelector(".email-error").innerText = "This email is already registered ❌‼️";
-      return false;
-    }
+  // try {
 
-    let res = await fetch(api_user, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(userData)
-    });
-    let val = await res.json();
-    console.log("🚀 ~ val:", val);
-  } catch (error) {
-    console.log(error)
-  }
+  //   // Checking if the email is already exists
+  //   let checkEmail = await fetch (`${api_user}?email=${email}`);
+  //   let existingUser = await checkEmail.json();
+
+  //   if(existingUser.length>0){
+  //     document.querySelector(".email-error").innerText = "This email is already registered ❌‼️";
+  //     return false;
+  //   }
+
+  //   let res = await fetch(api_user, {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/json"},
+  //     body: JSON.stringify(userData)
+  //   });
+  //   let val = await res.json();
+  //   console.log("🚀 ~ val:", val);
+  // } catch (error) {
+  //   console.log(error)
+  // }
 
   // Show success popup
   document.querySelector(".success-msg-popup").classList.add("active-success-msg");
+  document.querySelector(".signUp-form").classList.add("signUp-form-disable");
 
-  document.querySelector(".signUp-form").classList.add("signUp-form-disable")
-  
   // Clear the form inputs
   document.querySelector(".signUp-form").reset();
 };
-
 
 // Go to Login/SignIn page
 let loginBtn = document.querySelector(".login-btn");
