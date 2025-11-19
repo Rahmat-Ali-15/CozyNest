@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 .signUp-page-container {
+  position: relative;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -102,6 +103,79 @@
   font-size: 14px;
   padding-left: 10px;
   text-align: center;
+}
+
+/* Accont creation popup */
+.success-msg-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px 25px;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: -9999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%,-50%) scale(0.2);
+  transition: all 0.4s ease;
+}
+.active-success-msg{
+  z-index: 9999;
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  pointer-events: all;
+}
+.signUp-form-disable{
+  display: none;
+}
+.success-icon{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bi-check2-circle{
+  font-size: 66px;
+  color: #04bc7c;
+}
+.success-msg{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.success-msg>p{
+  text-align: center;
+}
+.success-msg>p:nth-child(1){
+  font-size: 18px;
+  font-weight: 500;
+}
+.success-msg>p:nth-child(2){
+  font-size: 14px;
+  opacity: 0.7;
+}
+.popUp-btns{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.back-btn,
+.continue-btn{
+  padding: 7px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+.continue-btn{
+  color: #fff;
+  background-color: #00bd7d;
 }
 
 /* Error messages style */
