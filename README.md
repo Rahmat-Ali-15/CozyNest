@@ -1,8 +1,3 @@
-# CozyNest
-🛠️ CozyNest is a work-in-progress modern furniture website. It aims to provide a clean, cozy, and responsive user experience.
-
-
-
 # 🚀 CozyNest – Modern Home Decor & Furniture Store
 ### A fully responsive, animated, and dynamic frontend e-commerce website.
 
@@ -24,7 +19,6 @@ The website is fully **responsive**, **interactive**, and **JavaScript-powered**
 
 # 📸 Screenshots
 
-> ⚠️ Add your actual images in a folder named **screenshots** and replace the image paths below.
 
 ### 🏠 Home Page  
 ![Homepage](./screenshots/homepage.png)
@@ -41,12 +35,6 @@ The website is fully **responsive**, **interactive**, and **JavaScript-powered**
 ### 🍁 Autumn Decor Section  
 ![Autumn Section](./screenshots/autumn.png)
 
-### 🎬 Video Banner Section  
-![Video Section](./Utilities/videos/FallColorEditVideo_Final.mp4)
-
-### 🛒 Ways to Shop  
-![Ways to Shop](./screenshots/ways-to-shop.png)
-
 ---
 
 # ✨ Features
@@ -58,6 +46,11 @@ The website is fully **responsive**, **interactive**, and **JavaScript-powered**
 - Name validation (alphabets only)
 - Phone number validation (10 digits only)
 - Email `"."` position validation
+- Strong password validation:  
+  - Uppercase  
+  - Lowercase  
+  - Number  
+  - Special character  
 - Duplicate email check
 - Animated **Success Popup**
 - Auto-clears form
@@ -116,7 +109,7 @@ The website is fully **responsive**, **interactive**, and **JavaScript-powered**
 ---
 
 # 📁 Folder Structure
-
+```
 CozyNest Project
 │── index.html
 │── /HTML
@@ -136,7 +129,7 @@ CozyNest Project
 └── /Utilities
 └── /img (Images)
 
-
+```
 
 No server required — the entire project runs on the frontend ✔
 
