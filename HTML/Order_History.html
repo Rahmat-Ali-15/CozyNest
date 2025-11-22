@@ -7,10 +7,15 @@
     <title>Order History | CozyNest</title>
     <link rel="stylesheet" href="../CSS/Order_History.css">
     <link rel="icon" type="image/png" href="../Utilities/img/favicon_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 </head>
 
 <body>
+    <header>
+
+    </header>
+
     <main>
         <!-- sidebar -->
         <div class="sidebar">
@@ -144,6 +149,22 @@
 
         </div>
     </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script type="module">
+        import {navbar,footer,navFooterStyle} from "../JS/Navbar_Footer.js";
+        document.querySelector("header").innerHTML = navbar();
+
+        let navFooterStyleTag = document.createElement("style");
+        navFooterStyleTag.textContent = navFooterStyle();
+        document.head.append(navFooterStyleTag);
+
+        document.querySelector("footer").innerHTML = footer();
+    </script>
 </body>
 
 </html>
