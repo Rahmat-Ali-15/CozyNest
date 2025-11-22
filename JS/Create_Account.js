@@ -79,16 +79,20 @@ const myValidation = async (event) => {
     const hasSpecialChar = /[!@#$%^&*()|\/;:<>?]/.test(pass);
 
     if (!hasUpperCase) {
-      document.querySelector(".pass-error").innerText = "Password must include at least one uppercase letter!";
+      document.querySelector(".pass-error").innerText =
+        "Password must include at least one uppercase letter!";
       return false;
     } else if (!hasLowerCase) {
-      document.querySelector(".pass-error").innerText = "Password must include at least one lowercase letter!";
+      document.querySelector(".pass-error").innerText =
+        "Password must include at least one lowercase letter!";
       return false;
     } else if (!hasNumber) {
-      document.querySelector(".pass-error").innerText = "Password must include at least one number!";
+      document.querySelector(".pass-error").innerText =
+        "Password must include at least one number!";
       return false;
     } else if (!hasSpecialChar) {
-      document.querySelector(".pass-error").innerText = "Password must include at least one special letter!";
+      document.querySelector(".pass-error").innerText =
+        "Password must include at least one special letter!";
       return false;
     }
   }
@@ -106,7 +110,8 @@ const myValidation = async (event) => {
   let checkEmail = userDataStorage.find((u) => u.email === email);
 
   if (checkEmail) {
-    document.querySelector(".email-error").innerText = "This email is already registered ❌";
+    document.querySelector(".email-error").innerText =
+      "This email is already registered ❌";
     return;
   }
   userDataStorage.push(userData);
@@ -136,8 +141,12 @@ const myValidation = async (event) => {
   // }
 
   // Show success popup
-  document.querySelector(".success-msg-popup").classList.add("active-success-msg");
+  document
+    .querySelector(".success-msg-popup")
+    .classList.add("active-success-msg");
   document.querySelector(".signUp-form").classList.add("signUp-form-disable");
+  document.querySelector("header").classList.add("header-disable");
+  document.querySelector("footer").classList.add("footer-disable");
 
   // Clear the form inputs
   document.querySelector(".signUp-form").reset();
@@ -157,5 +166,5 @@ continueBtn.addEventListener("click", () => {
 // Back to Home page
 let backBtn = document.querySelector(".back-btn");
 backBtn.addEventListener("click", () => {
-  window.location = "/index.html";
+  window.location = "../HTML/Create_Account.html";
 });

@@ -13,10 +13,12 @@ const signInForm = async (e) => {
     return false;
   }
 
-  let user = userDataStorage.find((el) => el.email === signInEmail && el.pass=== signInPass);
+  let user = userDataStorage.find(
+    (el) => el.email === signInEmail && el.pass === signInPass
+  );
   if (user) {
     localStorage.setItem("loggedUser", JSON.stringify(user));
-    window.location = "/index.html";
+    window.location = "../HTML/Order_History.html";
   } else {
     alert("Invalid email or password ❌");
   }
@@ -45,7 +47,7 @@ const signInForm = async (e) => {
 };
 
 let createAccBtn = document.querySelector(".create-account-btn");
-if(createAccBtn){
+if (createAccBtn) {
   createAccBtn.addEventListener("click", () => {
     window.location = "../HTML/Create_Account.html";
   });

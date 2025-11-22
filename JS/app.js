@@ -1,10 +1,3 @@
-let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-
-if (loggedUser) {
-    document.querySelector("#user_lastName").innerText = loggedUser.fName;
-}
-
-
 // scroll button
 const scrollBtn = document.querySelector(".scroll-btn");
 

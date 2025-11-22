@@ -1,5 +1,5 @@
 export const navbar = () => {
-    return `
+  return `
 
       
 
@@ -34,7 +34,7 @@ export const navbar = () => {
                 <div class="sign-in">
                     <p><a href="#">Orders</a> & <a href="#">Sign In</a></p>
                     <li class="user-name-icon">
-                        <p id="user_lastName"></p>
+                        <p id="user_firstName"></p>
                         <i class="fa-solid fa-user"></i>
                     </li>
 
@@ -1264,11 +1264,11 @@ export const navbar = () => {
             </ul>
         </nav>
     
-    `
-}
+    `;
+};
 
 export const footer = () => {
-    return `
+  return `
 
         <section class="footer-up">
             <div>
@@ -1412,11 +1412,35 @@ export const footer = () => {
 
         </section>
 
-    `
-}
+    `;
+};
+
+export const offerBanner = () => {
+  return `
+
+        <div class="msg-wrap">
+                <a href="#">New! 1600+ Fall Arrivals <span class="arrow"></span></a>
+            </div>
+            <div class="line"></div>
+            <div class="msg-wrap">
+                <a href="#">Up to 60% off Steals of the Season <br> Going, Going... Almost Gone! <span
+                        class="arrow"></span></a>
+            </div>
+            <div class="line"></div>
+            <div class="msg-wrap">
+                <a href="#">Up to 40% off Top Kitchen Brands <br>Le Creuset, Cuisinart & More! <span
+                        class="arrow"></span></a>
+            </div>
+            <div class="line"></div>
+            <div class="msg-wrap">
+                <a href="#">Up to 60% off Outdoor <span class="arrow"></span></a>
+        </div>
+    
+    `;
+};
 
 export const navFooterStyle = () => {
-    return `
+  return `
 
         :root {
           --primary-text: #343434;
@@ -2084,6 +2108,45 @@ export const navFooterStyle = () => {
         /* navbar popup end */
         /* navbar end */
 
+
+
+        /* banner start */
+        .banner {
+          width: 100%;
+          padding: 6px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          background-color: #694642;
+        }
+        .msg-wrap > a {
+          color: #ffffff;
+          text-align: center;
+          font-size: 15px;
+          font-weight: 550;
+        }
+        .line {
+          height: 25px;
+          width: 2px;
+          background-color: #fff;
+        }
+        .arrow,
+        .small-arrow {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: 5px;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-left: 7px solid #ffffff;
+        }
+        .small-arrow {
+          border-left: 7px solid black;
+        }
+        /* banner end */
+
+
+
         /* footer start */
 
         /* footer up section start */
@@ -2288,5 +2351,5 @@ export const navFooterStyle = () => {
 
         /* footer end */
 
-    `
-}
+    `;
+};
