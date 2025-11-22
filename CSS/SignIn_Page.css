@@ -37,13 +37,13 @@
   display: flex;
   gap: 20px;
 }
-.sign-in {
+.sign-in-details {
   width: 48%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.sign-in > h2,
+.sign-in-details > h2,
 .create-account > h2 {
   font-weight: 400;
   font-size: 20px;
