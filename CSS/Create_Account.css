@@ -6,6 +6,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+main {
+  padding: 30px 0;
+  width: 100%;
+}
 .signUp-page-container {
   position: relative;
   width: 100%;
