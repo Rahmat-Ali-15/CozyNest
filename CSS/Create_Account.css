@@ -111,7 +111,7 @@ main {
 }
 
 /* Accont creation popup */
-.success-msg-popup{
+.success-msg-popup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -122,49 +122,55 @@ main {
   flex-direction: column;
   gap: 20px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   z-index: -9999;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%,-50%) scale(0.2);
+  transform: translate(-50%, -50%) scale(0.2);
   transition: all 0.4s ease;
+  background-color: #d4edda;
 }
-.active-success-msg{
-  z-index: 9999;
+.active-success-msg {
+  z-index: 99999;
   opacity: 1;
-  transform: translate(-50%,-50%) scale(1);
+  filter: brightness(1);
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: all;
 }
-.signUp-form-disable{
-  display: none;
+.signUp-form-disable,
+.footer-disable,
+.header-disable {
+  opacity: 0.1;
+  z-index: -9999;
+  pointer-events: none;
 }
-.success-icon{
+.success-icon {
   margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bi-check2-circle{
+.bi-check2-circle {
   font-size: 66px;
   color: #04bc7c;
 }
-.success-msg{
+.success-msg {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.success-msg>p{
+.success-msg > p {
   text-align: center;
 }
-.success-msg>p:nth-child(1){
+.success-msg > p:nth-child(1) {
   font-size: 18px;
   font-weight: 500;
 }
-.success-msg>p:nth-child(2){
+.success-msg > p:nth-child(2) {
   font-size: 14px;
   opacity: 0.7;
 }
-.popUp-btns{
+.popUp-btns {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -172,13 +178,13 @@ main {
   gap: 30px;
 }
 .back-btn,
-.continue-btn{
+.continue-btn {
   padding: 7px 15px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
 }
-.continue-btn{
+.continue-btn {
   color: #fff;
   background-color: #00bd7d;
 }
@@ -188,7 +194,7 @@ main {
 .pass-error,
 .num-error,
 .fname-error,
-.lname-error{
+.lname-error {
   font-size: 10px;
   color: red;
 }

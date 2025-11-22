@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -53,41 +51,6 @@
 main {
   width: 100%;
 }
-
-/* banner start */
-.banner {
-  width: 100%;
-  padding: 6px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #694642;
-}
-.msg-wrap > a {
-  color: #ffffff;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 550;
-}
-.line {
-  height: 25px;
-  width: 2px;
-  background-color: #fff;
-}
-.arrow,
-.small-arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 7px solid #ffffff;
-}
-.small-arrow {
-  border-left: 7px solid black;
-}
-/* banner end */
 
 /* full img start */
 .full-img {
@@ -772,19 +735,19 @@ main {
 .bedroom-furniture-section > a > img {
   width: 100%;
 }
-.bedroom-heading{
+.bedroom-heading {
   position: absolute;
   top: 40px;
   left: 39%;
   color: white;
   cursor: pointer;
 }
-.bedroom-heading>h1{
+.bedroom-heading > h1 {
   font-size: 42px;
   line-height: 1;
   margin-bottom: 15px;
 }
-.bedroom-heading>button{
+.bedroom-heading > button {
   padding: 10px 30px;
   font-size: 19px;
   font-weight: 550;
@@ -795,18 +758,18 @@ main {
 /* bedroom furniture section end */
 
 /* All bedding section start */
-.all-bedding{
+.all-bedding {
   width: 100%;
   position: relative;
 }
-.all-bedding>a>img{
+.all-bedding > a > img {
   width: 100%;
 }
-.all-bedding>div{
+.all-bedding > div {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -815,12 +778,12 @@ main {
   align-items: center;
   cursor: pointer;
 }
-.all-bedding>div>h1{
+.all-bedding > div > h1 {
   text-align: center;
   line-height: 1;
   font-size: 38px;
 }
-.all-bedding>div>button{
+.all-bedding > div > button {
   padding: 10px 30px;
   font-size: 19px;
   font-weight: 550;
@@ -831,34 +794,34 @@ main {
 /* All bedding section end */
 
 /* kitchen & cookware section start */
-.kitchen-cookware{
+.kitchen-cookware {
   width: 100%;
   padding: 30px 35px;
   position: relative;
 }
-.kitchen-cookware>a>img{
+.kitchen-cookware > a > img {
   width: 100%;
 }
-.kitchen-cookware>div{
+.kitchen-cookware > div {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.kitchen-cookware>div>h1{
+.kitchen-cookware > div > h1 {
   font-size: 36px;
   line-height: 1;
   margin-bottom: 20px;
 }
-.kitchen-cookware>div>div{
+.kitchen-cookware > div > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.kitchen-cookware>div>div>button{
+.kitchen-cookware > div > div > button {
   width: 90%;
   padding: 12px 0;
   color: white;
@@ -872,24 +835,24 @@ main {
 /* kitchen & cookware section end */
 
 /* fall baking section start */
-.fall-baking{
+.fall-baking {
   width: 100%;
   position: relative;
 }
-.fall-baking>a>img{
+.fall-baking > a > img {
   width: 100%;
 }
-.fall-baking>div{
+.fall-baking > div {
   position: absolute;
   top: 30px;
   left: 70px;
   cursor: pointer;
 }
-.fall-baking>div>h1{
+.fall-baking > div > h1 {
   font-size: 38px;
   margin-bottom: 10px;
 }
-.fall-baking>div>button{
+.fall-baking > div > button {
   padding: 8px 30px;
   font-size: 19px;
   font-weight: 500;
@@ -899,24 +862,24 @@ main {
   background-color: transparent;
   transition: all 0.5s ease;
 }
-.fall-baking>div>button:hover{
+.fall-baking > div > button:hover {
   color: white;
   background-color: black;
 }
 /* fall baking section end */
 
 /* tool & recipe section start */
-.tool-recipe{
+.tool-recipe {
   width: 100%;
   padding: 35px 35px;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-.tool-recipe-left{
+.tool-recipe-left {
   width: 100%;
   position: relative;
 }
-.tool-recipe-left>div{
+.tool-recipe-left > div {
   position: absolute;
   left: 43%;
   top: 10%;
@@ -928,11 +891,11 @@ main {
   gap: 20px;
   cursor: pointer;
 }
-.tool-recipe-left>div>h1{
+.tool-recipe-left > div > h1 {
   font-size: 36px;
   font-weight: 600;
 }
-.tool-recipe-left>div>button{
+.tool-recipe-left > div > button {
   padding: 10px 25px;
   font-size: 19px;
   font-weight: 500;
@@ -942,35 +905,35 @@ main {
   background-color: transparent;
   transition: all 0.4s ease;
 }
-.tool-recipe-left>div>button:hover{
+.tool-recipe-left > div > button:hover {
   color: white;
   background-color: black;
 }
-.tool-recipe-left>a>img{
+.tool-recipe-left > a > img {
   width: 100%;
 }
-.tool-recipe-right{
+.tool-recipe-right {
   width: 100%;
   position: relative;
 }
-.tool-recipe-right>a>video{
+.tool-recipe-right > a > video {
   width: 100%;
 }
 /* tool & recipe section end */
 
 /* rugs video section start */
-.rugs-video{
+.rugs-video {
   width: 100%;
   position: relative;
 }
-.rugs-video>a>video{
+.rugs-video > a > video {
   width: 100%;
 }
-.rugs-video> div:nth-child(3){
+.rugs-video > div:nth-child(3) {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -978,10 +941,10 @@ main {
   align-items: center;
   gap: 20px;
 }
-.rugs-video> div:nth-child(3)>h1{
+.rugs-video > div:nth-child(3) > h1 {
   font-size: 38px;
 }
-.rugs-video> div:nth-child(3)>button{
+.rugs-video > div:nth-child(3) > button {
   font-size: 19px;
   font-weight: 550;
   padding: 10px 30px;
@@ -991,15 +954,15 @@ main {
 /* rugs video section end */
 
 /* appointment section start */
-.appointment-section{
+.appointment-section {
   width: 100%;
   padding: 40px 35px;
   position: relative;
 }
-.appointment-section>a>img{
+.appointment-section > a > img {
   width: 100%;
 }
-.appointment-section>div{
+.appointment-section > div {
   position: absolute;
   top: 12%;
   left: 24%;
@@ -1010,29 +973,29 @@ main {
   align-items: center;
   cursor: pointer;
 }
-.appointment-section>div>h1{
+.appointment-section > div > h1 {
   font-size: 42px;
   line-height: 1;
   font-weight: 550;
 }
-.appointment-section>div>span:nth-child(2){
+.appointment-section > div > span:nth-child(2) {
   width: 60px;
   height: 2px;
   margin: 25px 0 15px 0;
   border: 2px solid white;
 }
-.appointment-section>div>h1:nth-child(3){
+.appointment-section > div > h1:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.appointment-section>div>h1:nth-child(3)>span{
+.appointment-section > div > h1:nth-child(3) > span {
   width: 30px;
   height: 2px;
   border: 3px solid white;
 }
-.appointment-section>div>button{
+.appointment-section > div > button {
   padding: 10px 30px;
   margin-top: 15px;
   font-size: 19px;
@@ -1044,14 +1007,14 @@ main {
 /* appointment section end */
 
 /* christmas section start */
-.christmas-section{
+.christmas-section {
   width: 100%;
   position: relative;
 }
-.christmas-section>a>img{
+.christmas-section > a > img {
   width: 100%;
 }
-.christmas-section>div{
+.christmas-section > div {
   position: absolute;
   right: 30px;
   top: 50px;
@@ -1062,12 +1025,12 @@ main {
   gap: 15px;
   cursor: pointer;
 }
-.christmas-section>div>h1{
+.christmas-section > div > h1 {
   font-size: 38px;
   text-align: right;
   line-height: 1.2;
 }
-.christmas-section>div>button{
+.christmas-section > div > button {
   padding: 10px 25px;
   font-size: 19px;
   font-weight: 550;
@@ -1079,15 +1042,15 @@ main {
 /* christmas section end */
 
 /* holiday section start */
-.holiday-section{
+.holiday-section {
   width: 100%;
   padding: 40px 35px;
   position: relative;
 }
-.holiday-section>a>img{
+.holiday-section > a > img {
   width: 100%;
 }
-.holiday-section>div{
+.holiday-section > div {
   position: absolute;
   top: 50%;
   right: 7%;
@@ -1100,10 +1063,10 @@ main {
   gap: 15px;
   cursor: pointer;
 }
-.holiday-section>div>h1{
+.holiday-section > div > h1 {
   font-size: 38px;
 }
-.holiday-section>div>button{
+.holiday-section > div > button {
   padding: 10px 25px;
   font-size: 19px;
   font-weight: 550;
@@ -1116,14 +1079,14 @@ main {
 /* holiday section end */
 
 /* wedding registry section start */
-.wedding-registry-section{
+.wedding-registry-section {
   width: 100%;
   position: relative;
 }
-.wedding-registry-section>a>img{
+.wedding-registry-section > a > img {
   width: 100%;
 }
-.wedding-registry-section>div{
+.wedding-registry-section > div {
   position: absolute;
   top: 13%;
   left: 5%;
@@ -1134,35 +1097,35 @@ main {
   align-items: center;
   gap: 20px;
 }
-.wedding-registry-section>div>div:nth-child(1){
+.wedding-registry-section > div > div:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   line-height: 1;
 }
-.wedding-registry-section>div>div:nth-child(1)>h1{
+.wedding-registry-section > div > div:nth-child(1) > h1 {
   font-size: 8.5rem;
 }
-.wedding-registry-section>div>div:nth-child(1)>h3{
+.wedding-registry-section > div > div:nth-child(1) > h3 {
   text-align: center;
   line-height: 1;
   font-size: 24px;
   font-weight: 550;
 }
-.wedding-registry-section>div>div:nth-child(2){
+.wedding-registry-section > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.wedding-registry-section>div>div:nth-child(2)>h2{
+.wedding-registry-section > div > div:nth-child(2) > h2 {
   font-size: 40px;
   text-align: center;
   line-height: 1.2;
   font-weight: 550;
 }
-.wedding-registry-section>div>div:nth-child(2)>button{
+.wedding-registry-section > div > div:nth-child(2) > button {
   padding: 10px 25px;
   margin-top: 20px;
   font-size: 19px;
@@ -1174,7 +1137,7 @@ main {
 /* weddin registry seciton end */
 
 /* shopping ways section start */
-.shopping-ways{
+.shopping-ways {
   position: relative;
   width: 100%;
   padding: 40px 0;
@@ -1182,10 +1145,10 @@ main {
   flex-direction: column;
   gap: 15px;
 }
-.shopping-ways-heading{
+.shopping-ways-heading {
   text-align: center;
 }
-.shopping-ways-heading>h1{
+.shopping-ways-heading > h1 {
   font-size: 36px;
   font-weight: 550;
 }
@@ -1215,28 +1178,25 @@ main {
   border: none;
   background-color: #fff;
 }
-.shopping-ways-card-container{
+.shopping-ways-card-container {
   width: 100%;
   display: flex;
   gap: 15px;
   overflow: hidden;
 }
-.shopping-card-mainDiv{
+.shopping-card-mainDiv {
   width: 100%;
   cursor: pointer;
 }
-.shopping-card-mainDiv>img{
+.shopping-card-mainDiv > img {
   width: 435px;
 }
 /* shopping ways section end */
 
 /* main end */
 
-
-
-
 /* Hamburger start */
-.hamburger{
+.hamburger {
   width: 40px;
   height: 40px;
   display: flex;
@@ -1247,43 +1207,43 @@ main {
   border: 1px dashed black;
   display: none;
 }
-.hamburger>span{
+.hamburger > span {
   width: 25px;
   border: 1px solid black;
 }
 /* hamburger end */
 
-.mobile-header{
+.mobile-header {
   display: none;
 }
 
 /* <================= Responsive Start ================> */
 
-@media (min-width: 0) and (max-width: 480px){
+@media (min-width: 0) and (max-width: 480px) {
   /* header start */
-  .hamburger{
+  .hamburger {
     display: flex;
   }
-  .header-top{
+  .header-top {
     display: none;
   }
-  .search-bar{
+  .search-bar {
     display: none;
   }
-  .header-bottom{
+  .header-bottom {
     display: none;
   }
-  .navbar{
+  .navbar {
     display: none;
   }
-  .mobile-header{
+  .mobile-header {
     width: 100%;
     height: 120px;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .mobile-navbar{
+  .mobile-navbar {
     padding: 5px 12px;
     width: 100%;
     display: flex;
@@ -1291,31 +1251,31 @@ main {
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   }
-  .ham-location{
+  .ham-location {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
   }
-  .fa-location-dot{
+  .fa-location-dot {
     font-size: 24px;
   }
-  .logo>p{
+  .logo > p {
     font-size: 32px;
   }
-  .sign-cart{
+  .sign-cart {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
   }
-  .mobile-searchbar{
+  .mobile-searchbar {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .search{
+  .search {
     width: 93%;
     justify-content: space-between;
   }
@@ -1323,73 +1283,73 @@ main {
   /* header end */
 
   /* main start */
-  .banner{
+  .banner {
     display: none;
   }
-  .full-img{
+  .full-img {
     width: 100%;
     height: 550px;
   }
-  .full-img>img{
+  .full-img > img {
     width: 100%;
     height: 100%;
   }
-  .full-img>.img_btns_container>a{
+  .full-img > .img_btns_container > a {
     font-size: 24px;
   }
-  .full-img>.img_btns_container>button{
+  .full-img > .img_btns_container > button {
     font-size: 14px;
     padding: 5px 10px;
     width: 180px;
   }
-  .img-btn{
+  .img-btn {
     bottom: 20px;
     left: 20px;
     padding: 5px 10px;
   }
-  .img-btn > button{
+  .img-btn > button {
     font-size: 14px;
   }
-  .img-monterey{
+  .img-monterey {
     bottom: 70px;
     right: 240px;
   }
-  .img-monterey>h3{
+  .img-monterey > h3 {
     font-size: 16px;
   }
-  .img-monterey>p{
+  .img-monterey > p {
     font-size: 13px;
     padding-left: 0;
     text-align: left;
   }
-  .new-arrivals-container{
+  .new-arrivals-container {
     width: 100%;
   }
-  .arrivals-head{
+  .arrivals-head {
     height: 70px;
     padding-right: 10px;
   }
-  .arrivals-head:before{
+  .arrivals-head:before {
     width: 0;
   }
-  .arrivals-head>p{
+  .arrivals-head > p {
     font-size: 24px;
   }
-  .arrivals-head>button{
+  .arrivals-head > button {
     padding: 5px 10px;
     font-size: 16px;
   }
-  .arrival-arrow{
+  .arrival-arrow {
     display: none;
   }
-  .arrivals-imgs-container{
+  .arrivals-imgs-container {
     width: 100%;
     overflow: scroll;
   }
-  .arrival-items{
+  .arrival-items {
     width: 100%;
   }
-  .arrival-items>img{
+  .arrival-items > img {
     height: 400px;
   }
 
@@ -1406,13 +1366,13 @@ main {
     height: 500px;
   } */
 
-  .smeg-mocha{
+  .smeg-mocha {
     height: 550px;
   }
-  .smeg-mocha>img{
+  .smeg-mocha > img {
     height: 100%;
   }
-  .smeg-mocha-heading>h1{
+  .smeg-mocha-heading > h1 {
     font-size: 20px;
     top: 10px;
   }
