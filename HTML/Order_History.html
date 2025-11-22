@@ -16,77 +16,84 @@
 
     </header>
 
+    <!-- banner started -->
+    <section class="banner">
+
+    </section>
+    <!-- banner end -->
     <main>
+
+
         <!-- sidebar -->
         <div class="sidebar">
-            <h1>Hi, Md</h1>
-            <div tabindex="0" class="box orders">
+            <h1>Hi, <span class="user-fname"></span></h1>
+            <div class="box orders">
                 <a href="#">Orders</a>
             </div>
-            <div tabindex="0" class="box account-settings">
+            <div class="box account-settings">
                 <a href="#">Account Settings</a>
             </div>
-            <div tabindex="0" class="box payments">
+            <div class="box payments">
                 <a href="#">Payments</a>
             </div>
-            <div tabindex="0" class="box addresses">
+            <div class="box addresses" onclick="toggleList(this)">
                 <div>
-                    <a href="#">Addresses</a>
-                    <div class="box-list">
-                        <a href="#">Shipping Address</a>
-                        <a href="#">Billing Address</a>
+                    <a>Addresses</a>
+                    <div class="plus-minus-icons">
+                        <span class="plus">+</span>
+                        <span class="minus">-</span>
                     </div>
                 </div>
-                <div>
-                    <span>+</span>
-                    <span>-</span>
+                <div class="box-list">
+                    <a href="#">Shipping Address</a>
+                    <a href="#">Billing Address</a>
                 </div>
             </div>
-            <div tabindex="0" class="box rewards">
+            <div class="box rewards">
                 <a href="#">Rewards</a>
             </div>
-            <div tabindex="0" class="box favorites">
+            <div class="box favorites">
                 <a href="#">My Favorites</a>
             </div>
-            <div tabindex="0" class="box design-services">
+            <div class="box design-services" onclick="toggleList(this)">
                 <div>
-                    <a href="#">Design Services</a>
-                    <div class="box-list">
-                        <a href="#">My Design Packages</a>
-                        <a href="#">My Appointments</a>
+                    <a>Design Services</a>
+                    <div class="plus-minus-icons">
+                        <span class="plus">+</span>
+                        <span class="minus">-</span>
                     </div>
                 </div>
-                <div>
-                    <span>+</span>
-                    <span>-</span>
+                <div class="box-list">
+                    <a href="#">My Design Packages</a>
+                    <a href="#">My Appointments</a>
                 </div>
             </div>
-            <div tabindex="0" class="box my-registeries">
+            <div class="box my-registeries">
                 <a href="#">My Registeries</a>
             </div>
-            <div tabindex="0" class="box store-events">
+            <div class="box store-events">
                 <a href="#">My Store and Events</a>
             </div>
-            <div tabindex="0" class="box subscription">
+            <div class="box subscription" onclick="toggleList(this)">
                 <div>
-                    <a href="#">Preferences/Subscriptions</a>
-                    <div class="box-list">
-                        <a href="#">Email and Text Preferences</a>
-                        <a href="#">Catalog Subscriptions</a>
+                    <a>Preferences/Subscriptions</a>
+                    <div class="plus-minus-icons">
+                        <span class="plus">+</span>
+                        <span class="minus">-</span>
                     </div>
                 </div>
-                <div>
-                    <span>+</span>
-                    <span>-</span>
+                <div class="box-list">
+                    <a href="#">Email and Text Preferences</a>
+                    <a href="#">Catalog Subscriptions</a>
                 </div>
             </div>
-            <div tabindex="0" class="box mange-credit-card">
+            <div class="box mange-credit-card">
                 <a href="#">Manage CozyNest Credit Card</a>
             </div>
-            <div tabindex="0" class="box customer-service">
+            <div class="box customer-service">
                 <a href="#">Customer Services</a>
             </div>
-            <div tabindex="0" class="box sign-out">
+            <div class="box sign-out">
                 <a href="#">Sign Out</a>
             </div>
         </div>
@@ -156,8 +163,9 @@
 
 
     <script type="module">
-        import {navbar,footer,navFooterStyle} from "../JS/Navbar_Footer.js";
+        import { navbar, footer, navFooterStyle, offerBanner } from "../JS/Navbar_Footer.js";
         document.querySelector("header").innerHTML = navbar();
+        document.querySelector(".banner").innerHTML = offerBanner();
 
         let navFooterStyleTag = document.createElement("style");
         navFooterStyleTag.textContent = navFooterStyle();
@@ -165,6 +173,8 @@
 
         document.querySelector("footer").innerHTML = footer();
     </script>
+
+    <script src="../JS/Order_History.js" defer></script>
 </body>
 
 </html>

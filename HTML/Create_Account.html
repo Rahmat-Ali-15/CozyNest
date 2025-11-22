@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../Utilities/img/favicon_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/Create_Account.css">
     <script src="../JS/Create_Account.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -16,6 +16,12 @@
     <header>
 
     </header>
+
+    <!-- banner started -->
+    <section class="banner">
+
+    </section>
+    <!-- banner end -->
 
     <main>
         <div class="signUp-page-container">
@@ -32,7 +38,7 @@
                     </div>
                     <input type="text" id="firstname" name="First_Name" autocomplete="given-name"
                         placeholder="Enter your first name">
-                        <span class="fname-error"></span>
+                    <span class="fname-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
@@ -41,14 +47,15 @@
                     </div>
                     <input type="text" id="lastname" name="Last_Name" autocomplete="family-name"
                         placeholder="Enter your last name">
-                        <span class="lname-error"></span>
+                    <span class="lname-error"></span>
                 </div>
                 <div class="input-box">
                     <div>
                         <label for="p_number">Phone Number</label>
                         <span class="error-msg">required</span>
                     </div>
-                    <input type="tel" id="p_number" name="phone_number" autocomplete="tel" placeholder="Enter your phone number">
+                    <input type="tel" id="p_number" name="phone_number" autocomplete="tel"
+                        placeholder="Enter your phone number">
                     <span class="num-error"></span>
                 </div>
                 <div class="input-box">
@@ -56,7 +63,8 @@
                         <label for="email">Email</label>
                         <span class="error-msg">required</span>
                     </div>
-                    <input type="email" id="email" name="User_Email" autocomplete="email" placeholder="Enter your email">
+                    <input type="email" id="email" name="User_Email" autocomplete="email"
+                        placeholder="Enter your email">
                     <span class="email-error"></span>
                 </div>
                 <div class="input-box">
@@ -64,7 +72,8 @@
                         <label for="password">Password</label>
                         <span class="error-msg">required</span>
                     </div>
-                    <input type="password" id="password" name="User-Password" autocomplete="current-password" placeholder="Create a strong password">
+                    <input type="password" id="password" name="User-Password" autocomplete="current-password"
+                        placeholder="Create a strong password">
                     <span class="pass-error"></span>
                 </div>
                 <div class="btn-container">
@@ -102,8 +111,9 @@
 
 
     <script type="module">
-        import {navbar,footer,navFooterStyle} from "../JS/Navbar_Footer.js";
+        import { navbar, footer, navFooterStyle, offerBanner } from "../JS/Navbar_Footer.js";
         document.querySelector("header").innerHTML = navbar();
+        document.querySelector(".banner").innerHTML = offerBanner();
 
         let navFooterStyleTag = document.createElement("style");
         navFooterStyleTag.textContent = navFooterStyle();
