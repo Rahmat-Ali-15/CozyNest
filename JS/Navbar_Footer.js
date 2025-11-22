@@ -20,8 +20,8 @@ export const navbar = () => {
 
         <section class="search-bar">
 
-            <div class="search">
-                <input type="search" placeholder="What can we help you find?">
+            <div class="search" tabindex="0">
+                <input type="search" class="search-input" >
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
@@ -32,7 +32,7 @@ export const navbar = () => {
             <div class="icons-container">
 
                 <div class="sign-in">
-                    <p><a href="#">Orders</a> & <a href="#">Sign In</a></p>
+                    <p><a href="#">Orders</a> & <a href="../HTML/SignIn_Page.html">Sign In</a></p>
                     <li class="user-name-icon">
                         <p id="user_firstName"></p>
                         <i class="fa-solid fa-user"></i>
@@ -84,8 +84,8 @@ export const navbar = () => {
                             <li><span>See</span> it all together</li>
                         </ol>
                         <img src="../Utilities/img/CB_HDR-201707_Mdbrd-dd.png" alt="Sofa img">
-                        <p><a href="#">Sign in</a> to see items you may have added using another computer or device.</p>
-                        <button type="button">SIGN IN</button>
+                        <p><a href="../HTML/SignIn_Page.html">Sign in</a> to see items you may have added using another computer or device.</p>
+                        <a href="../HTML/SignIn_Page.html" ><button type="button">SIGN IN</button></a>
                     </div>
                 </li>
 
@@ -1740,8 +1740,9 @@ export const navFooterStyle = () => {
           color: var(--primary-text);
           text-decoration: underline;
         }
-        .heart-popUp > button,
+        .heart-popUp > a > button,
         .shopping-popUp > button {
+          width: 100%;
           padding: 10px;
           font-weight: 500;
           border: none;
