@@ -26,15 +26,15 @@ function typePlaceholder() {
 
 typePlaceholder();
 
-const fetchApi = async () => {
-  let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
+// const fetchApi = async () => {
+//   let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
 
-  try {
-    let res = await fetch(api);
-    let data = await res.json();
-    console.log("🚀 ~ data:", data.Furniture.main_product.lounge);
-  } catch (error) {
-    console.log("🚀 ~ error:", error);
-  }
-};
-fetchApi()
+//   try {
+//     let res = await fetch(api);
+//     let data = await res.json();
+//     console.log("🚀 ~ data:", data.Furniture.main_product.lounge);
+//   } catch (error) {
+//     console.log("🚀 ~ error:", error);
+//   }
+// };
+// fetchApi()
