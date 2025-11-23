@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture - Best Modern Home</title>
+    <link rel="stylesheet" href="../CSS/Furniture.css">
+    <link rel="shortcut icon" href="../Utilities/img/favicon_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+<body>
+    <header></header>
+
+
+    <!-- banner started -->
+        <section class="banner">
+
+        </section>
+        <!-- banner end -->
+
+    <main>
+        <section class="largeVisNav-slider-wrapper">
+            <div class="largeVisNav-header">
+                <h1>Furniture</h1>
+                <div class="largeVisNav-controls">
+                    <button><i class="bi bi-chevron-left"></i></button>
+                    <button><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="largeVisNav-modType">
+                <div class="largeVisNav-slider">
+                    <a href="#">
+                        <div class="media-container">
+                            <img src="" alt="">
+                        </div>
+                        <div class="renew-copy-container">
+                            <p>Shop Black Friday</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer></footer>
+
+    <script type="module">
+        import {navbar,footer,offerBanner,navFooterStyle} from "../JS/Navbar_Footer.js";
+        document.querySelector("header").innerHTML = navbar();
+        document.querySelector(".banner").innerHTML = offerBanner();
+
+        
+        let navFooterStyleTag = document.createElement("style");
+        navFooterStyleTag.textContent = navFooterStyle();
+        document.head.append(navFooterStyleTag);
+
+        document.querySelector("footer").innerHTML = footer();
+    </script>
+
+    <script src="../JS/Furniture.js" defer></script>
+
+</body>
+</html>
