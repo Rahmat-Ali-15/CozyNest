@@ -26,15 +26,41 @@ function typePlaceholder() {
 
 typePlaceholder();
 
-// const fetchApi = async () => {
-//   let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
+const fetchApi = async () => {
+  let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
 
-//   try {
-//     let res = await fetch(api);
-//     let data = await res.json();
-//     console.log("🚀 ~ data:", data.Furniture.main_product.lounge);
-//   } catch (error) {
-//     console.log("🚀 ~ error:", error);
-//   }
-// };
-// fetchApi()
+  try {
+    let res = await fetch(api);
+    let data = await res.json();
+    appendFurnitureData(data.Furniture.largeVisNav)
+  } catch (error) {
+    console.log("🚀 ~ error:", error);
+  }
+};
+
+const appendFurnitureData = (arr) => {
+  let largeVisNavSlider = document.querySelector(".largeVisNav-slider");
+
+  arr.forEach((el) => {
+    let slide = document.createElement("div");
+    slide.classList.add("slide");
+
+    slide.innerHTML = `
+      <a href="#">
+          <div class="media-container">
+              <img src=${el.img} alt="">
+          </div>
+          <div class="renew-copy-container">
+              <p>${el.caption}</p>
+          </div>
+      </a>
+    `;
+
+    largeVisNavSlider.append(slide);
+  });
+
+}
+
+window.onload = () => {
+  fetchApi();
+}
