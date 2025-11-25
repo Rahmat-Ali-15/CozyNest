@@ -7,8 +7,12 @@
 }
 main{
     width: 100%;
-    height: 500px;
+    height: 100%;
     padding: 10px 60px;
+}
+.largeVisNav-slider-wrapper{
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 .largeVisNav-header{
     display: flex;
@@ -31,4 +35,142 @@ main{
 .largeVisNav-controls>button>.bi-chevron-left,
 .largeVisNav-controls>button>.bi-chevron-right{
     font-size: 34px;
+}
+.slide{
+    display: flex;
+}
+.largeVisNav-slider{
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    gap: 10px;
+    overflow: hidden;
+}
+.media-container>img{
+    width: 271px;
+}
+.renew-copy-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.renew-copy-container>p{
+    color: black;
+    font-weight: 550;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+.slide:hover .renew-copy-container>p{
+    border-bottom: 2px solid black;
+}
+
+/* filter part */
+.filter-bar-section{
+    display: flex;
+    justify-content: space-between;
+}
+.filter-box{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.filter-box button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.view-all,
+.in-stock,
+.ship-in-week,
+.pickup,
+.filter-type{
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.bi-chevron-down{
+    font-size: 14px;
+}
+.filter-bar-main{
+    display: flex;
+    gap: 8px;
+}
+.availability-filters{
+    display: flex;
+}
+.countAnd-SortContainer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.drop-heading{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.item-count>p,
+.drop-heading>p{
+    font-size: 14px;
+}
+/* dropdown */
+.filter-type,
+.filter-category,
+.filter-color,
+.filter-price,
+.mostRelevant-dropdown-content{
+    position: relative;
+}
+.type-dropdown-content,
+.category-dropdown-content,
+.color-dropdown-content,
+.price-dropdown-content,
+.mostRelevant-dropdown-content{
+    width: 370px;
+    height: 200px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+    display: none;
+}
+.category-dropdown-content{
+    grid-template-columns: repeat(1,1fr);
+    width: 290px;
+}
+.price-dropdown-content{
+    width: 450px;
+}
+.mostRelevant-dropdown-content{
+    width: fit-content;
+}
+.filter-type:focus-within .type-dropdown-content,
+.filter-category:focus-within .category-dropdown-content,
+.filter-color:focus-within .color-dropdown-content,
+.filter-price:focus-within .price-dropdown-content,
+.dropdown-filter:focus-within .mostRelevant-dropdown-content{
+    display: grid;
+}
+.type-dropdown-content>div,
+.category-dropdown-content>div,
+.color-dropdown-content>div,
+.price-dropdown-content>div,
+.mostRelevant-dropdown-content>div{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.type-dropdown-content>div>label,
+.category-dropdown-content>div>label,
+.color-dropdown-content>div>label,
+.price-dropdown-content>div>label,
+.mostRelevant-dropdown-content>div>a{
+    font-size: 13px;
 }
