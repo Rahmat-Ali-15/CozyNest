@@ -267,7 +267,7 @@ export const navbar = () => {
         <nav class="navbar">
             <ul>
                 <li class="furniture">
-                    <a href="#">Furniture</a>
+                    <a href="../HTML/Furniture.html">Furniture</a>
 
                     <div class="furniture-popup">
 
