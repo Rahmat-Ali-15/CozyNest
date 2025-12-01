@@ -77,12 +77,20 @@ const fetchApi = async () => {
     let axis = Object.values(data.Furniture.main_product.axis).flat();
     let retreat = Object.values(data.Furniture.main_product.retreat).flat();
     let unwind = Object.values(data.Furniture.main_product.unwind).flat();
+    let walnut_storage = Object.values(data.Furniture.main_product.walnut_storage).flat();
+    let walnut_bookshelf = Object.values(data.Furniture.main_product.walnut_bookshelf).flat();
+    let bisou_chair = Object.values(data.Furniture.main_product.bisou_chair).flat();
+    let keane = Object.values(data.Furniture.main_product.keane).flat();
 
     // All use same function
     renderFurniture(lounge);
     renderFurniture(axis);
     renderFurniture(retreat);
     renderFurniture(unwind);
+    renderFurniture(walnut_storage);
+    renderFurniture(walnut_bookshelf);
+    renderFurniture(bisou_chair);
+    renderFurniture(keane);
 
   } catch (error) {
     console.log("🚀 ~ error:", error);
