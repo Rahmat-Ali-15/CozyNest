@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: 100%;
+  padding: 30px 160px;
+}
+.cart-content-section{
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+.cart-order-product-summry{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.cart-items-count{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cart-items-count>h1{
+    font-weight: 450;
+}
+.cart-items-count>span{
+    font-size: 24px;
+    opacity: 0.7;
+}
+.empty-cart-msg>p{
+    font-size: 14px;
+    opacity: 0.7;
+}
+.empty-cart-msg>p>a{
+    color: black;
+    text-decoration: underline;
+}
+.donation-container{
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.donation-container>img{
+    width: 240px;
+    height: 260px;
+}
+.donation-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.donation-message{
+    font-size: 14px;
+}
+.donation-price-btns{
+    display: flex;
+    gap: 20px;
+}
+.price-buttons{
+    padding: 7px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    background-color: #f0efed;
+    cursor: pointer;
+}
+.donation-add-btn>button{
+    padding: 7px 25px;
+    font-weight: 450;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+/* cart order payment summary */
+.cart-order-payment-summry{
+    width: 30%;
+}
+
+/* gift card */
+.gift-card-container{
+    width: 100%;
+    height: 100%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: #f0efed;
+}
+.gift-card-container>img{
+    width: 150px;
+    height: 100px;
+}
+.gift-card-heading{
+    text-align: center;
+    font-weight: 550;
+}
+.gift-card-details{
+    font-size: 14px;
+    text-align: center;
+}
+.gift-card-details>span{
+    color: red;
+    font-weight: 600;
+}
+.gift-card-links{
+    display: flex;
+    gap: 20px;
+}
+.gift-card-links>a{
+    color: black;
+    text-decoration: underline;
+}
+
+/* cart order summary box */
+.cart-order-summary-box{
+    border: 2px solid black;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.order-summary-heading{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.order-summary{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.order-summary-heading>.bi-bag-dash{
+    font-size: 20px;
+}
+.order-summary-title{
+    font-weight: 450;
+}
+.summary-box,
+.order-total,
+.promocode-div{
+    display: flex;
+    justify-content: space-between;
+}
+.summary-box>p:nth-child(2),
+.order-total>p{
+    font-weight: 550;
+}
+.order-total,
+.promocode-div{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+.checkout-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.term-condition>p{
+    font-size: 11px;
+}
+.term-condition>p>a{
+    color: black;
+    text-decoration: underline;
+}
+.checkout-btn>button{
+    padding: 13px 0;
+    font-weight: 550;
+    color: #fff;
+    border: none;
+    background-color: #007b00;
+    cursor: pointer;
+}
+.payment-method{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.payment-method> .box{
+    width: 50%;
+    padding: 7px 0;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+/* product details when added to the cart */
+.product-added-cart-container{
+    border: 1px solid red;
+}
