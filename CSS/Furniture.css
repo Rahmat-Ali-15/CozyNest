@@ -8,7 +8,7 @@
 main {
   width: 100%;
   height: 100%;
-  padding: 10px 60px;
+  padding: 10px 60px 60px 60px;
 }
 .largeVisNav-slider-wrapper {
   padding-top: 20px;
@@ -121,6 +121,7 @@ main {
 .filter-category,
 .filter-color,
 .filter-price,
+.filter-material,
 .mostRelevant-dropdown-content {
   position: relative;
 }
@@ -128,6 +129,7 @@ main {
 .category-dropdown-content,
 .color-dropdown-content,
 .price-dropdown-content,
+.material-dropdown-content,
 .mostRelevant-dropdown-content {
   width: 370px;
   height: 200px;
@@ -163,6 +165,7 @@ main {
 .category-dropdown-content > div,
 .color-dropdown-content > div,
 .price-dropdown-content > div,
+.material-dropdown-content>div,
 .mostRelevant-dropdown-content > div {
   display: flex;
   align-items: center;
@@ -172,6 +175,7 @@ main {
 .category-dropdown-content > div > label,
 .color-dropdown-content > div > label,
 .price-dropdown-content > div > label,
+.material-dropdown-content>div>label,
 .mostRelevant-dropdown-content > div > a {
   font-size: 13px;
 }
@@ -246,4 +250,122 @@ main {
 }
 .product-range-price>span{
   font-weight: 550;
+}
+
+/* view more products section */
+.view-more-products{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.view-more-products>p{
+  font-size: 14px;
+}
+.more-product-btn{
+  width: 25%;
+  padding: 7px 0;
+  font-size: 16px;
+  font-weight: 550;
+  color: #fff;
+  background-color: black;
+  cursor: pointer;
+}
+
+/* hero section */
+.hero-section{
+  width: 100%;
+  display: flex;
+  margin: 50px 0;
+}
+.hero-section-video{
+  height: 100%;
+  width: 50%;
+}
+.hero-section-video>a>video{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.design-desk{
+  width: 50%;
+}
+.design-desk{
+  background-image: url(../Utilities/img/design-desk.webp);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 150px;
+  gap: 25px;
+}
+.design-desk>h1{
+  font-size: 38px;
+
+}
+.design-desk>ul{
+  margin-left: 20px;
+}
+.design-desk>ul>li{
+  font-size: 19px;
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+.design-desk>ul>li>a{
+  color: black;
+}
+.book-appointment>button{
+  width: 75%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: black;
+  cursor: pointer;
+}
+.refresh>p{
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+/* hero section bestseller */
+.hero-bestseller{
+  width: 100%;
+}
+.heading-bestseller>h3{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.bestseller-cards{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+.bestseller-cards>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+.bestseller-cards>div>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.bestseller-cards>div>div>p,
+.bestseller-cards>div>div>i{
+  font-weight: 550;
+  font-size: 19px;
+}
+.bestseller-cards>div>img{
+  width: 100%;
 }
