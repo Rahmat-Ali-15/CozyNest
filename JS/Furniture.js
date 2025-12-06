@@ -294,48 +294,48 @@ const renderFurniture = (arr) => {
 //   }
 // });
 
-function setupDropdown(dropSelector) {
-    const dropBox = document.querySelector(dropSelector);
-    if (!dropBox) return;
+// function setupDropdown(dropSelector) {
+//     const dropBox = document.querySelector(dropSelector);
+//     if (!dropBox) return;
 
-    // use button if exists, else use the first div as click trigger
-    const toggleBtn = dropBox.querySelector("button") || dropBox.firstElementChild;
+//     // use button if exists, else use the first div as click trigger
+//     const toggleBtn = dropBox.querySelector("button") || dropBox.firstElementChild;
 
-    const dropdownContent = dropBox.querySelector("div[class$='dropdown-content']");
-    const iconDown = dropBox.querySelector(".bi-chevron-down");
-    const iconUp = dropBox.querySelector(".bi-chevron-up");
+//     const dropdownContent = dropBox.querySelector("div[class$='dropdown-content']");
+//     const iconDown = dropBox.querySelector(".bi-chevron-down");
+//     const iconUp = dropBox.querySelector(".bi-chevron-up");
 
-    if (!dropdownContent || !toggleBtn) return;
+//     if (!dropdownContent || !toggleBtn) return;
 
-    toggleBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
+//     toggleBtn.addEventListener("click", (e) => {
+//         e.stopPropagation();
 
-        // close other dropdowns
-        document.querySelectorAll(".filter-box, .dropdown-filter").forEach(box => {
-            if (box !== dropBox) {
-                const content = box.querySelector("div[class$='dropdown-content']");
-                const down = box.querySelector(".bi-chevron-down");
-                const up = box.querySelector(".bi-chevron-up");
+//         // close other dropdowns
+//         document.querySelectorAll(".filter-box, .dropdown-filter").forEach(box => {
+//             if (box !== dropBox) {
+//                 const content = box.querySelector("div[class$='dropdown-content']");
+//                 const down = box.querySelector(".bi-chevron-down");
+//                 const up = box.querySelector(".bi-chevron-up");
 
-                if (content) content.style.display = "none";
-                if (down) down.style.display = "inline-block";
-                if (up) up.style.display = "none";
-            }
-        });
+//                 if (content) content.style.display = "none";
+//                 if (down) down.style.display = "inline-block";
+//                 if (up) up.style.display = "none";
+//             }
+//         });
 
-        // Toggle this dropdown
-        const isOpen = dropdownContent.style.display === "grid";
-        dropdownContent.style.display = isOpen ? "none" : "grid";
+//         // Toggle this dropdown
+//         const isOpen = dropdownContent.style.display === "grid";
+//         dropdownContent.style.display = isOpen ? "none" : "grid";
 
-        if (iconDown) iconDown.style.display = isOpen ? "inline-block" : "none";
-        if (iconUp) iconUp.style.display = isOpen ? "none" : "inline-block";
-    });
-}
-setupDropdown(".filter-type");
-setupDropdown(".filter-category");
-setupDropdown(".filter-color");
-setupDropdown(".filter-price");
-setupDropdown(".filter-material");
+//         if (iconDown) iconDown.style.display = isOpen ? "inline-block" : "none";
+//         if (iconUp) iconUp.style.display = isOpen ? "none" : "inline-block";
+//     });
+// }
+// setupDropdown(".filter-type");
+// setupDropdown(".filter-category");
+// setupDropdown(".filter-color");
+// setupDropdown(".filter-price");
+// setupDropdown(".filter-material");
 
 // const filterDropdownData = {
 //   type: [
