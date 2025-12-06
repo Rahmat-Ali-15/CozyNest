@@ -31,10 +31,79 @@
                     <p>Are you missing itmes in your cart?</p>
                     <p><a href="#">Sign-in</a> to see items you may have added using another computer or device.</p>
                 </div>
+
+                <!-- Product details when added to the cart -->
+                <section class="product-added-cart-container">
+                    <div class="top-line-item-container">
+                        <div class="items-details">
+                            <h2 class="item-title">Lounge Deep 83" Sofa</h2>
+                        </div>
+                        <div class="items-shop-bar">
+                            <div class="price-qty">
+                                <div class="item-qty">
+                                    <button class="qty-decrease-btn" onclick="decreaseItem()">-</button>
+                                    <input type="text" name="itme-qty" class="qty-input">
+                                    <button class="qty-increase-btn" onclick="increaseItem()">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <p class="price">₹100</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-total">
+                            <p>₹1,200.00</p>
+                        </div>
+                    </div>
+                    <div class="bottom-line-item-container">
+                        <div class="item-img">
+                            <img src="../Utilities/img/Drawer-Dresser.jpg" alt="item img">
+                        </div>
+                        <div class="product-availability">
+                            <div class="ship-details">
+                                <div>
+                                    <input type="radio" id="ship" name="delivery">
+                                    <label for="ship">Ship</label>
+                                </div>
+                                <p>In stock and ready for delivery to PIN Code 843113</p>
+                                <p>Shipping: <a href="#">Local In-Home</a></p>
+                                <p>Arrives: <a href="#">7–14 business days</a></p>
+                                <div class="pin-code">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <p>PIN Code: 843113</p>
+                                </div>
+                            </div>
+                            <div class="warehouse-pickup">
+                                <div>
+                                    <input type="radio" id="warehouse" name="delivery">
+                                    <label for="warehouse">Free Warehouse Pickup</label>
+                                </div>
+                                <p>Pay no delivery fee. <a href="#">Learn more</a></p>
+                                <a href="#">Select Warehouse</a>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <div class="remove">
+                                <i class="bi bi-x-lg"></i>
+                                <p>Remove</p>
+                            </div>
+                            <div class="save-for-later">
+                                <i class="bi bi-download"></i>
+                                <p>Save for Later</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-msg">
+                        <i class="bi bi-gift"></i>
+                        <span>If this order contains a gift, you will be able to add a gift message and gift box to
+                            eligible items during checkout. <a href="#">Learn More.</a></span>
+                    </div>
+                </section>
+
+
                 <div class="donation-container">
-                    
-                        <img src="../Utilities/img/Donation_img.png" alt="Donation_img">
-                    
+
+                    <img src="../Utilities/img/Donation_img.png" alt="Donation_img">
+
                     <div class="donation-content">
                         <h2 class="donation-title">Feeding India</h2>
                         <p class="donation-message">
@@ -69,7 +138,8 @@
                     <p class="gift-card-heading">You could win a ₹10L gift card!^</p>
                     <p class="gift-card-details">Every purchase of ₹5000 or more with your CozyNest Visa Signature® Card
                         earns you an entry for a chance to win. See terms for additional entry methods.^</p>
-                    <p class="gift-card-details">Plus, earn <span>10%</span> back in Reward Dollars on this purchase. Or choose
+                    <p class="gift-card-details">Plus, earn <span>10%</span> back in Reward Dollars on this purchase. Or
+                        choose
                         flexible financing on eligible purchases. *Terms apply.</p>
                     <div class="gift-card-links">
                         <a href="#">Learn More</a>
@@ -78,7 +148,7 @@
                 </div>
 
                 <!-- carr-order symmary box -->
-                <!-- <div class="cart-order-summary-box">
+                <div class="cart-order-summary-box">
                     <div class="order-summary-heading">
                         <i class="bi bi-bag-dash"></i>
                         <h3 class="order-summary-title">Cart Summary</h3>
@@ -107,7 +177,8 @@
                     </div>
                     <div class="checkout-btn">
                         <div class="term-condition">
-                            <p>By checking out, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a></p>
+                            <p>By checking out, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy
+                                    Policy.</a></p>
                         </div>
                         <button>CHECKOUT NOW</button>
                     </div>
@@ -119,75 +190,17 @@
                             <p>Paytm</p>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </section>
-        
-        <!-- Product details when added to the cart -->
-         <section class="product-added-cart-container">
-            <div class="top-line-item-container">
-                <div class="items-details">
-                    <h2 class="item-title">Sofa</h2>
-                </div>
-                <div class="items-shop-bar">
-                    <div class="price-qty-total">
-                        <div class="item-qty">
-                            <button class="qty-decrease-btn">-</button>
-                            <input type="text" name="itme-qty" value="2">
-                            <button class="qty-increase-btn">+</button>
-                        </div>
-                        <div class="item-price">
-                            <p class="price">₹100</p>
-                        </div>
-                        <div class="item-total">₹200</div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-line-item-container">
-                <div class="item-img">
-                    <img src="" alt="item img">
-                </div>
-                <div class="product-availability">
-                    <div class="ship-details">
-                        <div>
-                            <i class="bi bi-record-circle-fill"></i>
-                            <h3>Ship</h3>
-                        </div>
-                        <p>In stock and ready for delivery to PIN Code 843113</p>
-                        <p>Shipping: <a href="#">Local In-Home</a></p>
-                        <p>Arrives: <a href="#">7–14 business days</a></p>
-                        <div class="pin-code">
-                            <i class="bi bi-geo-alt"></i>
-                            <p>PIN Code: 843113</p>
-                        </div>
-                    </div>
-                    <div class="warehouse-pickup">
-                        <div>
-                            <i class="bi bi-circle"></i>
-                            <h3>Free Warehouse Pickup</h3>
-                        </div>
-                        <p>Pay no delivery fee. <a href="#">Learn more</a></p>
-                        <a href="#">Select Warehouse</a>
-                    </div>
-                </div>
-                <div class="item-actions">
-                    <div class="remove">
-                        <i class="bi bi-x-lg"></i>
-                        <p>Remove</p>
-                    </div>
-                    <div class="save-for-later">
-                        <i class="bi bi-download"></i>
-                        <p>Save for Later</p>
-                    </div>
-                </div>
-            </div>
-         </section>
+
+
     </main>
 
     <footer></footer>
 
     <script type="module">
-        import {navbar, footer, navFooterStyle, offerBanner} from "../JS/Navbar_Footer.js";
+        import { navbar, footer, navFooterStyle, offerBanner } from "../JS/Navbar_Footer.js";
 
         document.querySelector("header").innerHTML = navbar();
         document.querySelector(".banner").innerHTML = offerBanner();
