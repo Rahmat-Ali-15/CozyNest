@@ -202,7 +202,8 @@ main {
     width: 100%;
   }
 }
-.arrival-arrow {
+.arrival-arrow,
+.hero-arrow {
   width: 100%;
   padding: 0 60px;
   display: flex;
@@ -213,7 +214,9 @@ main {
   bottom: 50%;
 }
 .arrival-arrow > .fa-angle-left,
-.arrival-arrow > .fa-angle-right {
+.hero-arrow > .fa-angle-left,
+.arrival-arrow > .fa-angle-right,
+.hero-arrow > .fa-angle-right {
   width: 50px;
   height: 50px;
   display: flex;
@@ -384,6 +387,7 @@ main {
 
 /* hero-card part start */
 .hero-card-container {
+  position: relative;
   width: 100%;
   padding-bottom: 30px;
   display: flex;
