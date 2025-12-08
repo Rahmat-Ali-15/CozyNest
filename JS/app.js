@@ -65,8 +65,8 @@ let arrivals = [
   },
 ];
 
+let arrivals_imgs = document.querySelector(".arrivals-imgs-container");
 function renderArrivalImg(arrivals) {
-  let arrivals_imgs = document.querySelector(".arrivals-imgs-container");
 
   arrivals.forEach((val) => {
     let div = document.createElement("div");
@@ -87,6 +87,59 @@ function renderArrivalImg(arrivals) {
   });
 }
 renderArrivalImg(arrivals);
+
+let arrivalLeftBtn = document.querySelector(".arrival-arrow>.fa-angle-left");
+let arrivalRightBtn = document.querySelector(".arrival-arrow>.fa-angle-right");
+
+// Onclicking scroll behaviour
+arrivalLeftBtn.addEventListener("click", () => {
+  arrivals_imgs.scrollBy({
+    left: -430,
+    behavior: "smooth"
+  });
+});
+
+arrivalRightBtn.addEventListener("click", () => {
+  arrivals_imgs.scrollBy({
+    left: 430,
+    behavior: "smooth"
+  });
+});
+
+// Auto Scroll behaviour
+let scroll;
+
+const arrivalAutoScroll = () => {
+  scroll = setInterval(() => {
+    const maxScroll =
+      arrivals_imgs.scrollWidth - arrivals_imgs.clientWidth;
+
+    if (arrivals_imgs.scrollLeft >= maxScroll) {
+      arrivals_imgs.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      arrivals_imgs.scrollBy({
+        left: 430,
+        behavior: "smooth",
+      });
+    }
+  }, 2000);
+};
+
+// start initially
+arrivalAutoScroll();
+
+// Hover pe pause
+arrivals_imgs.addEventListener("mouseenter", () => {
+  clearInterval(scroll);
+});
+
+// Hover hatao to wapas start
+arrivals_imgs.addEventListener("mouseleave", () => {
+  arrivalAutoScroll();
+});
 
 // video play start
 
@@ -185,8 +238,8 @@ let heroCard = [
   },
 ];
 
+let HeroCardContainer = document.querySelector(".hero-card-content");
 const renderHeroCard = (heroCard) => {
-  let HeroCardContainer = document.querySelector(".hero-card-content");
 
   heroCard.forEach((val) => {
     let mainDiv = document.createElement("div");
@@ -216,6 +269,60 @@ const renderHeroCard = (heroCard) => {
 
 renderHeroCard(heroCard);
 
+// Onclicking scroll behaviour
+let heroLeftBtn = document.querySelector(".hero-arrow>.fa-angle-left");
+let heroRightBtn = document.querySelector(".hero-arrow>.fa-angle-right");
+
+heroLeftBtn.addEventListener("click", () => {
+  HeroCardContainer.scrollBy({
+    left: -430,
+    behavior: "smooth"
+  });
+});
+
+heroRightBtn.addEventListener("click", () => {
+  HeroCardContainer.scrollBy({
+    left: 430,
+    behavior: "smooth"
+  });
+});
+
+// Auto Scroll behaviour
+let autoScroll;
+
+const heroCardAutoScroll = () => {
+  autoScroll = setInterval(() => {
+    const maxScroll =
+      HeroCardContainer.scrollWidth - HeroCardContainer.clientWidth;
+
+    if (HeroCardContainer.scrollLeft >= maxScroll) {
+      HeroCardContainer.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      HeroCardContainer.scrollBy({
+        left: 430,
+        behavior: "smooth",
+      });
+    }
+  }, 2000);
+};
+
+// start initially
+heroCardAutoScroll();
+
+// Hover pe pause
+HeroCardContainer.addEventListener("mouseenter", () => {
+  clearInterval(autoScroll);
+});
+
+// Hover hatao to wapas start
+HeroCardContainer.addEventListener("mouseleave", () => {
+  heroCardAutoScroll();
+});
+
+
 // Hosting Card
 
 let hostingCard = [
@@ -241,8 +348,8 @@ let hostingCard = [
   },
 ];
 
+let hostingContent = document.querySelector(".hosting-content");
 const renderHostingCard = (hostingCard) => {
-  let hostingContent = document.querySelector(".hosting-content");
 
   hostingCard.forEach((val) => {
     let mainDiv = document.createElement("div");
@@ -272,6 +379,61 @@ const renderHostingCard = (hostingCard) => {
 };
 
 renderHostingCard(hostingCard);
+
+
+// Onclicking scroll behaviour
+let hostingLeftBtn = document.querySelector(".hosting-arrow>.fa-angle-left");
+let hostingRightBtn = document.querySelector(".hosting-arrow>.fa-angle-right");
+
+hostingLeftBtn.addEventListener("click", () => {
+  hostingContent.scrollBy({
+    left: -430,
+    behavior: "smooth"
+  });
+});
+
+hostingRightBtn.addEventListener("click", () => {
+  hostingContent.scrollBy({
+    left: 430,
+    behavior: "smooth"
+  });
+});
+
+// Auto Scroll behaviour
+let hostingScroll;
+
+const hostingAutoScroll = () => {
+  hostingScroll = setInterval(() => {
+    const maxScroll =
+      hostingContent.scrollWidth - hostingContent.clientWidth;
+
+    if (hostingContent.scrollLeft >= maxScroll) {
+      hostingContent.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      hostingContent.scrollBy({
+        left: 430,
+        behavior: "smooth",
+      });
+    }
+  }, 2000);
+};
+
+// start initially
+hostingAutoScroll();
+
+// Hover pe pause
+hostingContent.addEventListener("mouseenter", () => {
+  clearInterval(hostingScroll);
+});
+
+// Hover hatao to wapas start
+hostingContent.addEventListener("mouseleave", () => {
+  heroCardAutoScroll();
+});
+
 
 // Autumn decorate section
 
@@ -306,8 +468,8 @@ let autumnCard = [
   },
 ];
 
+let autumnContent = document.querySelector(".autumn-content");
 const renderAutumnCard = (autumnCard) => {
-  let autumnContent = document.querySelector(".autumn-content");
 
   autumnCard.forEach((val) => {
     let mainDiv = document.createElement("div");
@@ -337,6 +499,62 @@ const renderAutumnCard = (autumnCard) => {
 };
 
 renderAutumnCard(autumnCard);
+
+
+// Onclicking scroll behaviour
+let autumnLeftBtn = document.querySelector(".autumn-arrow>.fa-angle-left");
+let autumnRightBtn = document.querySelector(".autumn-arrow>.fa-angle-right");
+
+autumnLeftBtn.addEventListener("click", () => {
+  autumnContent.scrollBy({
+    left: -430,
+    behavior: "smooth"
+  });
+});
+
+autumnRightBtn.addEventListener("click", () => {
+  autumnContent.scrollBy({
+    left: 430,
+    behavior: "smooth"
+  });
+});
+
+// Auto Scroll behaviour
+let autumnScroll;
+
+const autumnAutoScroll = () => {
+  autumnScroll = setInterval(() => {
+    const maxScroll =
+      autumnContent.scrollWidth - autumnContent.clientWidth;
+
+    if (autumnContent.scrollLeft >= maxScroll) {
+      autumnContent.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      autumnContent.scrollBy({
+        left: 430,
+        behavior: "smooth",
+      });
+    }
+  }, 2000);
+};
+
+// start initially
+autumnAutoScroll();
+
+// Hover pe pause
+hostingContent.addEventListener("mouseenter", () => {
+  clearInterval(autumnScroll);
+});
+
+// Hover hatao to wapas start
+hostingContent.addEventListener("mouseleave", () => {
+  autumnAutoScroll();
+});
+
+
 
 // shopping ways section
 
@@ -368,10 +586,10 @@ let shoppingCard = [
   },
 ];
 
+let shoppingCardContainer = document.querySelector(
+  ".shopping-ways-card-container"
+);
 const shoppingCardRender = (shoppingCard) => {
-  let shoppingCardContainer = document.querySelector(
-    ".shopping-ways-card-container"
-  );
 
   shoppingCard.forEach((el) => {
     let mainDiv = document.createElement("div");
@@ -415,6 +633,61 @@ const shoppingCardRender = (shoppingCard) => {
 };
 
 shoppingCardRender(shoppingCard);
+
+
+// Onclicking scroll behaviour
+let shoppingLeftBtn = document.querySelector(".shopping-arrow>.fa-angle-left");
+let shoppingRightBtn = document.querySelector(".shopping-arrow>.fa-angle-right");
+
+shoppingLeftBtn.addEventListener("click", () => {
+  shoppingCardContainer.scrollBy({
+    left: -430,
+    behavior: "smooth"
+  });
+});
+
+shoppingRightBtn.addEventListener("click", () => {
+  shoppingCardContainer.scrollBy({
+    left: 430,
+    behavior: "smooth"
+  });
+});
+
+// Auto Scroll behaviour
+let shoppingScroll;
+
+const shoppingAutoScroll = () => {
+  shoppingScroll = setInterval(() => {
+    const maxScroll =
+      shoppingCardContainer.scrollWidth - shoppingCardContainer.clientWidth;
+
+    if (shoppingCardContainer.scrollLeft >= maxScroll) {
+      shoppingCardContainer.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      shoppingCardContainer.scrollBy({
+        left: 430,
+        behavior: "smooth",
+      });
+    }
+  }, 2000);
+};
+
+// start initially
+shoppingAutoScroll();
+
+// Hover pe pause
+shoppingCardContainer.addEventListener("mouseenter", () => {
+  clearInterval(shoppingScroll);
+});
+
+// Hover hatao to wapas start
+shoppingCardContainer.addEventListener("mouseleave", () => {
+  shoppingAutoScroll();
+});
+
 
 // Carousel
 
