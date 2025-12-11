@@ -1,7 +1,6 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-
 // const fetchApi = async () => {
 //   let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
 
