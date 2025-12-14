@@ -29,4 +29,8 @@ const decreaseItem = () => {
     increaseBtn.disabled = false;
   }
 };
+
+increaseBtn.addEventListener("click", increaseItem);
+decreaseBtn.addEventListener("click", decreaseItem);
+
 window.onload = decreaseItem;
