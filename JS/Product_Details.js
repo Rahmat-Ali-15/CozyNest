@@ -135,6 +135,7 @@ const increaseQty = () => {
   if (Number(productQtyInput.value) >= 10) {
     increaseBtn.disabled = true;
   }
+  handleAmount();
 };
 const decreaseQty = () => {
   if (Number(productQtyInput.value) <= 0) {
@@ -148,7 +149,23 @@ const decreaseQty = () => {
   if (Number(productQtyInput.value) < 10) {
     increaseBtn.disabled = false;
   }
+  handleAmount();
 };
 
 increaseBtn.addEventListener("click", increaseQty);
 decreaseBtn.addEventListener("click", decreaseQty);
+
+const handleAmount = () => {
+  let pricePara = document.querySelector(".price-para");
+  let qty = productQtyInput.value;
+  let price = 1199;
+  let totalPrice = Number(qty) * Number(price);
+
+  pricePara.innerText =
+    "$" +
+    totalPrice.toLocaleString("en-IN", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+};
+window.onload = handleAmount;
