@@ -14,6 +14,7 @@ const increaseItem = () => {
   if (Number(itemInput.value) >= 10) {
     increaseBtn.disabled = true;
   }
+  handleAmount()
 };
 const decreaseItem = () => {
   if (Number(itemInput.value) <= 0) {
@@ -28,9 +29,75 @@ const decreaseItem = () => {
   if (Number(itemInput.value) < 10) {
     increaseBtn.disabled = false;
   }
+  handleAmount()
 };
 
 increaseBtn.addEventListener("click", increaseItem);
 decreaseBtn.addEventListener("click", decreaseItem);
 
-window.onload = decreaseItem;
+let itemPricePara = document.querySelector(".item-total-para");
+let itemRate = document.querySelector(".price");
+let itemQty = itemInput.value;
+let itemPrice = 1100;
+itemRate.innerText = "₹" + itemPrice;
+let totalItemPrice = Number(itemQty) * Number(itemPrice);
+const handleAmount = () => {
+
+  itemPricePara.innerText = "₹" + totalItemPrice.toLocaleString("en-IN", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+}
+
+const functions = () => {
+  let cardOrderSummaryBox = document.querySelector(".cart-order-summary-box");
+  cardOrderSummaryBox.innerHTML = `
+    <div class="order-summary-heading">
+                        <i class="bi bi-bag-dash"></i>
+                        <h3 class="order-summary-title">Cart Summary</h3>
+                    </div>
+                    <div class="order-summary">
+                        <div class="item-price summary-box">
+                            <p>Merchandise:</p>
+                            <p name="amount">₹ ${itemPrice}.00</p>
+                        </div>
+                        <div class="shipping-details summary-box">
+                            <p>Shipping:</p>
+                            <p name="amount">₹100.00</p>
+                        </div>
+                        <div class="tax-details summary-box">
+                            <p>Tax:</p>
+                            <p name="amount">₹210.00</p>
+                        </div>
+                    </div>
+                    <div class="order-total">
+                        <p name="total-amount">Order Total:</p>
+                        <p name="total-amt">₹2410.00</p>
+                    </div>
+                    <div class="promocode-div">
+                        <p>Promo Code</p>
+                        <p>+</p>
+                    </div>
+                    <div class="checkout-btn">
+                        <div class="term-condition">
+                            <p>By checking out, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy
+                                    Policy.</a></p>
+                        </div>
+                        <button>CHECKOUT NOW</button>
+                    </div>
+                    <div class="payment-method">
+                        <div class="phone-pay box">
+                            <p>PhonePay</p>
+                        </div>
+                        <div class="paytm box">
+                            <p>Paytm</p>
+                        </div>
+                    </div>
+  `
+}
+
+window.onload = () => {
+  decreaseItem();
+  handleAmount();
+  functions()
+}
