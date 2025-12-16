@@ -55,7 +55,8 @@ const handleAmount = () => {
       maximumFractionDigits: 2,
     });
 
-  let merchandiseAmt =
+  // Cart summary
+  let totalItemAmt =
     "₹" +
     totalItemPrice.toLocaleString("en-IN", {
       minimumFractionDigits: 2,
@@ -93,15 +94,15 @@ const handleAmount = () => {
     </div>
     <div class="order-summary">
         <div class="item-price summary-box">
-            <p>Merchandise:</p>
-            <p name="amount">${merchandiseAmt}</p>
+            <p>Total Item Price :</p>
+            <p name="amount">${totalItemAmt}</p>
         </div>
         <div class="shipping-details summary-box">
-            <p>Shipping:</p>
+            <p>Shipping :</p>
             <p name="amount">${shipping}</p>
         </div>
         <div class="tax-details summary-box">
-            <p>Tax:</p>
+            <p>Tax :</p>
             <p name="amount">${tax}</p>
         </div>
     </div>
