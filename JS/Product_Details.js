@@ -1,124 +1,61 @@
-// import { placeholder } from "../JS/Navbar_Footer.js";
-// placeholder();
-
-// const fetchApi = async () => {
-//   let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
-//   try {
-//     let res = await fetch(api);
-//     let data = await res.json();
-//     renderThumbnail(data.Furniture.main_product.lounge[0].thumbnail_img);
-//     console.log("🚀 ~ data:", data.Furniture.main_product.lounge[0].thumbnail_img);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// fetchApi();
-
-// const renderThumbnail = (val) => {
-//   let thumbnailContainer = document.querySelector(".left-thumbnail-container");
-
-//   let galleryImgContainer = document.querySelector(".gallery-img-container")
-
-//   val.map((el) => {
-//     let thumbImgDiv = document.createElement("div");
-//     thumbImgDiv.className = "thumb-img-div"
-//     let imgs = document.createElement("img");
-//     imgs.src = el.img;
-
-//     thumbImgDiv.append(imgs)
-//     thumbnailContainer.append(thumbImgDiv);
-//   });
-
-//   val.map((el) => {
-//     let galleryImgDiv = document.createElement("div");
-//     let imgs = document.createElement("img");
-//     imgs.src = el.img;
-
-//     galleryImgDiv.append(imgs)
-//     galleryImgContainer.append(galleryImgDiv);
-//   });
-// };
-
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-const fetchApi = async () => {
-  let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
+let productDataStorage =
+  JSON.parse(localStorage.getItem("product_page_data")) || [];
+console.log("🚀 ~ productDataStorage:", productDataStorage);
 
-  let loading = document.querySelector(".loading");
-
-  try {
-    loading.style.display = "block";
-    let res = await fetch(api);
-    let data = await res.json();
-
-    renderThumbnail(data.Furniture.main_product.lounge[0].thumbnail_img);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    loading.style.display = "none";
-  }
-};
-
-fetchApi();
-
-const renderThumbnail = (val) => {
+const renderProductDetails = (val) => {
   let thumbnailContainer = document.querySelector(".left-thumbnail-container");
   let galleryImgContainer = document.querySelector(".gallery-img-container");
 
   thumbnailContainer.innerHTML = "";
   galleryImgContainer.innerHTML = "";
+  let galleryImg;
 
-  // FIRST LOOP → thumbnails
-  val.map((el, index) => {
-    let thumbImgDiv = document.createElement("div");
-    thumbImgDiv.className = "thumb-img-div";
-
-    let img = document.createElement("img");
-    img.src = el.img;
-
-    if (index === 0) {
-      if (index === 0) {
-        thumbImgDiv.classList.add("active");
-      }
-    }
-
-    thumbImgDiv.append(img);
-    thumbnailContainer.append(thumbImgDiv);
-
-    // click logic yahin attach
-    thumbImgDiv.addEventListener("click", () => {
-      let allGalleryImgs =
-        galleryImgContainer.querySelectorAll(".gallery-img-div");
-
-      document.querySelectorAll(".thumb-img-div").forEach((div) => {
-        div.classList.remove("active");
-      });
-
-      thumbImgDiv.classList.add("active");
-
-      allGalleryImgs.forEach((div, i) => {
-        div.style.display = i === index ? "inline-block" : "none";
-      });
-    });
-  });
-
-  // SECOND LOOP → gallery images
-  val.map((el, index) => {
+  // Gallery img
+  if (productDataStorage.selectedImage) {
     let galleryImgDiv = document.createElement("div");
     galleryImgDiv.className = "gallery-img-div";
 
-    let img = document.createElement("img");
-    img.src = el.img;
+    // let img = document.createElement("img");
+    // img.src = productDataStorage.selectedImage;
 
-    let caption = document.createElement("p");
+    galleryImg = document.createElement("img");
+    galleryImg.src = productDataStorage.selectedImage;
 
-    // only first image visible initially
-    galleryImgDiv.style.display = index === 0 ? "block" : "none";
+    // // only first image visible initially
+    // galleryImgDiv.style.display = index === 0 ? "block" : "none";
 
-    galleryImgDiv.append(img);
+    galleryImgDiv.append(galleryImg);
     galleryImgContainer.append(galleryImgDiv);
+  }
+
+  // thumbnail img
+  productDataStorage.thumb_img &&
+    productDataStorage.thumb_img.forEach((el) => {
+      let thumbImgDiv = document.createElement("div");
+      thumbImgDiv.className = "thumb-img-div";
+
+      let img = document.createElement("img");
+      img.src = el.img;
+
+      img.addEventListener("click", () => {
+        galleryImg.src = img.src;
+      });
+
+      thumbImgDiv.append(img);
+      thumbnailContainer.append(thumbImgDiv);
+    });
+
+  let price = document.querySelector(".product-price");
+  price.innerText = productDataStorage.price.toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   });
+
+  let productName = document.querySelector(".product-name");
+  productName.innerText = productDataStorage.caption;
 };
 
 // Product Qty counter
@@ -158,7 +95,7 @@ decreaseBtn.addEventListener("click", decreaseQty);
 const handleAmount = () => {
   let pricePara = document.querySelector(".price-para");
   let qty = productQtyInput.value;
-  let price = 1199;
+  let price = 2199;
   let totalPrice = Number(qty) * Number(price);
 
   pricePara.innerText =
@@ -168,4 +105,9 @@ const handleAmount = () => {
       maximumFractionDigits: 2,
     });
 };
-window.onload = handleAmount;
+// window.onload = handleAmount;
+
+window.onload = () => {
+  handleAmount();
+  renderProductDetails();
+};
