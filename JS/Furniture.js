@@ -114,6 +114,17 @@ const renderFurniture = (arr) => {
     // Default: show only first big image
     bigImgs.forEach((img, i) => {
       img.style.display = i === 0 ? "block" : "none";
+      img.addEventListener("click", () => {
+          let obj = {
+          selectedImage: img.src,
+          price: el.price,
+          caption: el.caption,
+          thumb_img: el.thumbnail_img
+        };
+        localStorage.setItem("product_page_data", JSON.stringify(obj));
+        window.location = "../HTML/Product_Details.html"
+        console.log("🚀 ~ obj:", obj);
+      });
     });
 
     // On clicking colorbar → switch image
@@ -126,7 +137,6 @@ const renderFurniture = (arr) => {
     });
   });
 };
-
 
 window.onload = () => {
   fetchApi();
