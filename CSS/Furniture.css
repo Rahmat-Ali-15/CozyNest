@@ -219,6 +219,7 @@ main {
 }
 .product-img>img{
     width: 100%;
+    cursor: pointer;
 }
 .product-details{
   display: flex;
