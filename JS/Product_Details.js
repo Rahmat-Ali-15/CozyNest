@@ -1,8 +1,7 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-let productDataStorage =
-  JSON.parse(localStorage.getItem("product_page_data")) || [];
+let productDataStorage = JSON.parse(localStorage.getItem("product_page_data")) || [];
 console.log("🚀 ~ productDataStorage:", productDataStorage);
 
 const renderProductDetails = (val) => {
@@ -18,14 +17,8 @@ const renderProductDetails = (val) => {
     let galleryImgDiv = document.createElement("div");
     galleryImgDiv.className = "gallery-img-div";
 
-    // let img = document.createElement("img");
-    // img.src = productDataStorage.selectedImage;
-
     galleryImg = document.createElement("img");
     galleryImg.src = productDataStorage.selectedImage;
-
-    // // only first image visible initially
-    // galleryImgDiv.style.display = index === 0 ? "block" : "none";
 
     galleryImgDiv.append(galleryImg);
     galleryImgContainer.append(galleryImgDiv);
@@ -63,8 +56,8 @@ let increaseBtn = document.querySelector(".increase-qty");
 let decreaseBtn = document.querySelector(".decrease-qty");
 let productQtyInput = document.querySelector(".product-qty-input");
 
-productQtyInput.value = 0;
-decreaseBtn.disabled = true;
+productQtyInput.value = 1;
+// decreaseBtn.disabled = true;
 
 const increaseQty = () => {
   productQtyInput.value = Number(productQtyInput.value) + 1;
@@ -95,19 +88,39 @@ decreaseBtn.addEventListener("click", decreaseQty);
 const handleAmount = () => {
   let pricePara = document.querySelector(".price-para");
   let qty = productQtyInput.value;
-  let price = 2199;
+  let price = productDataStorage.price;
   let totalPrice = Number(qty) * Number(price);
 
   pricePara.innerText =
-    "$" +
+    "₹ " +
     totalPrice.toLocaleString("en-IN", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
 };
-// window.onload = handleAmount;
+
+let cartItemsListStorage = JSON.parse(localStorage.getItem("cartItemsData")) || []
+
+const addToCart = () => {
+    let cartItems = {
+      title: productDataStorage.caption,
+      price: productDataStorage.price,
+      itemImg: productDataStorage.selectedImage
+    }
+    cartItemsListStorage.push(cartItems);
+    localStorage.setItem("cartItemsData", JSON.stringify(cartItemsListStorage));
+    
+    // console.log("🚀 ~ cartItemsListStorage:", cartItemsListStorage);
+
+}
+
 
 window.onload = () => {
   handleAmount();
   renderProductDetails();
+  let addToCartBtn = document.querySelector(".add-to-cart-btn");
+  addToCartBtn.addEventListener("click",()=> {
+    addToCart();
+    window.location = "../HTML/Cart.html"
+  });
 };
