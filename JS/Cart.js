@@ -1,20 +1,38 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-let productDataStorage = JSON.parse(localStorage.getItem("product_page_data")) || [];
+let productDataStorage =
+  JSON.parse(localStorage.getItem("product_page_data")) || [];
 console.log("🚀 ~ productDataStorage:", productDataStorage);
 
-let cartItemsListStorage = JSON.parse(localStorage.getItem("cartItemsData")) || []
+let cartItemsListStorage =
+  JSON.parse(localStorage.getItem("cartItemsData")) || [];
 console.log("🚀 ~ cartItemsListStorage:", cartItemsListStorage);
 
-
+let totalItemsInCart = document.querySelector(".total-items-in-cart");
 
 const apendCartItems = () => {
-  let productAddedCartContainer = document.querySelector(".product-added-cart-container");
-  
-  cartItemsListStorage.forEach((el)=> {
+  let productAddedCartContainer = document.querySelector(
+    ".product-added-cart-container"
+  );
+  productAddedCartContainer.innerHTML = "";
+
+   totalItemsInCart.innerText = cartItemsListStorage.length;
+
+  // ✅ empty cart check
+  if (cartItemsListStorage.length === 0) {
+    productAddedCartContainer.innerHTML = `
+      <h2 style="text-align:center;margin-top:40px;">
+        🛒 No item is present
+      </h2>
+    `;
+    handleAmount()
+    return;
+  }
+
+  cartItemsListStorage.forEach((el) => {
     let cartItemsContentDiv = document.createElement("div");
-    cartItemsContentDiv.className = "cart-items-content-div"
+    cartItemsContentDiv.className = "cart-items-content-div";
     cartItemsContentDiv.innerHTML = `
 
           <div class="top-line-item-container">
@@ -67,7 +85,7 @@ const apendCartItems = () => {
               <div class="item-actions">
                   <div class="remove">
                       <i class="bi bi-x-lg"></i>
-                      <p>Remove</p>
+                      <p class ="remove-item-btn">Remove</p>
                   </div>
                   <div class="save-for-later">
                       <i class="bi bi-download"></i>
@@ -79,12 +97,21 @@ const apendCartItems = () => {
               <i class="bi bi-gift"></i>
               <span>If this order contains a gift, you will be able to add a gift message and gift box to eligible items during checkout. <a href="#">Learn More.</a></span>
           </div>
-    `
-    productAddedCartContainer.append(cartItemsContentDiv)
-  })
-  
-}
-apendCartItems()
+    `;
+
+    let removeItemBtn = cartItemsContentDiv.querySelector(".remove");
+    if (removeItemBtn) {
+      removeItemBtn.addEventListener("click", () => {
+        cartItemsListStorage = cartItemsListStorage.filter((item) => item.id != el.id);
+        localStorage.setItem("cartItemsData", JSON.stringify(cartItemsListStorage));
+        apendCartItems()
+      });
+    }
+
+    productAddedCartContainer.append(cartItemsContentDiv);
+  });
+};
+apendCartItems();
 
 // Increase or Decrease product quantity
 let qtyInput = document.querySelector(".qty-input");
@@ -93,13 +120,18 @@ let decreaseBtn = document.querySelector(".qty-decrease-btn");
 qtyInput.value = 1;
 
 qtyInput.addEventListener("change", (e) => {
-  if(e.target.value > 10){
+  if (e.target.value > 10) {
     alert("Oops! You can add up to 10 products only 😊");
-    e.target.value = 1
+    e.target.value = 1;
+    return;
+  }
+  else if(e.target.value < 0){
+    alert("Oops! Quantity can’t be less than 1. Please add at least one item 🙂");
+    e.target.value = 1;
     return
   }
-  handleAmount(e.target.value)
-})
+  handleAmount(e.target.value);
+});
 
 const increaseItem = () => {
   qtyInput.value = Number(qtyInput.value) + 1;
@@ -129,13 +161,6 @@ increaseBtn.addEventListener("click", increaseItem);
 decreaseBtn.addEventListener("click", decreaseItem);
 
 const handleAmount = () => {
-  // let itemTitle = document.querySelector(".item-title");
-  // let productCartImg = document.querySelector(".product-img");
-
-  // itemTitle.innerText = productDataStorage.caption
-  // productCartImg.src = productDataStorage.selectedImage;
-
-
   let itemPricePara = document.querySelector(".item-total-para");
   let itemRate = document.querySelector(".price");
   let itemQty = Number(qtyInput.value);
@@ -230,8 +255,6 @@ const handleAmount = () => {
     </div>
   `;
 };
-
-
 
 window.onload = () => {
   handleAmount();
