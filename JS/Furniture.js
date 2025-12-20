@@ -88,6 +88,14 @@ const renderFurniture = (arr) => {
       )
       .join("");
 
+    let productPrice =
+      "₹ " +
+      Number(el.price).toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    console.log("🚀 ~ productPrice:", productPrice);
+
     productCardContent.innerHTML = `
       <ul>
           <li class="product-card">
@@ -97,7 +105,7 @@ const renderFurniture = (arr) => {
                   <div class="product-details-description">
                       <div class="product-name">${el.caption}</div>
                       <div class="product-range-price">
-                          <span>${el.price}</span>
+                          <span>${productPrice}</span>
                       </div>
                   </div>
               </div>
@@ -115,14 +123,15 @@ const renderFurniture = (arr) => {
     bigImgs.forEach((img, i) => {
       img.style.display = i === 0 ? "block" : "none";
       img.addEventListener("click", () => {
-          let obj = {
+        let obj = {
+          id: el.id,
           selectedImage: img.src,
           price: el.price,
           caption: el.caption,
-          thumb_img: el.thumbnail_img
+          thumb_img: el.thumbnail_img,
         };
         localStorage.setItem("product_page_data", JSON.stringify(obj));
-        window.location = "../HTML/Product_Details.html"
+        window.location = "../HTML/Product_Details.html";
         console.log("🚀 ~ obj:", obj);
       });
     });
