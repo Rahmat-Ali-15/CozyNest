@@ -1,32 +1,125 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
+let productDataStorage = JSON.parse(localStorage.getItem("product_page_data")) || [];
+console.log("🚀 ~ productDataStorage:", productDataStorage);
+
+let cartItemsListStorage = JSON.parse(localStorage.getItem("cartItemsData")) || []
+console.log("🚀 ~ cartItemsListStorage:", cartItemsListStorage);
+
+
+
+const apendCartItems = () => {
+  let productAddedCartContainer = document.querySelector(".product-added-cart-container");
+  
+  cartItemsListStorage.forEach((el)=> {
+    let cartItemsContentDiv = document.createElement("div");
+    cartItemsContentDiv.className = "cart-items-content-div"
+    cartItemsContentDiv.innerHTML = `
+
+          <div class="top-line-item-container">
+              <div class="items-details">
+                  <h2 class="item-title">${el.title}</h2>
+              </div>
+              <div class="items-shop-bar">
+                  <div class="price-qty">
+                      <div class="item-qty">
+                          <button class="qty-decrease-btn">-</button>
+                          <input type="text" name="itme-qty" class="qty-input">
+                          <button class="qty-increase-btn">+</button>
+                      </div>
+                      <div class="item-price">
+                          <p class="price">${el.price}</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="item-total">
+                  <p class="item-total-para"></p>
+              </div>
+          </div>
+          <div class="bottom-line-item-container">
+              <div class="item-img">
+                  <img src=${el.itemImg} alt="item img" class="product-img">
+              </div>
+              <div class="product-availability">
+                  <div class="ship-details">
+                      <div>
+                          <input type="radio" id="ship" name="delivery">
+                          <label for="ship">Ship</label>
+                      </div>
+                      <p>In stock and ready for delivery to PIN Code 843113</p>
+                      <p>Shipping: <a href="#">Local In-Home</a></p>
+                      <p>Arrives: <a href="#">7–14 business days</a></p>
+                      <div class="pin-code">
+                          <i class="bi bi-geo-alt"></i>
+                          <p>PIN Code: 843113</p>
+                      </div>
+                  </div>
+                  <div class="warehouse-pickup">
+                      <div>
+                          <input type="radio" id="warehouse" name="delivery">
+                          <label for="warehouse">Free Warehouse Pickup</label>
+                      </div>
+                      <p>Pay no delivery fee. <a href="#">Learn more</a></p>
+                      <a href="#">Select Warehouse</a>
+                  </div>
+              </div>
+              <div class="item-actions">
+                  <div class="remove">
+                      <i class="bi bi-x-lg"></i>
+                      <p>Remove</p>
+                  </div>
+                  <div class="save-for-later">
+                      <i class="bi bi-download"></i>
+                      <p>Save for Later</p>
+                  </div>
+              </div>
+          </div>
+          <div class="gift-msg">
+              <i class="bi bi-gift"></i>
+              <span>If this order contains a gift, you will be able to add a gift message and gift box to eligible items during checkout. <a href="#">Learn More.</a></span>
+          </div>
+    `
+    productAddedCartContainer.append(cartItemsContentDiv)
+  })
+  
+}
+apendCartItems()
+
 // Increase or Decrease product quantity
-let itemInput = document.querySelector(".qty-input");
+let qtyInput = document.querySelector(".qty-input");
 let increaseBtn = document.querySelector(".qty-increase-btn");
 let decreaseBtn = document.querySelector(".qty-decrease-btn");
+qtyInput.value = 1;
 
-itemInput.value = 0;
+qtyInput.addEventListener("change", (e) => {
+  if(e.target.value > 10){
+    alert("Oops! You can add up to 10 products only 😊");
+    e.target.value = 1
+    return
+  }
+  handleAmount(e.target.value)
+})
 
 const increaseItem = () => {
-  itemInput.value = Number(itemInput.value) + 1;
+  qtyInput.value = Number(qtyInput.value) + 1;
   decreaseBtn.disabled = false;
-  if (Number(itemInput.value) >= 10) {
+  if (Number(qtyInput.value) >= 10) {
     increaseBtn.disabled = true;
   }
   handleAmount();
 };
 const decreaseItem = () => {
-  if (Number(itemInput.value) <= 0) {
+  if (Number(qtyInput.value) <= 0) {
     decreaseBtn.disabled = true;
     return;
   }
-  itemInput.value = Number(itemInput.value) - 1;
+  qtyInput.value = Number(qtyInput.value) - 1;
 
-  if (Number(itemInput.value) === 0) {
+  if (Number(qtyInput.value) === 0) {
     decreaseBtn.disabled = true;
   }
-  if (Number(itemInput.value) < 10) {
+  if (Number(qtyInput.value) < 10) {
     increaseBtn.disabled = false;
   }
   handleAmount();
@@ -36,10 +129,17 @@ increaseBtn.addEventListener("click", increaseItem);
 decreaseBtn.addEventListener("click", decreaseItem);
 
 const handleAmount = () => {
+  // let itemTitle = document.querySelector(".item-title");
+  // let productCartImg = document.querySelector(".product-img");
+
+  // itemTitle.innerText = productDataStorage.caption
+  // productCartImg.src = productDataStorage.selectedImage;
+
+
   let itemPricePara = document.querySelector(".item-total-para");
   let itemRate = document.querySelector(".price");
-  let itemQty = itemInput.value;
-  let itemPrice = 1100;
+  let itemQty = Number(qtyInput.value);
+  let itemPrice = Number(productDataStorage.price);
   itemRate.innerText =
     "₹" +
     itemPrice.toLocaleString("en-IN", {
@@ -130,6 +230,8 @@ const handleAmount = () => {
     </div>
   `;
 };
+
+
 
 window.onload = () => {
   handleAmount();
