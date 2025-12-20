@@ -1,7 +1,8 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-let productDataStorage = JSON.parse(localStorage.getItem("product_page_data")) || [];
+let productDataStorage =
+  JSON.parse(localStorage.getItem("product_page_data")) || [];
 console.log("🚀 ~ productDataStorage:", productDataStorage);
 
 const renderProductDetails = (val) => {
@@ -99,28 +100,34 @@ const handleAmount = () => {
     });
 };
 
-let cartItemsListStorage = JSON.parse(localStorage.getItem("cartItemsData")) || []
+let cartItemsListStorage =
+  JSON.parse(localStorage.getItem("cartItemsData")) || [];
 
 const addToCart = () => {
-    let cartItems = {
-      title: productDataStorage.caption,
-      price: productDataStorage.price,
-      itemImg: productDataStorage.selectedImage
-    }
-    cartItemsListStorage.push(cartItems);
-    localStorage.setItem("cartItemsData", JSON.stringify(cartItemsListStorage));
-    
-    // console.log("🚀 ~ cartItemsListStorage:", cartItemsListStorage);
-
-}
-
+  let cartItems = {
+    id: productDataStorage.id,
+    title: productDataStorage.caption,
+    price: productDataStorage.price,
+    itemImg: productDataStorage.selectedImage,
+  };
+  cartItemsListStorage.push(cartItems);
+  localStorage.setItem("cartItemsData", JSON.stringify(cartItemsListStorage));
+};
 
 window.onload = () => {
   handleAmount();
   renderProductDetails();
   let addToCartBtn = document.querySelector(".add-to-cart-btn");
-  addToCartBtn.addEventListener("click",()=> {
+  addToCartBtn.addEventListener("click", () => {
+    let isPresent = cartItemsListStorage.find(
+      (el) => el.id === productDataStorage.id
+    );
+
+    if (isPresent) {
+      alert("Item already in cart");
+      return;
+    }
     addToCart();
-    window.location = "../HTML/Cart.html"
+    window.location = "../HTML/Cart.html";
   });
 };
