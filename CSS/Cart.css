@@ -331,3 +331,12 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
+.product-added-cart-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.cart-items-content-div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    padding-bottom: 15px;
+}
