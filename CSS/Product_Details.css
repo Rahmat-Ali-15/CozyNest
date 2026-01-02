@@ -20,6 +20,7 @@ main {
 
 /* thumbnail section */
 .left-thumbnail-container {
+  position: relative;
   width: 6%;
   display: flex;
   flex-direction: column;
@@ -54,6 +55,29 @@ main {
   height: 550px;
   position: sticky;
   top: 20px;
+}
+
+/* loading */
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid rgba(81, 77, 77, 0.4);
+  border-top-color: rgb(76, 76, 220);
+  transition: all 0.4s ease;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* product-details section */
@@ -135,6 +159,9 @@ input {
 }
 .shop-bar-price > p {
   font-weight: 550;
+}
+.add-to-cart-btn-conatainer{
+  position: relative;
 }
 .add-to-cart-btn-conatainer > button,
 .add-to-registry-btn-container > button {
