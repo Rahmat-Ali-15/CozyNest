@@ -162,6 +162,7 @@ input {
 }
 .add-to-cart-btn-conatainer{
   position: relative;
+  border: 1px solid red;
 }
 .add-to-cart-btn-conatainer > button,
 .add-to-registry-btn-container > button {
