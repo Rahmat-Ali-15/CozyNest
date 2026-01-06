@@ -286,9 +286,25 @@ main {
 }
 .summary-box,
 .order-total,
-.promocode-div{
+.promocode-div,
+.promocode-content,
+.promocode-inputBtn{
     display: flex;
     justify-content: space-between;
+}
+.promocode-div{
+    flex-direction: column;
+    gap: 7px;
+}
+.promocode-inputBtn{
+    width: 100%;
+}
+.promocode-inputBtn>input{
+    width: 70%;
+    padding: 5px 7px;
+}
+.promocode-inputBtn>button{
+    width: 30%;
 }
 .summary-box>p:nth-child(2),
 .order-total>p{
@@ -298,6 +314,14 @@ main {
 .promocode-div{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
+}
+.promocode-message{
+    font-size: 12px;
+    font-weight: 500;
+}
+.discount-message{
+    font-size: 11px;
+    color: green;
 }
 .checkout-btn{
     display: flex;
