@@ -171,9 +171,15 @@
     <footer></footer>
 
     <script type="module">
-        import { navbar, offerBanner, navFooterStyle, footer } from "../JS/Navbar_Footer.js";
+        import { navbar, offerBanner, navFooterStyle, footer, placeholder } from "../JS/Navbar_Footer.js";
 
-        document.querySelector("header").innerHTML = navbar();
+        // document.querySelector("header").innerHTML = navbar();
+
+        const renderNavbar = async () => {
+            document.querySelector("header").innerHTML = await navbar();
+            placeholder()
+        }
+
         document.querySelector(".banner").innerHTML = offerBanner();
 
         let navFooterStyleTag = document.createElement("style");
@@ -182,6 +188,7 @@
 
         document.querySelector("footer").innerHTML = footer();
 
+        renderNavbar()
     </script>
 
     <script type="module" src="../JS/Product_Details.js" defer></script>

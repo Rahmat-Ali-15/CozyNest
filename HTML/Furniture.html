@@ -480,8 +480,13 @@
     <footer></footer>
 
     <script type="module">
-        import { navbar, footer, offerBanner, navFooterStyle } from "../JS/Navbar_Footer.js";
-        document.querySelector("header").innerHTML = navbar();
+        import { navbar, footer, offerBanner, navFooterStyle,placeholder } from "../JS/Navbar_Footer.js";
+        // document.querySelector("header").innerHTML = navbar();
+
+        const renderNavbar = async () => {
+            document.querySelector("header").innerHTML = await navbar();
+            placeholder()
+        }
         document.querySelector(".banner").innerHTML = offerBanner();
 
 
@@ -490,9 +495,10 @@
         document.head.append(navFooterStyleTag);
 
         document.querySelector("footer").innerHTML = footer();
+        renderNavbar()
     </script>
 
-    <script type="module" src="../JS/Furniture.js" defer></script>
+    <script type="module" src="../JS/Furniture.js"></script>
 
 </body>
 
