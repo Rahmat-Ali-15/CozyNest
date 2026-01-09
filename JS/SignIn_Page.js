@@ -1,14 +1,12 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-
-
 // Getting the data from the localstorage
 
 // let api_user = "https://api-server-zecj.onrender.com/user";
 
 let userDataStorage = JSON.parse(localStorage.getItem("userDetails")) || [];
-let form = document.querySelector(".signIn-form")
+let form = document.querySelector(".signIn-form");
 
 const signInForm = async (e) => {
   e.preventDefault();
@@ -54,9 +52,12 @@ const signInForm = async (e) => {
   document.querySelector(".signIn-form").reset();
 };
 
-form.addEventListener("submit", (e)=> {
-  signInForm(e);
-})
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    signInForm(e);
+  });
+}
 
 let createAccBtn = document.querySelector(".create-account-btn");
 if (createAccBtn) {

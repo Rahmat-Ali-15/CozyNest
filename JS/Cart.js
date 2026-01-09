@@ -1,43 +1,71 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
-let productDataStorage =
-  JSON.parse(localStorage.getItem("product_page_data")) || [];
-console.log("🚀 ~ productDataStorage:", productDataStorage);
+let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
 
-let cartItemsListStorage =
-  JSON.parse(localStorage.getItem("cartItemsData")) || [];
-console.log("🚀 ~ cartItemsListStorage:", cartItemsListStorage);
+const fetchCartItem = async () => {
+  try {
+    let res = await fetch(cartApi);
+    let cartItemData = await res.json();
+    apendCartItems(cartItemData);
+    renderCartSummary(cartItemData);
+    console.log("🚀 ~ cartItemData:", cartItemData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchCartItem();
 
-let totalItemsInCart = document.querySelector(".total-items-in-cart");
+let cardOrderSummaryBox = document.querySelector(".cart-order-summary-box");
+let emptyCartMsg = document.querySelector(".empty-cart-msg")
 
-const apendCartItems = () => {
+const apendCartItems = (data) => {
   let productAddedCartContainer = document.querySelector(
     ".product-added-cart-container"
   );
   productAddedCartContainer.innerHTML = "";
 
-   totalItemsInCart.innerText = cartItemsListStorage.length;
+  let giftCardContainer = document.querySelector(".gift-card-container");
 
-  // ✅ empty cart check
-  if (cartItemsListStorage.length === 0) {
+  totalItemsInCart.innerText = data.length;
+
+  data.length === 0 ? giftCardContainer.style.display= "flex" : giftCardContainer.style.display= "none";
+  data.length === 0 ? emptyCartMsg.style.display= "flex" : emptyCartMsg.style.display= "none";
+  data.length === 0 ? cardOrderSummaryBox.style.display= "none" : cardOrderSummaryBox.style.display= "flex";
+
+  // Empty cart check
+  if (data.length === 0) {
     productAddedCartContainer.innerHTML = `
       <h2 style="text-align:center;margin-top:40px;">
         🛒 No item is present
       </h2>
     `;
-    handleAmount()
     return;
   }
 
-  cartItemsListStorage.forEach((el) => {
+  data.forEach((el) => {
     let cartItemsContentDiv = document.createElement("div");
     cartItemsContentDiv.className = "cart-items-content-div";
+
+    let itemPrice =
+      "₹ " +
+      el.itemPrice.toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+    let totalPrice =
+      "₹ " +
+      el.totalPrice.toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
     cartItemsContentDiv.innerHTML = `
 
           <div class="top-line-item-container">
               <div class="items-details">
-                  <h2 class="item-title">${el.title}</h2>
+                  <h2 class="item-title">${el.caption}</h2>
               </div>
               <div class="items-shop-bar">
                   <div class="price-qty">
@@ -47,17 +75,17 @@ const apendCartItems = () => {
                           <button class="qty-increase-btn">+</button>
                       </div>
                       <div class="item-price">
-                          <p class="price">${el.price}</p>
+                          <p class="price">${itemPrice}</p>
                       </div>
                   </div>
               </div>
               <div class="item-total">
-                  <p class="item-total-para"></p>
+                  <p class="item-total-para">${totalPrice}</p>
               </div>
           </div>
           <div class="bottom-line-item-container">
               <div class="item-img">
-                  <img src=${el.itemImg} alt="item img" class="product-img">
+                  <img src=${el.selectedImg} alt="item img" class="product-img">
               </div>
               <div class="product-availability">
                   <div class="ship-details">
@@ -99,120 +127,144 @@ const apendCartItems = () => {
           </div>
     `;
 
+    let qtyInput = cartItemsContentDiv.querySelector(".qty-input");
+    qtyInput.value = el.productQty;
+    console.log("🚀 ~ qtyInput:", qtyInput.value);
+
+    let increaseBtn = cartItemsContentDiv.querySelector(".qty-increase-btn");
+    let decreaseBtn = cartItemsContentDiv.querySelector(".qty-decrease-btn");
+
+    // Increase button logic
+    const increaseItem = async () => {
+      qtyInput.value = Number(qtyInput.value) + 1;
+
+      decreaseBtn.disabled = false;
+      if (Number(qtyInput.value) >= 10) {
+        increaseBtn.disabled = true;
+      }
+      handleAmount();
+      renderCartSummary();
+    };
+
+    // Decrease button logic
+    const decreaseItem = async () => {
+      if (Number(qtyInput.value) <= 0) {
+        decreaseBtn.disabled = true;
+        return;
+      }
+      qtyInput.value = Number(qtyInput.value) - 1;
+
+      if (Number(qtyInput.value) === 0) {
+        decreaseBtn.disabled = true;
+      }
+      if (Number(qtyInput.value) < 10) {
+        increaseBtn.disabled = false;
+      }
+      handleAmount();
+      renderCartSummary();
+    };
+
+    const handleAmount = async () => {
+      let updatedQty = Number(qtyInput.value);
+      let updatedTotal = updatedQty * Number(el.itemPrice);
+      let updatedTotalPrice =
+        cartItemsContentDiv.querySelector(".item-total-para");
+      updatedTotalPrice.innerText =
+        "₹ " +
+        updatedTotal.toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+
+      try {
+        let res = await fetch(`${cartApi}/${el.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productQty: updatedQty,
+            totalPrice: updatedTotal,
+          }),
+        });
+        fetchCartItem();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    increaseBtn.addEventListener("click", increaseItem);
+    decreaseBtn.addEventListener("click", decreaseItem);
+
+    // Remove product from cart logic
     let removeItemBtn = cartItemsContentDiv.querySelector(".remove");
     if (removeItemBtn) {
-      removeItemBtn.addEventListener("click", () => {
-        cartItemsListStorage = cartItemsListStorage.filter((item) => item.id != el.id);
-        localStorage.setItem("cartItemsData", JSON.stringify(cartItemsListStorage));
-        apendCartItems()
+      removeItemBtn.addEventListener("click", async () => {
+        try {
+          let res = await fetch(`${cartApi}/${el.id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          fetchCartItem();
+        } catch (error) {
+          console.log(error);
+        }
       });
     }
 
     productAddedCartContainer.append(cartItemsContentDiv);
   });
 };
-apendCartItems();
 
-// Increase or Decrease product quantity
-let qtyInput = document.querySelector(".qty-input");
-let increaseBtn = document.querySelector(".qty-increase-btn");
-let decreaseBtn = document.querySelector(".qty-decrease-btn");
-qtyInput.value = 1;
 
-qtyInput.addEventListener("change", (e) => {
-  if (e.target.value > 10) {
-    alert("Oops! You can add up to 10 products only 😊");
-    e.target.value = 1;
-    return;
-  }
-  else if(e.target.value < 0){
-    alert("Oops! Quantity can’t be less than 1. Please add at least one item 🙂");
-    e.target.value = 1;
-    return
-  }
-  handleAmount(e.target.value);
-});
+let totalItemsInCart = document.querySelector(".total-items-in-cart");
+let totalProductAmt;
 
-const increaseItem = () => {
-  qtyInput.value = Number(qtyInput.value) + 1;
-  decreaseBtn.disabled = false;
-  if (Number(qtyInput.value) >= 10) {
-    increaseBtn.disabled = true;
-  }
-  handleAmount();
-};
-const decreaseItem = () => {
-  if (Number(qtyInput.value) <= 0) {
-    decreaseBtn.disabled = true;
-    return;
-  }
-  qtyInput.value = Number(qtyInput.value) - 1;
 
-  if (Number(qtyInput.value) === 0) {
-    decreaseBtn.disabled = true;
-  }
-  if (Number(qtyInput.value) < 10) {
-    increaseBtn.disabled = false;
-  }
-  handleAmount();
-};
+const renderCartSummary = (apiData) => {
+  console.log("🚀 ~ apiData:", apiData);
+  // let cardOrderSummaryBox = document.querySelector(".cart-order-summary-box");
+  totalProductAmt = 0;
 
-increaseBtn.addEventListener("click", increaseItem);
-decreaseBtn.addEventListener("click", decreaseItem);
+  apiData &&
+    apiData.forEach((el) => {
+      totalProductAmt += el.totalPrice;
 
-const handleAmount = () => {
-  let itemPricePara = document.querySelector(".item-total-para");
-  let itemRate = document.querySelector(".price");
-  let itemQty = Number(qtyInput.value);
-  let itemPrice = Number(productDataStorage.price);
-  itemRate.innerText =
-    "₹" +
-    itemPrice.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  let totalItemPrice = Number(itemQty) * Number(itemPrice);
+      let totalProduct =
+        "₹ " +
+        totalProductAmt.toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
 
-  itemPricePara.innerText =
-    "₹" +
-    totalItemPrice.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
+      let shippingValue = Number(totalProductAmt * 2.5) / 100;
+      let shippingCharge =
+        "₹ " +
+        shippingValue.toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
 
-  // Cart summary
-  let totalItemAmt =
-    "₹" +
-    totalItemPrice.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
+      let taxValue = Number(totalProductAmt * 18) / 100;
+      let tax =
+        "₹ " +
+        taxValue.toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
 
-  let shippingValue = (totalItemPrice * 2.5) / 100;
-  let shipping =
-    "₹" +
-    shippingValue.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
+      let cartTotalAmt = Number(totalProductAmt) + shippingValue + taxValue;
 
-  let taxValue = (totalItemPrice * 28) / 100;
-  let tax =
-    "₹" +
-    taxValue.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
+      let cartTotal =
+        "₹ " +
+        cartTotalAmt.toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
 
-  let totalOrderAmt = totalItemPrice + shippingValue + taxValue;
-  let totalOrder =
-    "₹" +
-    totalOrderAmt.toLocaleString("en-IN", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  let cardOrderSummaryBox = document.querySelector(".cart-order-summary-box");
-  cardOrderSummaryBox.innerHTML = `
+      cardOrderSummaryBox.innerHTML = `
     <div class="order-summary-heading">
         <i class="bi bi-bag-dash"></i>
         <h3 class="order-summary-title">Cart Summary</h3>
@@ -220,11 +272,11 @@ const handleAmount = () => {
     <div class="order-summary">
         <div class="item-price summary-box">
             <p>Total Item Price :</p>
-            <p name="amount">${totalItemAmt}</p>
+            <p name="amount" class = "total-product-amt">${totalProduct}</p>
         </div>
         <div class="shipping-details summary-box">
             <p>Shipping :</p>
-            <p name="amount">${shipping}</p>
+            <p name="amount">${shippingCharge}</p>
         </div>
         <div class="tax-details summary-box">
             <p>Tax :</p>
@@ -233,11 +285,21 @@ const handleAmount = () => {
     </div>
     <div class="order-total">
         <p name="total-amount">Order Total:</p>
-        <p name="total-amt">${totalOrder}</p>
+        <p name="total-amt" class="cartTotal-amt">${cartTotal}</p>
     </div>
     <div class="promocode-div">
-        <p>Promo Code</p>
-        <p>+</p>
+        <div class="promocode-content">
+            <p>Promo Code</p>
+            <p>+</p>
+        </div>
+        <div class="promocode-details">
+          <div class="promocode-inputBtn">
+            <input type="text" class="promocode-input" placeholder="Enter promo code" />
+            <button class="promocode-btn">Add</button>
+          </div>
+            <p class="promocode-message">Apply: FLAT30%</p>
+            <p class="discount-message"></p>
+        </div>
     </div>
     <div class="checkout-btn">
         <div class="term-condition">
@@ -254,8 +316,38 @@ const handleAmount = () => {
         </div>
     </div>
   `;
-};
 
-window.onload = () => {
-  handleAmount();
+      let promocodeDiv = cardOrderSummaryBox.querySelector(".promocode-content");
+      let promocodeDetails = cardOrderSummaryBox.querySelector(".promocode-details")
+      let promocodeInput = cardOrderSummaryBox.querySelector(".promocode-input");
+      let promocodeBtn = cardOrderSummaryBox.querySelector(".promocode-btn");
+      let cartTotalAfterDiscount = cardOrderSummaryBox.querySelector(".cartTotal-amt");
+      let discountMsg = cardOrderSummaryBox.querySelector(".discount-message");
+
+      promocodeDiv.addEventListener("click", () => {
+        promocodeDetails.classList.toggle("promocode-details")
+      })
+
+      promocodeBtn.addEventListener("click", () => {
+        if (promocodeInput.value === "FLAT30%") {
+          let discountAmt = (cartTotalAmt * 30) / 100;
+          cartTotalAmt = cartTotalAmt - discountAmt;
+          cartTotalAfterDiscount.innerText =
+            "₹ " +
+            cartTotalAmt.toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            });
+
+            document.querySelector(".promocode-message").innerText = ""
+          // show discount message
+          discountMsg.innerText = `🥳 Hurrah! You just saved ₹ ${discountAmt} on this order!`;
+
+          promocodeInput.value = "";
+        } else {
+          alert("❌ Invalid Promo Code");
+          promocodeInput.value = "";
+        }
+      });
+    });
 };

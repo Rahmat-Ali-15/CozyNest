@@ -1,6 +1,4 @@
-import "./SignIn_Page.js"
-// import { placeholder } from "../JS/Navbar_Footer.js";
-// placeholder();
+import "./SignIn_Page.js";
 
 // scroll button
 const scrollBtn = document.querySelector(".scroll-btn");
@@ -19,8 +17,6 @@ window.scrollUp = function () {
     behavior: "smooth",
   });
 };
-
-
 
 let arrivals = [
   {
@@ -67,7 +63,6 @@ let arrivals = [
 
 let arrivals_imgs = document.querySelector(".arrivals-imgs-container");
 function renderArrivalImg(arrivals) {
-
   arrivals.forEach((val) => {
     let div = document.createElement("div");
     div.classList.add("arrival-items");
@@ -95,14 +90,14 @@ let arrivalRightBtn = document.querySelector(".arrival-arrow>.fa-angle-right");
 arrivalLeftBtn.addEventListener("click", () => {
   arrivals_imgs.scrollBy({
     left: -430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
 arrivalRightBtn.addEventListener("click", () => {
   arrivals_imgs.scrollBy({
     left: 430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
@@ -111,8 +106,7 @@ let scroll;
 
 const arrivalAutoScroll = () => {
   scroll = setInterval(() => {
-    const maxScroll =
-      arrivals_imgs.scrollWidth - arrivals_imgs.clientWidth;
+    const maxScroll = arrivals_imgs.scrollWidth - arrivals_imgs.clientWidth;
 
     if (arrivals_imgs.scrollLeft >= maxScroll) {
       arrivals_imgs.scrollTo({
@@ -240,7 +234,6 @@ let heroCard = [
 
 let HeroCardContainer = document.querySelector(".hero-card-content");
 const renderHeroCard = (heroCard) => {
-
   heroCard.forEach((val) => {
     let mainDiv = document.createElement("div");
     mainDiv.classList.add("heroCard-items");
@@ -276,14 +269,14 @@ let heroRightBtn = document.querySelector(".hero-arrow>.fa-angle-right");
 heroLeftBtn.addEventListener("click", () => {
   HeroCardContainer.scrollBy({
     left: -430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
 heroRightBtn.addEventListener("click", () => {
   HeroCardContainer.scrollBy({
     left: 430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
@@ -322,7 +315,6 @@ HeroCardContainer.addEventListener("mouseleave", () => {
   heroCardAutoScroll();
 });
 
-
 // Hosting Card
 
 let hostingCard = [
@@ -350,7 +342,6 @@ let hostingCard = [
 
 let hostingContent = document.querySelector(".hosting-content");
 const renderHostingCard = (hostingCard) => {
-
   hostingCard.forEach((val) => {
     let mainDiv = document.createElement("div");
 
@@ -380,7 +371,6 @@ const renderHostingCard = (hostingCard) => {
 
 renderHostingCard(hostingCard);
 
-
 // Onclicking scroll behaviour
 let hostingLeftBtn = document.querySelector(".hosting-arrow>.fa-angle-left");
 let hostingRightBtn = document.querySelector(".hosting-arrow>.fa-angle-right");
@@ -388,14 +378,14 @@ let hostingRightBtn = document.querySelector(".hosting-arrow>.fa-angle-right");
 hostingLeftBtn.addEventListener("click", () => {
   hostingContent.scrollBy({
     left: -430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
 hostingRightBtn.addEventListener("click", () => {
   hostingContent.scrollBy({
     left: 430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
@@ -404,8 +394,7 @@ let hostingScroll;
 
 const hostingAutoScroll = () => {
   hostingScroll = setInterval(() => {
-    const maxScroll =
-      hostingContent.scrollWidth - hostingContent.clientWidth;
+    const maxScroll = hostingContent.scrollWidth - hostingContent.clientWidth;
 
     if (hostingContent.scrollLeft >= maxScroll) {
       hostingContent.scrollTo({
@@ -433,7 +422,6 @@ hostingContent.addEventListener("mouseenter", () => {
 hostingContent.addEventListener("mouseleave", () => {
   heroCardAutoScroll();
 });
-
 
 // Autumn decorate section
 
@@ -470,7 +458,6 @@ let autumnCard = [
 
 let autumnContent = document.querySelector(".autumn-content");
 const renderAutumnCard = (autumnCard) => {
-
   autumnCard.forEach((val) => {
     let mainDiv = document.createElement("div");
 
@@ -500,7 +487,6 @@ const renderAutumnCard = (autumnCard) => {
 
 renderAutumnCard(autumnCard);
 
-
 // Onclicking scroll behaviour
 let autumnLeftBtn = document.querySelector(".autumn-arrow>.fa-angle-left");
 let autumnRightBtn = document.querySelector(".autumn-arrow>.fa-angle-right");
@@ -508,14 +494,14 @@ let autumnRightBtn = document.querySelector(".autumn-arrow>.fa-angle-right");
 autumnLeftBtn.addEventListener("click", () => {
   autumnContent.scrollBy({
     left: -430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
 autumnRightBtn.addEventListener("click", () => {
   autumnContent.scrollBy({
     left: 430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
@@ -524,8 +510,7 @@ let autumnScroll;
 
 const autumnAutoScroll = () => {
   autumnScroll = setInterval(() => {
-    const maxScroll =
-      autumnContent.scrollWidth - autumnContent.clientWidth;
+    const maxScroll = autumnContent.scrollWidth - autumnContent.clientWidth;
 
     if (autumnContent.scrollLeft >= maxScroll) {
       autumnContent.scrollTo({
@@ -553,8 +538,6 @@ hostingContent.addEventListener("mouseenter", () => {
 hostingContent.addEventListener("mouseleave", () => {
   autumnAutoScroll();
 });
-
-
 
 // shopping ways section
 
@@ -590,7 +573,6 @@ let shoppingCardContainer = document.querySelector(
   ".shopping-ways-card-container"
 );
 const shoppingCardRender = (shoppingCard) => {
-
   shoppingCard.forEach((el) => {
     let mainDiv = document.createElement("div");
     mainDiv.classList.add("shopping-card-mainDiv");
@@ -634,22 +616,23 @@ const shoppingCardRender = (shoppingCard) => {
 
 shoppingCardRender(shoppingCard);
 
-
 // Onclicking scroll behaviour
 let shoppingLeftBtn = document.querySelector(".shopping-arrow>.fa-angle-left");
-let shoppingRightBtn = document.querySelector(".shopping-arrow>.fa-angle-right");
+let shoppingRightBtn = document.querySelector(
+  ".shopping-arrow>.fa-angle-right"
+);
 
 shoppingLeftBtn.addEventListener("click", () => {
   shoppingCardContainer.scrollBy({
     left: -430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
 shoppingRightBtn.addEventListener("click", () => {
   shoppingCardContainer.scrollBy({
     left: 430,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
@@ -688,19 +671,12 @@ shoppingCardContainer.addEventListener("mouseleave", () => {
   shoppingAutoScroll();
 });
 
-
 // Carousel
 
 // Go to SingIn page
 let signInPageBtn = document.querySelector("#goTo_singIn_page");
-signInPageBtn.addEventListener("click", () => {
-  window.location = "../HTML/SignIn_Page.html";
-});
-
-// Redirect to Cart page
-let cartBtn = document.querySelector(".view-cart-btn");
-// cartBtn.style.border= "4px solid red"
-
-// cartBtn.addEventListener("click", () => {
-//   window.location.href = "../HTML/Cart.html";
-// });
+if (signInPageBtn) {
+  signInPageBtn.addEventListener("click", () => {
+    window.location = "../HTML/SignIn_Page.html";
+  });
+}

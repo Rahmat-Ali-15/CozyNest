@@ -1,42 +1,44 @@
+let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
+
 export const placeholder = () => {
   // Focusing on the input when the search icon is clicked
-let searchInput = document.querySelector(".search-input");
-let searchIcon = document.querySelector(".fa-magnifying-glass");
-searchIcon.addEventListener("click", () => {
-  searchInput.focus();
-});
+  let searchInput = document.querySelector(".search-input");
+  let searchIcon = document.querySelector(".fa-magnifying-glass");
 
-// Placeholder text come one-by-one(Placeholder Typing animation)
-const text = "What can we help you find?";
-let index = 0;
+  if (!searchInput || !searchIcon) return ;
 
-function typePlaceholder() {
-  if (index < text.length) {
-    searchInput.placeholder += text.charAt(index);
-    index++;
-    setTimeout(typePlaceholder, 150);
-  } else {
-    // When all text is done typing, wait and restart
-    setTimeout(() => {
-      searchInput.placeholder = ""; // clear placeholder
-      index = 0; // reset index
-      typePlaceholder(); // start again
-    }, 1500); // pause before restarting
+  searchIcon.addEventListener("click", () => {
+    searchInput.focus();
+  });
+
+  // Placeholder text come one-by-one(Placeholder Typing animation)
+  const text = "What can we help you find?";
+  let index = 0;
+
+  function typePlaceholder() {
+    if (index < text.length) {
+      searchInput.placeholder += text.charAt(index);
+      index++;
+      setTimeout(typePlaceholder, 150);
+    } else {
+      // When all text is done typing, wait and restart
+      setTimeout(() => {
+        searchInput.placeholder = ""; // clear placeholder
+        index = 0; // reset index
+        typePlaceholder(); // start again
+      }, 1500); // pause before restarting
+    }
   }
-}
 
-typePlaceholder();
-}
+  typePlaceholder();
+};
 
+export const navbar = async () => {
+  try {
+    let res = await fetch(cartApi);
+    let data = await res.json();
 
-export const navbar = () => {
-  return `
-
-      
-
-
-
-
+    return `
         <section class="header-top">
 
             <ul>
@@ -121,12 +123,15 @@ export const navbar = () => {
                 </li>
 
                 <li class="shopping-cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <div>
+                    <p class="total-cart-item">${data.length}</p>
+                  </div>
 
                     <div class="shopping-popUp">
                         <h5>Are you missing items in your cart?</h5>
                         <p><a href="#">Sign in</a> to see items you may have added using another computer or device.</p>
-                        <button type="button">VIEW CART</button>
+                        <a href="../HTML/Cart.html"><button type="button">VIEW CART</button></a>
                     </div>
                 </li>
 
@@ -1296,6 +1301,9 @@ export const navbar = () => {
         </nav>
     
     `;
+  } catch (error) {
+    console.log("🚀 ~ error:", error);
+  }
 };
 
 export const footer = () => {
@@ -1676,6 +1684,13 @@ export const navFooterStyle = () => {
         .shopping-cart {
           position: relative;
         }
+        .total-cart-item{
+            position: absolute;
+            top: -20px;
+            right: -8px;
+            font-weight: 600;
+        }
+
         .sign-in-popUp,
         .location-popUp,
         .heart-popUp,
@@ -1772,7 +1787,7 @@ export const navFooterStyle = () => {
           text-decoration: underline;
         }
         .heart-popUp > a > button,
-        .shopping-popUp > button {
+        .shopping-popUp > a > button {
           width: 100%;
           padding: 10px;
           font-weight: 500;

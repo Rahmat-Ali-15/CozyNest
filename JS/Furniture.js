@@ -1,9 +1,13 @@
 import { placeholder } from "../JS/Navbar_Footer.js";
 placeholder();
 
+let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
+
 const fetchApi = async () => {
   let api = "https://api-server-zecj.onrender.com/Modern-Furniture";
   let loading = document.querySelector(".loading");
+  let largeVisNavSlider = document.querySelector(".largeVisNav-slider");
+  largeVisNavSlider.style.height = "250px";
 
   try {
     // Show loading message before fetch
@@ -44,6 +48,7 @@ const fetchApi = async () => {
     console.log("🚀 ~ error:", error);
   } finally {
     loading.style.display = "none";
+    largeVisNavSlider.style.height = "fit-content";
   }
 };
 
@@ -94,7 +99,6 @@ const renderFurniture = (arr) => {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       });
-    console.log("🚀 ~ productPrice:", productPrice);
 
     productCardContent.innerHTML = `
       <ul>
@@ -122,17 +126,15 @@ const renderFurniture = (arr) => {
     // Default: show only first big image
     bigImgs.forEach((img, i) => {
       img.style.display = i === 0 ? "block" : "none";
+      
       img.addEventListener("click", () => {
-        let obj = {
+        let selectedProduct = {
           id: el.id,
-          selectedImage: img.src,
-          price: el.price,
-          caption: el.caption,
-          thumb_img: el.thumbnail_img,
+          selectedImg: img.src,
         };
-        localStorage.setItem("product_page_data", JSON.stringify(obj));
+        localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct))
         window.location = "../HTML/Product_Details.html";
-        console.log("🚀 ~ obj:", obj);
+
       });
     });
 
