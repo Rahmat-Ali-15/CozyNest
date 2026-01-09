@@ -35,6 +35,11 @@ main {
     font-size: 24px;
     opacity: 0.7;
 }
+.empty-cart-msg{
+    flex-direction: column;
+    display: none;
+
+}
 .empty-cart-msg>p{
     font-size: 14px;
     opacity: 0.7;
@@ -265,7 +270,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* display: none; */
+    display: none;
 }
 .order-summary-heading{
     display: flex;
@@ -305,6 +310,9 @@ main {
 }
 .promocode-inputBtn>button{
     width: 30%;
+}
+.promocode-details{
+    display: none;
 }
 .summary-box>p:nth-child(2),
 .order-total>p{
