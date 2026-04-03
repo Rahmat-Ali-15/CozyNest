@@ -124,7 +124,7 @@ export const navbar = async () => {
 
                 <li class="shopping-cart">
                   <i class="fa-solid fa-cart-shopping"></i>
-                  <div>
+                  <div class="total-cart-item-div">
                     <p class="total-cart-item">${data.length}</p>
                   </div>
 
@@ -1684,11 +1684,21 @@ export const navFooterStyle = () => {
         .shopping-cart {
           position: relative;
         }
-        .total-cart-item{
+        .total-cart-item-div{
             position: absolute;
             top: -20px;
-            right: -8px;
+            right: -15px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-item: center;
             font-weight: 600;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        .total-cart-item{
+            font-size: 13px;
         }
 
         .sign-in-popUp,
