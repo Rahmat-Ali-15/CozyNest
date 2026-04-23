@@ -15,62 +15,60 @@
             <div class="shipping-left">
                 <div class="shipping-left-content">
                     <div class="shipping-heading">
-                        <h1>Create&Barrel</h1>
+                        <p>Cozy&Nest</p>
                         <div>
                             <i class="bi bi-bag-check"></i>
                             <p>Checkout</p>
                         </div>
                     </div>
-                    <div class="">
-                        <div>
-                            <span>1</span>
-                            <p>Shipping and Gift Options</p>
+                    <div class="checkout-navigation">
+                        <div class="navigation-circle">
+                            <div class="box">1</div>
+                            <span class="navigation-span"></span>
+                            <div class="box">2</div>
+                            <span class="navigation-span"></span>
+                            <div class="box">3</div>
                         </div>
-                        <span></span>
-                        <div>
-                            <span>2</span>
-                            <p>Payment and Billing</p>
-                        </div>
-                        <span></span>
-                        <div>
-                            <span>3</span>
-                            <p>Review and Place Order</p>
+                        <div class="navigation-text">
+                            <p style="text-align: left;">Shipping and Gift Options</p>
+                            <p style="text-align: center;">Payment and Billing</p>
+                            <p style="text-align: right;">Review and Place Order</p>
                         </div>
                     </div>
 
-                    <!-- shipping form -->
+                    <!--# shipping form -->
 
-                    <form>
-                        <h1>Ship To</h1>
+                    <form class="checkout-form">
+                        <p style="font-size: 20px;font-weight: 400;">Ship To</p>
                         <div>
-                            <div>
+                            <div class="usernames">
                                 <div>
-                                    <label for="">First Name <span>required</span></label>
+                                    <label for="">First Name <span class="label-span">required</span></label>
                                     <input type="text" id="">
                                 </div>
                                 <div>
-                                    <label for="">Last Name <span>required</span></label>
+                                    <label for="">Last Name <span class="label-span">required</span></label>
                                     <input type="text" id="">
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <label for="">Street Address <span>required</span></label>
+                        <div class="user-address">
+                            <label for="">Street Address <span class="label-span">required</span></label>
                             <input type="text">
-                            <a href="#">Add apt, suite or other</a>
+                            <a href="#" style="color: black; font-size: 13px; margin-top: 7px; opacity: 0.8;">Add apt, suite or other</a>
                         </div>
-                        <div>
+                        <div class="zip-city">
                             <div>
-                                <label for="">Zip Code <span>required</span></label>
+                                <label for="">Zip Code <span class="label-span">required</span></label>
                                 <input type="text">
                             </div>
                             <div>
-                                <label for="">City <span>required</span></label>
+                                <label for="">City <span class="label-span">required</span></label>
                                 <input type="text">
                             </div>
                         </div>
-                        <div>
-                            <label for="">State <span>required</span></label>
+                        <div class="user-state">
+                            <label for="">State <span class="label-span">required</span></label>
                             <select>
                                 <option value="Please Select">Please Select</option>
                                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -103,19 +101,139 @@
                                 <option value="West Bengal">West Bengal</option>
                             </select>
                         </div>
-                        <div>
-                            <label for="">Phone Number <span>required</span></label>
+                        <div class="user-number">
+                            <label for="">Phone Number <span class="label-span">required</span></label>
                             <input type="tel" >
                         </div>
-                        <div>
-                            <button>Next</button>
+                        <div class="next-btn">
+                            <button>NEXT</button>
                         </div>
                     </form>
+
+                    <!--# Payment & Billing -->
+
+                    <div class="payment-method-container">
+                        <div class="payment-heading">Payment</div>
+                        <!-- card details -->
+                        <div class="payment-details">
+                            <div class="apple-pay">
+                                <input type="radio" name="payment" />
+                                <div style="border: 1px solid black; display: flex;">
+                                    <i class="bi bi-apple"></i>
+                                    <p>Pay</p>
+                                </div>
+                                <p>Apple Pay</p>
+                            </div>
+                            <div class="paypal">
+                                <input type="radio" name="payment" />
+                                <img src="../Utilities/img/Paypal_2014_logo.png" alt="paypal">
+                                <p>PayPal, Venmo</p>
+                            </div>
+                            <div class="credit-debit-card">
+                                <div class="card-heading">
+                                    <i class="bi bi-record-circle-fill"></i>
+                                    <p>Credit or Debit Card</p>
+                                </div>
+                                <div class="card-number">
+                                    <label>Card Number <span>required</span></label>
+                                    <div>
+                                        <input type="text" required>
+                                        <i class="bi bi-credit-card"></i>
+                                    </div>
+                                    <div>
+                                        <img src="../Utilities/img/amrican_credit_card.png" alt="card imgs">
+                                        <img src="../Utilities/img/paypal_credit_card.webp" alt="card imgs">
+                                        <img src="../Utilities/img/visa_credit_card.jpg" alt="card imgs">
+                                        <img src="../Utilities/img/master_credit-card.webp" alt="card imgs">
+                                    </div>
+                                </div>
+                                <div class="card-expiry-cvv">
+                                    <div class="card-expiry">
+                                        <label>Expiry MM/YY <span>required</span></label>
+                                        <input type="text" required>
+                                    </div>
+                                    <div class="card-cvv">
+                                        <label>CVC/CVV <span>required</span></label>
+                                        <input type="text" required>
+                                    </div>
+                                </div>
+                                <div class="save-card-details">
+                                    <input type="checkbox">
+                                    <p>Save card to my account</p>
+                                </div>
+
+                                <div class="payment-btn">
+                                    <button>APPLY CARD</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reward Rupees -->
+                         <div class="reward">
+                            <h3>Reward Rupees</h3>
+                            <p>To redeem your Reward Rupees, apply your CozyNest Visa Signature® Card as your payment method.</p>
+                         </div>
+
+                         <!-- Billing address -->
+
+                         <div class="billing-address">
+                            <div class="billing-heading">
+                                <p>Billing Address</p>
+                            </div>
+                            <div class="billing-address-details">
+                                <p class="username">Rahmat Ali</p>
+                                <p class="user-address">Nehru Nagar <br> <span class="city">Mumbai, 400024</span><span class="number">+91 9262986281</span></p>
+                            </div>
+                         </div>
+
+                         <!-- buttons -->
+
+                         <div class="btn-container">
+                            <button class="back-btn">BACK</button>
+                            <button class="payment-next-btn">NEXT: REVIEW & PLACE ORDER</button>
+                         </div>
+                    </div>
                 </div>
             </div>
-            <div class="right"></div>
+            <div class="shipping-right">
+                <div class="shipping-order-summary">
+                    <div class="order-heading">
+                        <p>Order Summary</p>
+                        <a href="../HTML/Cart.html">Edit cart</a>
+                    </div>
+                    <div>
+                        <p>Merchandise: </p>
+                        <p>100</p>
+                    </div>
+                    <div>
+                        <p>Shipping:</p>
+                        <p>20</p>
+                    </div>
+                    <div>
+                        <p>Tax:</p>
+                        <p>10</p>
+                    </div>
+                    <div class="order-total">
+                        <p>Order Total</p>
+                        <p>130</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer>
+
+    </footer>
+
+    <script type="module">
+        import { footer, navFooterStyle } from "../JS/Navbar_Footer.js";
+
+        let navFooterStyleTag = document.createElement("style");
+        navFooterStyleTag.textContent = navFooterStyle();
+        document.head.append(navFooterStyleTag);
+
+        document.querySelector("footer").innerHTML = footer();
+    </script>
 </body>
 
 </html>
