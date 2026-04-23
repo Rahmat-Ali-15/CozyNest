@@ -7,15 +7,20 @@
   font-family: "Poppins", sans-serif;
 }
 .shipping-main-container{
-  border: 1px solid red;
   display: flex;
 }
 .shipping-left{
+  padding: 50px 0;
   width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+}
+.shipping-left-content{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 .shipping-heading{
   display: flex;
@@ -37,30 +42,360 @@
   font-size: 20px;
 }
 .checkout-navigation{
-  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+.navigation-circle,.navigation-text{
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 50px; */
 }
-/* .checkout-navigation>span{
-  border: 1px solid red;
-  width: 50px;
+.box{
+  width: 28px;
+  height: 25px;
+  border: 1px solid rgb(208, 205, 205);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
-.checkout-navigation>div{
+.navigation-span{
+  height: 1px;
+  width: 50%;
+  border: 1px solid rgba(190, 187, 187,0.5);
+}
+.navigation-text>p{
+  font-size: 12px;
+  width: 87px;
+}
+.checkout-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.usernames{
+  display: flex;
+  gap: 10px;
+}
+.usernames>div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.usernames>div>input,
+.user-address>input,
+.zip-city>div>input,
+.user-number>input{
+  padding: 5px 7px;
+  border: 1px solid black;
+}
+
+.usernames>div>label,
+.user-address>label,
+.zip-city>div>label,
+.user-state>label,
+.user-number>label{
+  font-size: 15px;
+  font-weight: 500;
+}
+.label-span{
+  font-weight: 400;
+  font-size: 10px;
+  opacity: 0.7;
+}
+.user-address{
   display: flex;
   flex-direction: column;
 }
-.checkout-navigation>div>span{
-  height: 25px;
-  width: 25px;
-  border: 1px solid black;
-  border-radius: 50%;
-  text-align: center;
+.user-address>input{
+  padding: 5px 7px
 }
-.checkout-navigation>div>p{
-  width: 100px;
+.zip-city{
+  display: flex;
+  gap: 17px;
+}
+.zip-city>div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.user-state{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.user-state>select{
+  padding: 7px;
+}
+.user-number{
+  display: flex;
+  flex-direction: column;
+}
+.next-btn{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.next-btn>button{
+  width: 60%;
+  padding: 7px;
+  color: #fff;
+  background-color: black;
+  font-weight: 600;
+}
+
+/* Shipping order summary */
+
+.shipping-right{
+  position: relative;
+  width: 30%;
+  padding: 70px 20px;
+  background-color: #f7f7f7;
+}
+.shipping-order-summary{
+  position: sticky;
+  top: 25px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 70%;
+  background-color: #fff;
+}
+.shipping-order-summary>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shipping-order-summary>div>p{
+  font-size: 14px;
+  opacity: 0.7;
+}
+.shipping-order-summary>div>p:nth-child(2){
+  font-size: 14px;
+  font-weight: 600;
+}
+.order-heading{
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-heading>p{
+  font-size: 20px !important;
+  opacity: 0.6;
+}
+.order-heading>a{
+  color: black;
+  font-size: 14px;
+  font-weight: 0.8;
+}
+.order-total{
+  padding-top: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Payment & Billing */
+.payment-method-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.payment-heading{
+  font-size: 20px;
+  margin-left: 15px;
+}
+.payment-details{
+  border: 1px solid black;
+}
+.apple-pay,.paypal{
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid black;
+}
+.apple-pay>div{
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+.apple-pay>div>i{
+  font-size: 9px;
+}
+.apple-pay>div>p{
   font-size: 12px;
-  border: 1px solid green;
-} */
+}
+.apple-pay>p{
+  font-size: 14px;
+}
+.paypal>img{
+  padding: 3px;
+  width: 40px;
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.paypal>p{
+  font-size: 13px;
+}
+.credit-debit-card{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card-heading{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-heading>p{
+  font-weight: 600;
+}
+.card-number{
+  display: flex;
+  flex-direction: column;
+}
+.card-number>label{
+  font-weight: 600;
+}
+.card-number>label>span{
+  font-size: 10px;
+  opacity: 0.7;
+}
+.card-number>div:nth-child(2){
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+.card-number>div:nth-child(2)>input{
+  border: none;
+  padding: 9px;
+  outline: none;
+  width: 92%;
+}
+.bi-credit-card{
+  font-size: 20px;
+}
+.card-number>div:nth-child(3)>img{ 
+  width: 25px;
+  height: 15px;
+}
+.card-expiry-cvv{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.card-expiry,
+.card-cvv{
+  width: 50%;
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+}
+.card-expiry>label,
+.card-cvv>label{
+  font-weight: 600;
+}
+.card-expiry>label>span,
+.card-cvv>label>span{
+  font-size: 10px;
+  opacity: 0.7;
+}
+.card-expiry>input,
+.card-cvv>input{
+  padding: 7px;
+}
+.save-card-details{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.payment-btn{
+  width: 100%;
+}
+.payment-btn>button{
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  font-weight: 600;
+  background-color: black;
+}
+
+/* Reward rupees */
+.reward{
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+.reward>h3{
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.reward>p{
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* Billing address */
+.billing-address{
+  margin-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.billing-heading>p{
+  font-size: 22px;
+}
+.billing-address-details{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.username{
+  font-weight: 500;
+}
+.user-address{
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* Buttons */
+.btn-container{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.back-btn{
+  width: 30%;
+  background-color: transparent;
+}
+.payment-next-btn{
+  width: 70%;
+  color: #fff;
+  background-color: black;
+}
+.btn-container>button{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
