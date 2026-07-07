@@ -1,6 +1,3 @@
-import { placeholder } from "../JS/Navbar_Footer.js";
-placeholder();
-
 // Getting the data from the localstorage
 
 // let api_user = "https://api-server-zecj.onrender.com/user";

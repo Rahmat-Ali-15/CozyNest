@@ -33,16 +33,25 @@ export const placeholder = () => {
   typePlaceholder();
 };
 
-export const navbar = async () => {
-  try {
-    let res = await fetch(cartApi);
-    let data = await res.json();
+export const updateCartCount = async() => {
+    try{
+        const res = await fetch(cartApi);
+        const data = await res.json();
+
+        document.querySelector(".total-cart-item").innerText = data.length;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+export const navbar = () => {
 
     return `
         <section class="header-top">
 
             <ul>
-                <li><a href="#">CozyNest</a></li>
+                <li><a href="../index.html">CozyNest</a></li>
                 <li><a href="#">Cozy&kids</a></li>
                 <li><a href="#">CN2</a></li>
                 <li><a href="#">HUDSON <span></span> GRACE</a></li>
@@ -125,7 +134,7 @@ export const navbar = async () => {
                 <li class="shopping-cart">
                   <i class="fa-solid fa-cart-shopping"></i>
                   <div class="total-cart-item-div">
-                    <p class="total-cart-item">${data.length}</p>
+                    <p class="total-cart-item"></p>
                   </div>
 
                     <div class="shopping-popUp">
@@ -1301,9 +1310,6 @@ export const navbar = async () => {
         </nav>
     
     `;
-  } catch (error) {
-    console.log("🚀 ~ error:", error);
-  }
 };
 
 export const footer = () => {

@@ -1,5 +1,4 @@
-import { placeholder } from "../JS/Navbar_Footer.js";
-placeholder();
+import { updateCartCount } from "../JS/Navbar_Footer.js";
 
 let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
 
@@ -208,6 +207,7 @@ const apendCartItems = (data) => {
             },
           });
           fetchCartItem();
+          updateCartCount()
         } catch (error) {
           console.log(error);
         }
@@ -305,7 +305,7 @@ const renderCartSummary = (apiData) => {
         <div class="term-condition">
             <p>By checking out, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a></p>
         </div>
-        <button>CHECKOUT NOW</button>
+        <button class="chechout-btn">CHECKOUT NOW</button>
     </div>
     <div class="payment-method">
         <div class="phone-pay box">
@@ -323,6 +323,11 @@ const renderCartSummary = (apiData) => {
       let promocodeBtn = cardOrderSummaryBox.querySelector(".promocode-btn");
       let cartTotalAfterDiscount = cardOrderSummaryBox.querySelector(".cartTotal-amt");
       let discountMsg = cardOrderSummaryBox.querySelector(".discount-message");
+
+      let chechoutBtn = cardOrderSummaryBox.querySelector(".chechout-btn")
+      chechoutBtn.addEventListener("click", () => {
+        window.location = "../HTML/Checkout.html"
+      })
 
       promocodeDiv.addEventListener("click", () => {
         promocodeDetails.classList.toggle("promocode-details")

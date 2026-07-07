@@ -1,6 +1,3 @@
-import { placeholder } from "../JS/Navbar_Footer.js";
-placeholder();
-
 let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
 
 const fetchApi = async () => {

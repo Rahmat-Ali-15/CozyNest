@@ -1,5 +1,4 @@
-import { placeholder } from "../JS/Navbar_Footer.js";
-placeholder();
+import { updateCartCount } from "../JS/Navbar_Footer.js";
 
 
 let cartApi = `https://api-server-zecj.onrender.com/product_cart`;
@@ -188,6 +187,7 @@ const renderProductDetails = (val) => {
           body: JSON.stringify(cartDataObj),
         });
         let data = await res.json();
+        updateCartCount()
         console.log("✅ Added to cart:", data);
         alert("✅ Product added to cart");
       } catch (error) {

@@ -1,7 +1,3 @@
-import { placeholder } from "../JS/Navbar_Footer.js";
-placeholder();
-
-
 // Getting the data from the localstorage
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
