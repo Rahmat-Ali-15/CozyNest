@@ -110,13 +110,11 @@
 
 
     <script type="module">
-        import { navbar, footer, navFooterStyle, offerBanner, placeholder } from "../JS/Navbar_Footer.js";
-        // document.querySelector("header").innerHTML = navbar();
+        import { navbar, footer, navFooterStyle, offerBanner, placeholder, updateCartCount } from "../JS/Navbar_Footer.js";
 
-        const renderNavbar = async () => {
-            document.querySelector("header").innerHTML = await navbar();
-            placeholder()
-        }
+        document.querySelector("header").innerHTML = navbar();
+        placeholder()
+        updateCartCount()
 
         document.querySelector(".banner").innerHTML = offerBanner();
 
@@ -125,8 +123,6 @@
         document.head.append(navFooterStyleTag);
 
         document.querySelector("footer").innerHTML = footer();
-
-        renderNavbar()
     </script>
 
     <script type="module" src="../JS/Create_Account.js"></script>
